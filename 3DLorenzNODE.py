@@ -149,9 +149,9 @@ if __name__ == "__main__":
     d_val = load_h5_data(val_data_dir)
     d_test = load_h5_data(test_data_dir)
     n_of_data = len(d_train[1])
-    dt = 0.01    # read out from simulation script
+    dt = 0.0025    # read out from simulation script
     lookahead = 2
-    n_of_batches = 8
+    n_of_batches = 4
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
 
     # Settings
@@ -222,9 +222,9 @@ if __name__ == "__main__":
         load_models(model_dir, optimizer, f)
 
     with torch.no_grad():
-        idx = 2
+        idx = 4
         ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
-        dt_test = 0.002
+        dt_test = 0.0025
         t = torch.arange(0, 1, dt_test)
         N = len(t)
         #t = t + 0.9*dt_test*np.random.rand(N)
@@ -236,7 +236,7 @@ if __name__ == "__main__":
         y = d_test[idx][:, 1].reshape(-1)
         z = d_test[idx][:, 2].reshape(-1)
         ax = plt.axes(projection='3d')
-        #ax.plot3D(x[:end], y[:end], z[:end], '-', label='Real Lorenz')
+        ax.plot3D(x[:end], y[:end], z[:end], '-', label='Real Lorenz')
         ax.plot3D(ex_traj[:, 0], ex_traj[:, 1], ex_traj[:, 2], '-', label="Learnt Lorenz")
         ax.legend()
         plt.savefig(figures_dir + "/lorenz3d.png")

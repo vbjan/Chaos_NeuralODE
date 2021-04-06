@@ -1624,3 +1624,94 @@ STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead:
 2021-04-06 12:55:45,913:<module>:INFO:            | real z: 0.955144739707321 | learnt z: None
 2021-04-06 12:55:45,913:<module>:INFO:
  REACHED END OF MAIN
+2021-04-06 18:23:33,897:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:23:33,906:<module>:INFO:Shape of d_train: (16, 1001, 1)
+2021-04-06 18:23:33,923:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:25:53,280:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:25:53,298:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:25:53,328:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:25:59,265:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:25:59,265:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:25:59,427:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:25:59,427:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:25:59,427:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:25:59,550:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:25:59,550:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:25:59,714:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:25:59,714:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:25:59,714:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:25:59,854:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:25:59,854:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:00,026:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:00,026:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:00,026:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:26:00,026:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-06 18:26:46,170:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:26:46,183:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:26:46,204:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:26:51,664:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:51,664:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:51,804:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:51,804:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:51,804:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:26:51,921:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:51,921:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:52,079:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:52,079:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:52,079:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:26:52,206:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:52,206:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:52,350:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:26:52,350:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:26:52,350:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:26:52,350:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-06 18:30:13,177:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:30:13,191:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:30:13,218:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:30:18,563:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:18,563:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:18,710:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:18,710:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:18,710:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:30:18,832:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:18,832:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:18,980:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:18,980:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:18,980:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:30:19,107:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:19,107:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:19,268:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:30:19,268:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:30:19,268:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:30:19,268:<module>:INFO:
+ REACHED END OF MAIN
