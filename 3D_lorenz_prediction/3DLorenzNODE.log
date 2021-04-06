@@ -1715,3 +1715,166 @@ STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead:
 2021-04-06 18:30:19,268:<module>:INFO:            | real z: None | learnt z: None
 2021-04-06 18:30:19,268:<module>:INFO:
  REACHED END OF MAIN
+2021-04-06 18:51:53,673:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:51:53,688:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:51:53,718:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:51:59,118:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,118:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,260:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,260:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,260:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:51:59,377:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,377:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,528:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,528:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,528:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:51:59,646:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,647:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,789:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:51:59,789:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:51:59,789:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:51:59,790:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-06 18:52:44,506:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:52:44,517:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:52:44,537:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:52:47,836:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:47,837:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:47,918:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:47,918:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:47,918:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:52:47,982:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:47,982:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:48,060:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:48,060:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:48,060:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:52:48,132:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:48,133:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:48,212:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:52:48,212:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:52:48,212:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:52:48,212:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-06 18:53:21,498:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 18:53:21,508:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-06 18:53:21,532:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 18:53:23,659:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,659:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,706:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,706:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,706:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-06 18:53:23,743:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,743:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,784:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,784:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,784:<module>:INFO:            | real y: None | learnt y: None
+2021-04-06 18:53:23,820:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,820:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,862:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-06 18:53:23,863:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-06 18:53:23,863:<module>:INFO:            | real z: None | learnt z: None
+2021-04-06 18:53:23,863:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-06 19:04:27,831:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:04:27,840:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:04:46,057:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:04:46,067:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:15:59,592:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:15:59,604:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:15:59,623:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:16:14,226:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:16:14,235:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:16:14,253:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:16:50,756:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:16:50,765:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:16:50,782:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 6, batch_first=True)
+  (o2o): Linear(in_features=6, out_features=3, bias=True)
+)
+2021-04-06 19:16:50,782:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:16:50,782:<module>:INFO:(2001, 1)
+2021-04-06 19:17:09,831:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:17:09,840:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:17:09,858:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 6, batch_first=True)
+  (o2o): Linear(in_features=6, out_features=3, bias=True)
+)
+2021-04-06 19:17:09,858:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:17:09,858:<module>:INFO:(2001, 1)
+2021-04-06 19:17:35,958:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:17:35,968:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:17:35,987:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 6, batch_first=True)
+  (o2o): Linear(in_features=6, out_features=3, bias=True)
+)
+2021-04-06 19:17:35,987:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:17:35,987:<module>:INFO:(2001, 1)
+2021-04-06 19:17:58,803:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-06 19:17:58,817:<module>:INFO:Shape of d_train: (16, 2001, 1)
+2021-04-06 19:17:58,835:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 6, batch_first=True)
+  (o2o): Linear(in_features=6, out_features=3, bias=True)
+)
+2021-04-06 19:17:58,836:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-06 19:17:58,836:<module>:INFO:(2001, 1)

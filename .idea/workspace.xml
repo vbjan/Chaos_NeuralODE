@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)">
+      <change afterPath="$PROJECT_DIR$/oneDLorenzNODE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3DLorenzNODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/3DLorenzNODE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3DLorenzNODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/threeDLorenzNODE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/3DLorenzNODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/3DLorenzNODE.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/test/data.h5" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/test/data.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/train/data.h5" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/train/data.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/val/data.h5" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/val/data.h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzz.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/3DLorenzmodelmodel0.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/3DLorenzmodelopt.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/lorenz3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/lorenz3d_periodicity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/lorenzx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/lorenzy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/1.4model/lorenzz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model/3DLorenzmodelmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model/3DLorenzmodelmodel0.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model/3DLorenzmodelopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model/3DLorenzmodelopt.pth" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +69,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/3D_lorenz_prediction/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -76,19 +82,20 @@
     <option name="myShowDebugConsoleByDefault" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/1D_lorenz_prediction" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/seq2seq_lorenz_prediction" />
       <recent name="$PROJECT_DIR$/first_tries" />
       <recent name="$PROJECT_DIR$/3D_lorenz_prediction" />
-      <recent name="$PROJECT_DIR$/SimpleModels" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models/2.4model" />
+      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.3DLorenzNODE">
+  <component name="RunManager" selected="Python.oneDLorenzNODE">
     <configuration name="3DLorenzNODE" type="PythonConfigurationType" factoryName="Python">
       <module name="MyNeuralODE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,7 +106,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3DLorenzNODE.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/threeDLorenzNODE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,28 +203,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="MyNeuralODE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Lorenz3D" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Lorenz3D/create_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="latent_ode" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MyNeuralODE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,8 +225,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="oneDLorenzNODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oneDLorenzNODE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.create_data" />
+      <item itemvalue="Python.oneDLorenzNODE" />
       <item itemvalue="Python.LorentzLatentODE" />
       <item itemvalue="Python.latent_ode" />
       <item itemvalue="Python.SimpleSinNeuralODE" />
@@ -311,12 +318,24 @@
       <workItem from="1617660124904" duration="525000" />
       <workItem from="1617705249597" duration="1211000" />
       <workItem from="1617713714970" duration="162000" />
-      <workItem from="1617725828489" duration="664000" />
+      <workItem from="1617725828489" duration="3711000" />
     </task>
+    <task id="LOCAL-00001" summary="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)">
+      <created>1617726734700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617726734700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1680" y="327" key="#Deployment" timestamp="1617105380080">
@@ -331,36 +350,41 @@
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
     <state x="-1571" y="288" key="#Neural_oDE/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617282990006" />
-    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617283033444">
-      <screen x="-2560" y="-55" width="2560" height="1440" />
+    <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617728662885">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617283033444" />
     <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092354457" />
+    <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1617728662885" />
     <state x="549" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617568876366">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1584" y="472" key="#com.intellij.fileTypes.FileTypeChooser/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617435005666" />
     <state x="549" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1617568876366" />
-    <state width="1398" height="292" key="GridCell.Tab.0.bottom" timestamp="1617726403042">
+    <state x="115" y="49" key="CommitChangelistDialog2" timestamp="1617729999218">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="115" y="49" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1617729999218" />
+    <state width="1398" height="322" key="GridCell.Tab.0.bottom" timestamp="1617729497631">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
-    <state width="1398" height="292" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1617726403042" />
-    <state width="1398" height="292" key="GridCell.Tab.0.center" timestamp="1617726403042">
+    <state width="1398" height="322" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1617729497631" />
+    <state width="1398" height="322" key="GridCell.Tab.0.center" timestamp="1617729497630">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="292" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1617726403042" />
-    <state width="1398" height="292" key="GridCell.Tab.0.left" timestamp="1617726403041">
+    <state width="1398" height="322" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1617729497630" />
+    <state width="1398" height="322" key="GridCell.Tab.0.left" timestamp="1617729497630">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="292" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1617726403041" />
-    <state width="1398" height="292" key="GridCell.Tab.0.right" timestamp="1617726403042">
+    <state width="1398" height="322" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1617729497630" />
+    <state width="1398" height="322" key="GridCell.Tab.0.right" timestamp="1617729497631">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="292" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1617726403042" />
+    <state width="1398" height="322" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1617729497631" />
     <state width="1398" height="292" key="GridCell.Tab.1.bottom" timestamp="1617726403044">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -392,10 +416,10 @@
     <state x="-1649" y="521" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617434936987" />
     <state x="-2060" y="494" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617090992574" />
     <state x="512" y="360" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1617725828713" />
-    <state x="506" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617726648583">
+    <state x="506" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617726817409">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="506" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1617726648583" />
+    <state x="506" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1617726817409" />
     <state x="0" y="32" width="496" height="480" key="dock-window-1" timestamp="1617356623586">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -404,6 +428,10 @@
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
     <state x="-2460" y="45" width="1080" height="1240" key="dock-window-2/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1615800093323" />
+    <state x="383" y="85" width="674" height="729" key="find.popup" timestamp="1617726896473">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="383" y="85" width="674" height="729" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1617726896473" />
     <state x="-2014" y="399" width="814" height="531" key="ftp.server.browser" timestamp="1617095774905">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
@@ -418,7 +446,7 @@
     <SUITE FILE_PATH="coverage/MyNeuralODE$LorentzLatentODE.coverage" NAME="LorentzLatentODE Coverage Results" MODIFIED="1617006792003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$FigureOutCuda.coverage" NAME="FigureOutCuda Coverage Results" MODIFIED="1616770663897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$3DLorenzNODE.coverage" NAME="3DLorenzNODE Coverage Results" MODIFIED="1617726397871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="create_data Coverage Results" MODIFIED="1617726198978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Lorenz3D" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="oneDLorenzNODE Coverage Results" MODIFIED="1617729477364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$Neural_oDE.coverage" NAME="Neural oDE Coverage Results" MODIFIED="1617279851054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$SimpleSinNeuralODE.coverage" NAME="SimpleSinNeuralODE Coverage Results" MODIFIED="1616776260798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -1,10 +1,10 @@
 '''
-Version: 4.1
+Version: 5
 TODO:
 - delete xi return of data functions?
-- remove make data form sequences function
 - write so that logging.info appears in console as well
 - save checkpoints of good models better!
+- Use all the steps for training
 '''
 
 import numpy as np
@@ -25,6 +25,9 @@ from utils import save_models, load_models, load_h5_data, z1test
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 logging.basicConfig(filename="3D_lorenz_prediction/3DLorenzNODE.log", level=logging.INFO,
                     format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logging.getLogger('').addHandler(console)
 
 
 def plot_lorenz(x1, x2, x3, end=100, label="plot"):
@@ -142,6 +145,7 @@ if __name__ == "__main__":
     train_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/train/data.h5"
     val_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/val/data.h5"
     figures_dir = project_dir + "/3D_lorenz_prediction/figures"
+    model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
 
     # Load in the data
     d_train = load_h5_data(train_data_dir)
@@ -151,7 +155,7 @@ if __name__ == "__main__":
     n_of_data = len(d_train[1])
     dt = 0.0025    # read out from simulation script
     lookahead = 2
-    n_of_batches = 4
+    n_of_batches = 8
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
 
     # Settings
@@ -159,7 +163,6 @@ if __name__ == "__main__":
     LOAD_THEN_TRAIN = False
     EPOCHS = 3000
     LR = 0.01
-    model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
 
     # Construct model
     f = Net(hidden_dim=256)
@@ -168,7 +171,7 @@ if __name__ == "__main__":
     params = list(f.parameters())
     optimizer = optim.Adam(params, lr=LR)
     #scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=200, gamma=0.8)
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=25, verbose=False, min_lr=LR/100)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=10, verbose=False, min_lr=LR/100)
 
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
@@ -204,11 +207,11 @@ if __name__ == "__main__":
             val_losses.append(float(val_loss))
             scheduler.step(val_loss)
 
-            if EPOCH % 25 == 0:
+            if EPOCH % 10 == 0:
                 logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} | K: {} \n"
                       .format(EPOCH, loss, val_loss, get_lr(optimizer), get_approx_k_of_model(f, d_val)))
                 save_models(model_dir, optimizer, f)
-                if val_loss > pre_val_loss and EPOCH % 75 == 0:
+                if val_loss > pre_val_loss and EPOCH % 30 == 0:
                     logging.info("\n STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!\n")
                     break
             pre_val_loss = val_loss
@@ -225,7 +228,7 @@ if __name__ == "__main__":
         idx = 4
         ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
         dt_test = 0.0025
-        t = torch.arange(0, 1, dt_test)
+        t = torch.arange(0, 0.5, dt_test)
         N = len(t)
         #t = t + 0.9*dt_test*np.random.rand(N)
         ex_traj = np.array(odeint(f, ic_state, t).view(-1, 3))
@@ -272,6 +275,5 @@ if __name__ == "__main__":
 
 
     logging.info("\n REACHED END OF MAIN")
-    print("REACHED END OF MAIN")
 
 
