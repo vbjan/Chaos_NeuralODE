@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MyNeuralODE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="1c2aa721-9fc6-4fe5-bf6a-d8bed0586b33" />
+  <component name="ProjectId" id="1pmtMOPIHq8J731h6Mzt0TqSIGe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/3D_lorenz_prediction/models" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="MyNeuralODE" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="MyNeuralODE" />
+      </console-settings>
+    </option>
+    <option name="myShowDebugConsoleByDefault" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/seq2seq_lorenz_prediction" />
+      <recent name="$PROJECT_DIR$/first_tries" />
+      <recent name="$PROJECT_DIR$/3D_lorenz_prediction" />
+      <recent name="$PROJECT_DIR$/SimpleModels" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.3DLorenzNODE">
+    <configuration name="3DLorenzNODE" type="PythonConfigurationType" factoryName="Python">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3DLorenzNODE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FigureOutCuda" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FigureOutCuda.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LorentzLatentODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LorentzLatentODE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SimpleSinNeuralODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SimpleSinNeuralODE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create_data" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Lorenz3D" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Lorenz3D/create_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="latent_ode" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../torchdiffeq/examples" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../torchdiffeq/examples/latent_ode.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.create_data" />
+      <item itemvalue="Python.LorentzLatentODE" />
+      <item itemvalue="Python.latent_ode" />
+      <item itemvalue="Python.SimpleSinNeuralODE" />
+      <item itemvalue="Python.FigureOutCuda" />
+      <item itemvalue="Python.3DLorenzNODE" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="" />
+      <created>1615800044837</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615800044837</updated>
+      <workItem from="1615800046005" duration="3741000" />
+      <workItem from="1615805230793" duration="1215000" />
+      <workItem from="1616145409233" duration="6323000" />
+      <workItem from="1616164037826" duration="7077000" />
+      <workItem from="1616248474588" duration="8293000" />
+      <workItem from="1616257445288" duration="2983000" />
+      <workItem from="1616321013731" duration="11202000" />
+      <workItem from="1616343731466" duration="3824000" />
+      <workItem from="1616418527444" duration="10750000" />
+      <workItem from="1616490347096" duration="14552000" />
+      <workItem from="1616510692875" duration="4125000" />
+      <workItem from="1616526556835" duration="2747000" />
+      <workItem from="1616530331135" duration="273000" />
+      <workItem from="1616577326121" duration="9790000" />
+      <workItem from="1616587280146" duration="106000" />
+      <workItem from="1616592378883" duration="9320000" />
+      <workItem from="1616602997786" duration="4556000" />
+      <workItem from="1616615560885" duration="4508000" />
+      <workItem from="1616660342857" duration="5194000" />
+      <workItem from="1616666309180" duration="225000" />
+      <workItem from="1616673785061" duration="9131000" />
+      <workItem from="1616696368395" duration="2152000" />
+      <workItem from="1616767831959" duration="14635000" />
+      <workItem from="1617004159630" duration="2115000" />
+      <workItem from="1617008863285" duration="3355000" />
+      <workItem from="1617030209480" duration="1005000" />
+      <workItem from="1617031839284" duration="1997000" />
+      <workItem from="1617090986488" duration="3967000" />
+      <workItem from="1617095245383" duration="18365000" />
+      <workItem from="1617128009969" duration="25000" />
+      <workItem from="1617128249199" duration="4800000" />
+      <workItem from="1617200741232" duration="7765000" />
+      <workItem from="1617266545333" duration="19457000" />
+      <workItem from="1617313774149" duration="801000" />
+      <workItem from="1617355846472" duration="3103000" />
+      <workItem from="1617373661093" duration="110000" />
+      <workItem from="1617376794257" duration="3257000" />
+      <workItem from="1617385791219" duration="95000" />
+      <workItem from="1617385895521" duration="1653000" />
+      <workItem from="1617387672701" duration="244000" />
+      <workItem from="1617387973279" duration="4000" />
+      <workItem from="1617434930280" duration="1591000" />
+      <workItem from="1617528005369" duration="372000" />
+      <workItem from="1617540315856" duration="107000" />
+      <workItem from="1617546804782" duration="1514000" />
+      <workItem from="1617560102337" duration="313000" />
+      <workItem from="1617568858395" duration="2318000" />
+      <workItem from="1617621544967" duration="51000" />
+      <workItem from="1617628178239" duration="466000" />
+      <workItem from="1617660124904" duration="525000" />
+      <workItem from="1617705249597" duration="1211000" />
+      <workItem from="1617713714970" duration="162000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1680" y="327" key="#Deployment" timestamp="1617105380080">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-1680" y="327" key="#Deployment/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617105380080" />
+    <state x="-1680" y="327" key="#Log_Highlighting_(ideolog)" timestamp="1617385823701">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-1680" y="327" key="#Log_Highlighting_(ideolog)/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617385823701" />
+    <state x="-1571" y="288" key="#Neural_oDE" timestamp="1617282990006">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-1571" y="288" key="#Neural_oDE/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617282990006" />
+    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617283033444">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617283033444" />
+    <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092354457" />
+    <state x="549" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617568876366">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="-1584" y="472" key="#com.intellij.fileTypes.FileTypeChooser/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617435005666" />
+    <state x="549" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1617568876366" />
+    <state width="2518" height="508" key="GridCell.Tab.0.bottom" timestamp="1617295684055">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.0.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
+    <state width="2518" height="508" key="GridCell.Tab.0.center" timestamp="1617295684054">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.0.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
+    <state width="2518" height="508" key="GridCell.Tab.0.left" timestamp="1617295684054">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.0.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
+    <state width="2518" height="508" key="GridCell.Tab.0.right" timestamp="1617295684054">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.0.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
+    <state width="2518" height="508" key="GridCell.Tab.1.bottom" timestamp="1617295684056">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.1.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684056" />
+    <state width="2518" height="508" key="GridCell.Tab.1.center" timestamp="1617295684055">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.1.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
+    <state width="2518" height="508" key="GridCell.Tab.1.left" timestamp="1617295684055">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.1.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
+    <state width="2518" height="508" key="GridCell.Tab.1.right" timestamp="1617295684055">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="508" key="GridCell.Tab.1.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
+    <state x="-2085" y="383" key="SettingsEditor" timestamp="1617387961675">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-2085" y="383" key="SettingsEditor/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617387961675" />
+    <state x="84" y="172" key="SettingsEditor/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092299055" />
+    <state x="512" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1617724368364">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="-1649" y="521" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617434936987" />
+    <state x="-2060" y="494" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617090992574" />
+    <state x="512" y="360" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1617724368364" />
+    <state x="0" y="32" width="496" height="480" key="dock-window-1" timestamp="1617356623586">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="32" width="496" height="480" key="dock-window-1/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617356623586" />
+    <state x="-2460" y="45" width="1080" height="1240" key="dock-window-2" timestamp="1615800093323">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-2460" y="45" width="1080" height="1240" key="dock-window-2/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1615800093323" />
+    <state x="-2014" y="399" width="814" height="531" key="ftp.server.browser" timestamp="1617095774905">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-2014" y="399" width="814" height="531" key="ftp.server.browser/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617095774905" />
+    <state x="307" y="284" key="ftp.server.browser/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092121738" />
+    <state x="-1615" y="276" width="670" height="676" key="search.everywhere.popup" timestamp="1616778566587">
+      <screen x="-2560" y="-55" width="2560" height="1440" />
+    </state>
+    <state x="-1615" y="276" width="670" height="676" key="search.everywhere.popup/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1616778566587" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/3DLorenzNODE.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyNeuralODE$LorentzLatentODE.coverage" NAME="LorentzLatentODE Coverage Results" MODIFIED="1617006792003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$FigureOutCuda.coverage" NAME="FigureOutCuda Coverage Results" MODIFIED="1616770663897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="create_data Coverage Results" MODIFIED="1617279521341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Lorenz3D" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$Neural_oDE.coverage" NAME="Neural oDE Coverage Results" MODIFIED="1617279851054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$SimpleSinNeuralODE.coverage" NAME="SimpleSinNeuralODE Coverage Results" MODIFIED="1616776260798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
