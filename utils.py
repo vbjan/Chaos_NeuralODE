@@ -7,6 +7,7 @@ import h5py
 import matplotlib.pyplot as plt
 from scipy.stats.stats import pearsonr
 
+
 def load_h5_data(directory):
     """
         Loads h5 files containing the Lorenz trajectories
@@ -40,10 +41,11 @@ class CreationRNN(nn.Module):
     def init_hidden(self):
         return torch.zeros(self.num_layers, self.nbatch, self.hidden_dim)  # used to set hidden vector to zeros
 
+
     def forward(self, x, hid):
-        skip = x
+        #skip = x
         x, hid = self.rnn(x, hid)
-        return skip + self.o2o(x), hid
+        return  self.o2o(x), hid
 
 
 def get_lr(opt):
@@ -98,6 +100,64 @@ def load_models(save_dir, opt, *models):
     logging.debug('Loaded ckpt from {}'.format(ckpt_path))
 
 
+def load_only_models(save_dir, *models):
+    ckpt_path = save_dir + 'opt.pth'
+    if os.path.exists(ckpt_path):
+        i = 0
+        for model in models:
+            ckpt_path = save_dir + 'model' + str(i) + '.pth'
+            checkpoint = torch.load(ckpt_path)
+            model.load_state_dict(checkpoint['model' + str(i)])
+            i += 1
+        logging.debug('Loaded all the models')
+    logging.debug('Loaded ckpt from {}'.format(ckpt_path))
+
+
+def split_sequence(sequence, lookahead, tau, k, max_blocks):
+    """
+    :param sequence: data sequence with dimensions (sequence length, data dimension)
+    :param lookahead: number of steps to predict
+    :param tau: stepsize of history (see Takens theorem)
+    :param k: number of steps of history
+    :param max_blocks: maximum number of training points per batch
+    :return: torch.tensor of history and future of dimensions (nblocks, future/history length, data dimension)
+    """
+    sequence_len = sequence.shape[0]
+    histories = []
+    futures = []
+    for i in range(k * tau, sequence_len - lookahead):
+        histories.append(sequence[i - k * tau:i - tau + 1:tau])
+        futures.append(sequence[i - tau:i + lookahead:1])
+        if len(histories) == max_blocks:
+            break
+    histories, futures = np.stack(histories), np.stack(futures)
+    if histories.shape[0] != max_blocks:
+        logging.warning("histories.shape: {}, max_blocks: {}".format(histories.shape, max_blocks))
+        assert histories.shape[0] == max_blocks
+    histories, futures = torch.from_numpy(histories).float(), torch.from_numpy(futures).float()
+    return histories, futures
+
+
+def make_batches_from_stack(stack, lookahead, tau, k, n_batches, max_blocks=512):
+    """
+    :param stack: data stack with all the simulated trajectories
+    :param lookahead: number of steps to predict
+    :param tau: stepsize of history (see Takens theorem)
+    :param k: number of steps of history
+    :param n_batches: number of batches
+    :param max_blocks: maximum number of training points per batch
+    :return: lists containing the n_batches amount of histories and futures
+    """
+    batches_histories = []
+    batches_futures = []
+    for i in range(n_batches):
+        sequence = stack[i][:, :]
+        histories, futures = split_sequence(sequence, lookahead, tau, k, max_blocks)
+        batches_histories.append(histories)
+        batches_futures.append(futures)
+    return batches_histories, batches_futures
+
+
 def z1test(x, show_warnings=True, plotting=False):
     """
     :param x: 1-dimensional sequence of data
@@ -143,4 +203,5 @@ def z1test(x, show_warnings=True, plotting=False):
         plt.xlabel('t'), plt.ylabel('M')
         plt.show()
     return np.median(kcorr)
+
 

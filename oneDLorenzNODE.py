@@ -11,8 +11,7 @@ from tqdm import tqdm
 import os
 import logging
 from utils import get_lr
-from utils import save_models, load_models, load_h5_data, z1test, CreationRNN
-from threeDLorenzNODE import recast_sequence_to_batches
+from utils import save_models, load_models, load_h5_data, z1test, CreationRNN, split_sequence
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 logging.basicConfig(filename="1D_lorenz_prediction/1DLorenzNODE.log", level=logging.INFO,
@@ -42,31 +41,8 @@ class Net(nn.Module):
         return x
 
 
-# TODO: make function more general...
-def recast_sequence_to_batches2(sequence, lookpa, lookah):
-    """
-        :param sequence: numpy array with trajectory
-        :param lookpa: timesteps to look into the past
-        :param lookah: lookahead for input output split
-        :return: np array with all the states and np stack with the resulting trajectories
-    """
-    N = len(sequence)
-
-    x0s = sequence[0::lookah + 1]
-    xis = []
-    xs = []
-    for i in range(N):
-        if i % (lookah + 1) == 0:
-            xis.append(sequence[i + 1:i + lookah + 1:1])
-            xs.append(sequence[i:i + lookah + 1:1])
-    # Cut last x0 if sequence was not long enough
-    xis = np.stack(xis[:-1])
-    xs = np.stack(xs[:-1])
-    if x0s.shape[0] != xis.shape[0]:
-        x0s = x0s[:-1]
-    # logging.info(len(x0s), len(xis), len(xs))
-    assert len(x0s) == len(xis) and len(x0s) == len(xs)
-    return x0s, xis, xs  # x0s.dim=(n_batches,3), xis.dim=(n_batches, lookah, 3)
+def extract_real_uts(u0s):
+    uts = torch.zeros()
 
 
 if __name__ == "__main__":
@@ -86,15 +62,19 @@ if __name__ == "__main__":
     n_of_data = len(d_train[1])
     dt = 0.0025  # read out from simulation script
     lookahead = 2
-    n_of_blocks = 8
+    k = 7
+    tau = 1
+    latent_dim = 3
+    force = 0.1
+    n_of_batches = 1
+    max_blocks = 512
     t = torch.from_numpy(np.arange(0, (1 + lookahead) * dt, dt))
-    # TODO: get nbatches from data
 
     # Settings
     TRAIN_MODEL = True
     LOAD_THEN_TRAIN = False
-    EPOCHS = 3000
-    LR = 0.01
+    EPOCHS = 1000
+    LR = 0.001
     HIDDEN_DIM = 6
 
     # Construct model
@@ -102,18 +82,95 @@ if __name__ == "__main__":
                             input_dim=1,
                             hidden_dim=HIDDEN_DIM,
                             num_layers=1,
-                            output_dim=3,
-                            nbatch=None
+                            output_dim=latent_dim,
+                            nbatch=max_blocks
                             )
     f = Net(hidden_dim=256)
     logging.info(encoder_rnn)
     logging.info(f)
 
-    params = list(f.parameters())
+    params = list(f.parameters()) + list(encoder_rnn.parameters())
     optimizer = optim.Adam(params, lr=LR)
 
     if TRAIN_MODEL:
         logging.info(d_train[1, :, :].shape)
-        X0, Xi, X = recast_sequence_to_batches(d_train[1, :, :], lookahead)
-        print(X0.shape, Xi.shape, X.shape)
+        history_Xs, future_Xs = split_sequence(
+                                    d_train[1, :, :],
+                                    lookahead,
+                                    tau=tau,
+                                    k=k,
+                                    max_blocks=max_blocks
+                                    )
+        logging.info(history_Xs.size())
+        logging.info(future_Xs.size())
+        val_losses = []
+        train_losses = []
+
+        for EPOCH in range(EPOCHS):
+            optimizer.zero_grad()
+
+            # encode history into 3D initial condition vector (out)
+            hid = encoder_rnn.init_hidden()
+            for i in range(k):
+                x = history_Xs[:, i, :].view(max_blocks, 1, 1)
+                out, hid = encoder_rnn.forward(x, hid)
+
+            U0 = out.view(-1, latent_dim)
+            U_pred = odeint(f, U0, t).permute(1, 0, 2)
+            U_t_hat = U_pred[:-2, 1:lookahead+1, :] # the next predicted latent steps
+
+            # restricting the latent space mapping to stay in the same space
+            U_t = torch.zeros(max_blocks - lookahead, lookahead, latent_dim)
+            for i in range(max_blocks-lookahead):
+                U_t[i, 0, :] = out[i, :, :].view(-1)
+                U_t[i, 1, :] = out[i+1, :, :].view(-1)
+            x_t = future_Xs[:-2, :, :]
+
+            loss = torch.mean(torch.abs(x_t - U_pred[:-2, 0, :].view(-1, lookahead+1, 1))) \
+                   + force * torch.mean(torch.abs(U_t - U_t_hat))
+            train_losses.append(loss)
+            loss.backward()
+            optimizer.step()
+
+            if EPOCH % 10 == 0:
+                logging.info("EPOCH {} finished with training loss: {} | lr: {} \n"
+                      .format(EPOCH, loss, get_lr(optimizer)))
+
+        print("TRAINING IS FINISHED")
+        save_models(model_dir, optimizer, f, encoder_rnn)
+        plt.plot(train_losses), plt.show()
+        #print("out.size: {}, U_pred.size: {}, U_t_hat.size: {}, U_t.size: {}".format(out.size(), U_pred.size(), U_t_hat.size(), U_t.size()))
+        #print("x_t: {}, U_t[0]: {}, U_t: {}, U_t_hat: {}".format(x_t.size(), U_pred[:-2, 0, :].view(-1, lookahead+1, 1).size(), U_t.size(), U_t_hat.size() ))
+    else:
+        load_models(model_dir, optimizer, f, encoder_rnn)
+
+    with torch.no_grad():
+        ic = torch.tensor([10, 1, 1]).float()
+        dt_test = 0.0025
+        t = torch.arange(0, 0.5, dt_test)
+        N = len(t)
+        ex_traj = np.array(odeint(f, ic, t).view(-1, latent_dim))
+        x = d_test[0, :, 0]
+
+        ax = plt.axes(projection='3d')
+        ax.plot3D(ex_traj[:, 0], ex_traj[:, 1], ex_traj[:, 2], '-', label="Learnt Lorenz")
+        ax.legend()
+        plt.show()
+
+        # Compare x, y and z of real and learnt trajectory
+        plt.figure()
+        plt.plot(ex_traj[:, 0], label='Learnt x')
+        plt.plot(x[:N], label='Real x')
+        plt.legend()
+        plt.show()
+
+        plt.figure()
+        plt.plot(ex_traj[:, 1], label='Learnt y')
+        plt.legend()
+        plt.show()
+
+        plt.figure()
+        plt.plot(ex_traj[:, 2], label='Learnt z')
+        plt.legend()
+        plt.show()
 

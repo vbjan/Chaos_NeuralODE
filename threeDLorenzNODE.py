@@ -1,5 +1,5 @@
 '''
-Version: 5
+Version: 6.1
 TODO:
 - delete xi return of data functions?
 - write so that logging.info appears in console as well
@@ -20,7 +20,7 @@ from tqdm import tqdm
 import os
 import logging
 from utils import get_lr
-from utils import save_models, load_models, load_h5_data, z1test
+from utils import save_models, load_models, load_h5_data, z1test, split_sequence, make_batches_from_stack
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 logging.basicConfig(filename="3D_lorenz_prediction/3DLorenzNODE.log", level=logging.INFO,
@@ -45,58 +45,6 @@ def get_batch(d, batch_n, t, batch_length=100):
     batch_X0 = true_X[s]
     batch_t = t[s:s+batch_length]
     return batch_X, batch_X0, batch_t
-
-
-def recast_sequence_to_batches(sequence, lookah):
-    """
-    :param sequence: numpy array with trajectory
-    :param lookah: lookahead for input output split
-    :return: np array with all the states and np stack with the resulting trajectories
-    """
-    N = len(sequence)
-
-    x0s = sequence[0::lookah + 1]
-    xis = []
-    xs = []
-    for i in range(N):
-        if i % (lookah+1) == 0:
-            xis.append(sequence[i+1:i+lookah+1:1])
-            xs.append(sequence[i:i+lookah+1:1])
-    # Cut last x0 if sequence was not long enough
-    xis = np.stack(xis[:-1])
-    xs = np.stack(xs[:-1])
-    if x0s.shape[0] != xis.shape[0]:
-        x0s = x0s[:-1]
-    #logging.info(len(x0s), len(xis), len(xs))
-    assert len(x0s) == len(xis) and len(x0s) == len(xs)
-    return x0s, xis, xs  # x0s.dim=(n_batches,3), xis.dim=(n_batches, lookah, 3)
-
-
-def make_trainable_data_from_sequence(sequence, lookah):
-    """
-    :param sequence: data sequence to make data from
-    :param lookah: lookahead parameter for data splitting
-    :return: x0, xi and x as torch tensors of size (n_batches, 1 or 1+lookah, 3)
-    """
-    x0, xi, x = recast_sequence_to_batches(sequence, lookah)
-    x0 = torch.from_numpy(x0).float()
-    xi = torch.from_numpy(xi).float()
-    x = torch.from_numpy(x).float()
-    return x0, xi, x
-
-
-def make_trainable_batches_from_stack(stack, lookah, n_batches):
-    batches_xs = []
-    batches_xis = []
-    batches_x0s = []
-    for i in range(n_batches):
-        sequence = stack[i][:, :]
-        x0s, xis, xs = make_trainable_data_from_sequence(sequence, lookah)
-        batches_xs.append(xs)
-        batches_x0s.append(x0s)
-        batches_xis.append(xis)
-
-    return batches_x0s, batches_xis, batches_xs
 
 
 class Net(nn.Module):
@@ -155,13 +103,13 @@ if __name__ == "__main__":
     n_of_data = len(d_train[1])
     dt = 0.0025    # read out from simulation script
     lookahead = 2
-    n_of_batches = 8
+    n_of_batches = 4
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
 
     # Settings
     TRAIN_MODEL = False
     LOAD_THEN_TRAIN = False
-    EPOCHS = 3000
+    EPOCHS = 2000
     LR = 0.01
 
     # Construct model
@@ -177,10 +125,23 @@ if __name__ == "__main__":
         if LOAD_THEN_TRAIN:
             load_models(model_dir, optimizer, f)
 
-        batches_X0, batches_Xi, batches_X = make_trainable_batches_from_stack(d_train, lookahead, n_of_batches)
+        batches_X0, batches_X = make_batches_from_stack(
+                                                    d_train,
+                                                    lookahead,
+                                                    tau=1,
+                                                    k=1,
+                                                    n_batches=n_of_batches,
+                                                    max_blocks=1900
+                                                    )
 
-        val_X0, val_Xi, val_X = make_trainable_batches_from_stack(d_val, lookahead, n_batches=1)
-        val_X0, val_Xi, val_X = val_X0[0], val_Xi[0], val_X[0]
+        val_X0, val_X = make_batches_from_stack(d_val,
+                                                lookahead,
+                                                tau=1,
+                                                k=1,
+                                                n_batches=1
+                                                )
+
+        val_X0, val_X = val_X0[0].view(-1, 3), val_X[0]
 
         val_losses = []
         train_losses = []
@@ -193,10 +154,11 @@ if __name__ == "__main__":
         for EPOCH in range(EPOCHS):
 
             for n in range(n_of_batches):
-                batch_X0, batch_Xi, batch_X =  batches_X0[n], batches_Xi[n], batches_X[n]
+                batch_X0, batch_X = batches_X0[n].view(-1, 3), batches_X[n]
 
                 optimizer.zero_grad()
                 X_pred = odeint(f, batch_X0, t).permute(1, 0, 2)
+
                 loss = torch.mean(torch.abs(X_pred - batch_X) ** 2)
                 loss.backward()
                 optimizer.step()
@@ -225,10 +187,10 @@ if __name__ == "__main__":
         load_models(model_dir, optimizer, f)
 
     with torch.no_grad():
-        idx = 4
+        idx = 8
         ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
         dt_test = 0.0025
-        t = torch.arange(0, 0.5, dt_test)
+        t = torch.arange(0, 1.5, dt_test)
         N = len(t)
         #t = t + 0.9*dt_test*np.random.rand(N)
         ex_traj = np.array(odeint(f, ic_state, t).view(-1, 3))
@@ -276,4 +238,63 @@ if __name__ == "__main__":
 
     logging.info("\n REACHED END OF MAIN")
 
+
+
+
+
+'''
+def recast_sequence_to_batches(sequence, lookah):
+    """
+    :param sequence: numpy array with trajectory
+    :param lookah: lookahead for input output split
+    :return: np array with all the states and np stack with the resulting trajectories
+    """
+    N = len(sequence)
+
+    x0s = sequence[0::lookah + 1]
+    xis = []
+    xs = []
+    for i in range(N):
+        if i % (lookah+1) == 0:
+            xis.append(sequence[i+1:i+lookah+1:1])
+            xs.append(sequence[i:i+lookah+1:1])
+    # Cut last x0 if sequence was not long enough
+    xis = np.stack(xis[:-1])
+    xs = np.stack(xs[:-1])
+    if x0s.shape[0] != xis.shape[0]:
+        x0s = x0s[:-1]
+    #logging.info(len(x0s), len(xis), len(xs))
+    assert len(x0s) == len(xis) and len(x0s) == len(xs)
+    return x0s, xis, xs  # x0s.dim=(n_batches,3), xis.dim=(n_batches, lookah, 3)
+'''
+
+'''
+def make_trainable_data_from_sequence(sequence, lookah):
+    """
+    :param sequence: data sequence to make data from
+    :param lookah: lookahead parameter for data splitting
+    :return: x0, xi and x as torch tensors of size (n_batches, 1 or 1+lookah, 3)
+    """
+    x0, xi, x = recast_sequence_to_batches(sequence, lookah)
+    x0 = torch.from_numpy(x0).float()
+    xi = torch.from_numpy(xi).float()
+    x = torch.from_numpy(x).float()
+    return x0, xi, x
+'''
+
+
+'''
+def make_trainable_batches_from_stack(stack, lookah, n_batches):
+    batches_xs = []
+    batches_xis = []
+    batches_x0s = []
+    for i in range(n_batches):
+        sequence = stack[i][:, :]
+        x0s, xis, xs = make_trainable_data_from_sequence(sequence, lookah)
+        batches_xs.append(xs)
+        batches_x0s.append(x0s)
+        batches_xis.append(xis)
+
+    return batches_x0s, batches_xis, batches_xs
+'''
 
