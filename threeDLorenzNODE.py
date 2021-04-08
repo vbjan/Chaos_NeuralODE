@@ -20,7 +20,8 @@ from tqdm import tqdm
 import os
 import logging
 from utils import get_lr
-from utils import save_models, load_models, load_h5_data, z1test, split_sequence, make_batches_from_stack
+from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
+from utils import save_models, load_models, save_optimizer, load_optimizer
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 logging.basicConfig(filename="3D_lorenz_prediction/3DLorenzNODE.log", level=logging.INFO,
@@ -37,16 +38,6 @@ def plot_lorenz(x1, x2, x3, end=100, label="plot"):
     #plt.show()
 
 
-def get_batch(d, batch_n, t, batch_length=100):
-    true_X = d[batch_n]
-    allowed_numbers = len(true_X)-batch_length
-    s = int(np.random.uniform(0, allowed_numbers))
-    batch_X = true_X[s:s+batch_length, :]
-    batch_X0 = true_X[s]
-    batch_t = t[s:s+batch_length]
-    return batch_X, batch_X0, batch_t
-
-
 class Net(nn.Module):
     '''
     The NN that learns the right hand side of the ODE
@@ -57,12 +48,12 @@ class Net(nn.Module):
         #self.acti = nn.Tanh()
         self.acti = nn.LeakyReLU()
         self.layer1 = nn.Linear(self.io_dim, hidden_dim)
-        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self,t , x):
         x = self.acti(self.layer1(x))
-        x = self.acti(self.layer2(x))
+        #x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
 
@@ -101,15 +92,17 @@ if __name__ == "__main__":
     d_val = load_h5_data(val_data_dir)
     d_test = load_h5_data(test_data_dir)
     n_of_data = len(d_train[1])
-    dt = 0.0025    # read out from simulation script
+    dt = 0.01    # read out from simulation script
     lookahead = 2
-    n_of_batches = 4
+    n_of_batches = 1
+    max_blocks = 500
+    val_max_blocks = 10
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
 
     # Settings
     TRAIN_MODEL = False
     LOAD_THEN_TRAIN = False
-    EPOCHS = 2000
+    EPOCHS = 500
     LR = 0.01
 
     # Construct model
@@ -123,7 +116,8 @@ if __name__ == "__main__":
 
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
-            load_models(model_dir, optimizer, f)
+            load_models(model_dir, f)
+            load_optimizer(model_dir, optimizer)
 
         batches_X0, batches_X = make_batches_from_stack(
                                                     d_train,
@@ -131,14 +125,15 @@ if __name__ == "__main__":
                                                     tau=1,
                                                     k=1,
                                                     n_batches=n_of_batches,
-                                                    max_blocks=1900
+                                                    max_blocks=max_blocks
                                                     )
 
         val_X0, val_X = make_batches_from_stack(d_val,
                                                 lookahead,
                                                 tau=1,
                                                 k=1,
-                                                n_batches=1
+                                                n_batches=1,
+                                                max_blocks=val_max_blocks
                                                 )
 
         val_X0, val_X = val_X0[0].view(-1, 3), val_X[0]
@@ -170,12 +165,13 @@ if __name__ == "__main__":
             scheduler.step(val_loss)
 
             if EPOCH % 10 == 0:
-                logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} | K: {} \n"
-                      .format(EPOCH, loss, val_loss, get_lr(optimizer), get_approx_k_of_model(f, d_val)))
-                save_models(model_dir, optimizer, f)
-                if val_loss > pre_val_loss and EPOCH % 30 == 0:
-                    logging.info("\n STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!\n")
-                    break
+                logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} \n"
+                      .format(EPOCH, loss, val_loss, get_lr(optimizer)))
+                save_models(model_dir, f)
+                save_optimizer(model_dir, optimizer)
+                #if val_loss > pre_val_loss and EPOCH % 30 == 0:
+                #    logging.info("\n STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!\n")
+                #    break
             pre_val_loss = val_loss
 
         post_train_time = time.time()
@@ -184,13 +180,14 @@ if __name__ == "__main__":
         plt.plot(val_losses, label='validation loss')
         plt.legend(), plt.savefig(figures_dir + '/losses.png'), plt.show()
     else:
-        load_models(model_dir, optimizer, f)
+        load_models(model_dir, f)
+        load_optimizer(model_dir, optimizer)
 
     with torch.no_grad():
         idx = 8
         ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
-        dt_test = 0.0025
-        t = torch.arange(0, 1.5, dt_test)
+        dt_test = dt
+        t = torch.arange(0, 1, dt_test)
         N = len(t)
         #t = t + 0.9*dt_test*np.random.rand(N)
         ex_traj = np.array(odeint(f, ic_state, t).view(-1, 3))

@@ -6111,3 +6111,526 @@ STARTING TO TRAIN MODEL | EPOCHS : 1000 | lr: 0.01 | n_of_batches: 4 | lookahead
 2021-04-07 23:15:25,792:<module>:INFO:            | real z: None | learnt z: None
 2021-04-07 23:15:25,792:<module>:INFO:
  REACHED END OF MAIN
+2021-04-07 23:22:08,906:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-07 23:22:08,917:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-07 23:22:08,939:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-07 23:22:15,806:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:15,806:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:16,038:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:16,038:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:16,038:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-07 23:22:16,256:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:16,256:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:16,520:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:16,520:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:16,520:<module>:INFO:            | real y: None | learnt y: None
+2021-04-07 23:22:16,744:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:16,744:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:17,002:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-07 23:22:17,002:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-07 23:22:17,002:<module>:INFO:            | real z: None | learnt z: None
+2021-04-07 23:22:17,002:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 10:14:47,324:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:14:47,335:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:14:47,356:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:14:53,414:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:53,414:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:53,556:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:53,557:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:53,557:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 10:14:53,681:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:53,681:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:53,828:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:53,828:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:53,828:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 10:14:53,960:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:53,960:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:54,136:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:14:54,136:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:14:54,136:<module>:INFO:            | real z: None | learnt z: None
+2021-04-08 10:14:54,136:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 10:25:29,763:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:25:29,773:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:25:29,793:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:25:29,796:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 2000 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 10:25:30,116:<module>:INFO:EPOCH 0 finished with training loss: 2.362740993499756 | validation loss: 4.975614547729492 | lr: 0.01 | K: 0.17326746947274826 
+
+2021-04-08 10:25:30,119:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:25:45,282:<module>:INFO:EPOCH 10 finished with training loss: 1.6235666275024414 | validation loss: 9.249933242797852 | lr: 0.01 | K: 0.16460509044872507 
+
+2021-04-08 10:25:45,285:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:26:22,674:<module>:INFO:EPOCH 20 finished with training loss: 1.5390033721923828 | validation loss: 8.976046562194824 | lr: 0.005 | K: -0.5983378093209523 
+
+2021-04-08 10:26:22,677:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:26:58,457:<module>:INFO:EPOCH 30 finished with training loss: 1.5092209577560425 | validation loss: 8.008156776428223 | lr: 0.0025 | K: -0.517691649370176 
+
+2021-04-08 10:26:58,459:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:26:58,460:<module>:INFO:
+ STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!
+
+2021-04-08 10:26:58,460:<module>:INFO:
+TRAINING FINISHED after 88 seconds
+2021-04-08 10:26:59,991:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:26:59,991:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,151:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:27:00,151:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,151:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 10:27:00,283:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:27:00,284:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,457:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:27:00,457:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,457:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 10:27:00,598:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:27:00,598:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,772:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:27:00,773:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:27:00,773:<module>:INFO:            | real z: None | learnt z: None
+2021-04-08 10:27:00,773:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 10:27:33,154:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:27:33,164:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:27:33,183:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:27:33,186:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 2000 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 10:27:33,408:<module>:INFO:EPOCH 0 finished with training loss: 1.2427430152893066 | validation loss: 4.973141670227051 | lr: 0.01 | K: 0.051813389147840415 
+
+2021-04-08 10:27:33,411:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:36,563:<module>:INFO:EPOCH 10 finished with training loss: 0.17611916363239288 | validation loss: 5.2223663330078125 | lr: 0.01 | K: 0.04826569883689094 
+
+2021-04-08 10:27:36,566:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:37,695:<module>:INFO:EPOCH 20 finished with training loss: 0.15302705764770508 | validation loss: 5.3148345947265625 | lr: 0.005 | K: -0.17402923221166802 
+
+2021-04-08 10:27:37,698:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:39,967:<module>:INFO:EPOCH 30 finished with training loss: 0.15373101830482483 | validation loss: 5.3408613204956055 | lr: 0.0025 | K: -0.018161883017202802 
+
+2021-04-08 10:27:39,969:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:43,361:<module>:INFO:EPOCH 40 finished with training loss: 0.14942985773086548 | validation loss: 5.270270824432373 | lr: 0.00125 | K: -0.008121823460445396 
+
+2021-04-08 10:27:43,363:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:46,164:<module>:INFO:EPOCH 50 finished with training loss: 0.1482209712266922 | validation loss: 5.276645660400391 | lr: 0.000625 | K: -0.1783629401742465 
+
+2021-04-08 10:27:46,166:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:49,023:<module>:INFO:EPOCH 60 finished with training loss: 0.14735235273838043 | validation loss: 5.2870869636535645 | lr: 0.0003125 | K: -0.2762616760035154 
+
+2021-04-08 10:27:49,025:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:51,844:<module>:INFO:EPOCH 70 finished with training loss: 0.14727193117141724 | validation loss: 5.290150165557861 | lr: 0.00015625 | K: -0.022502920370892614 
+
+2021-04-08 10:27:51,846:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:54,749:<module>:INFO:EPOCH 80 finished with training loss: 0.14726291596889496 | validation loss: 5.290329456329346 | lr: 0.0001 | K: -0.06465420030425513 
+
+2021-04-08 10:27:54,752:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:27:57,619:<module>:INFO:EPOCH 90 finished with training loss: 0.1472555547952652 | validation loss: 5.289881229400635 | lr: 0.0001 | K: 0.03515253990369751 
+
+2021-04-08 10:27:57,621:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:28:00,387:<module>:INFO:EPOCH 100 finished with training loss: 0.14724664390087128 | validation loss: 5.289209842681885 | lr: 0.0001 | K: -0.0782593074579106 
+
+2021-04-08 10:28:00,389:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:28:06,992:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:28:07,002:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:28:07,021:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:28:08,252:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,253:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,414:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,414:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,414:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 10:28:08,535:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,535:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,690:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,690:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,690:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 10:28:08,824:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,824:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,993:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:28:08,993:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:28:08,993:<module>:INFO:            | real z: None | learnt z: None
+2021-04-08 10:28:08,993:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 10:29:31,373:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:29:31,383:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:29:31,403:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:29:31,403:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 2000 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 10:29:31,612:<module>:INFO:EPOCH 0 finished with training loss: 1.2227052450180054 | validation loss: 2.793881893157959 | lr: 0.01 | K: -0.0433094932713835 
+
+2021-04-08 10:29:31,615:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:29:34,017:<module>:INFO:EPOCH 10 finished with training loss: 0.19170260429382324 | validation loss: 2.4543004035949707 | lr: 0.01 | K: -0.12457306406878177 
+
+2021-04-08 10:29:34,019:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:29:38,230:<module>:INFO:EPOCH 20 finished with training loss: 0.1825382113456726 | validation loss: 3.150942087173462 | lr: 0.01 | K: 0.0597515155404427 
+
+2021-04-08 10:29:38,232:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:29:44,930:<module>:INFO:EPOCH 30 finished with training loss: 0.15690691769123077 | validation loss: 2.731513500213623 | lr: 0.005 | K: -0.08651716963137661 
+
+2021-04-08 10:29:44,932:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:29:50,005:<module>:INFO:EPOCH 40 finished with training loss: 0.14780353009700775 | validation loss: 2.8205437660217285 | lr: 0.0025 | K: 0.0423595265113792 
+
+2021-04-08 10:29:50,008:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:29:54,607:<module>:INFO:EPOCH 50 finished with training loss: 0.1480550765991211 | validation loss: 2.8568625450134277 | lr: 0.00125 | K: -0.0037045033540373438 
+
+2021-04-08 10:29:54,609:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:30:01,380:<module>:INFO:EPOCH 60 finished with training loss: 0.14699727296829224 | validation loss: 2.838357925415039 | lr: 0.000625 | K: 0.048911165501557774 
+
+2021-04-08 10:30:01,382:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:30:27,459:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:30:27,470:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:30:27,489:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:30:27,491:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 2000 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 10:30:28,129:<module>:INFO:EPOCH 0 finished with training loss: 4.642661094665527 | validation loss: 2.1977577209472656 | lr: 0.01 | K: -0.031221579400163308 
+
+2021-04-08 10:30:28,131:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:31:14,568:<module>:INFO:EPOCH 10 finished with training loss: 3.2280972003936768 | validation loss: 1.5424647331237793 | lr: 0.01 | K: -0.06383019747524388 
+
+2021-04-08 10:31:14,571:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:33:27,755:<module>:INFO:EPOCH 20 finished with training loss: 1.993391752243042 | validation loss: 2.970170736312866 | lr: 0.01 | K: -0.1514408215897228 
+
+2021-04-08 10:33:27,757:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:36:08,431:<module>:INFO:EPOCH 30 finished with training loss: 1.7792950868606567 | validation loss: 1.3614104986190796 | lr: 0.005 | K: 0.012617196975649244 
+
+2021-04-08 10:36:08,433:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:38:51,745:<module>:INFO:EPOCH 40 finished with training loss: 1.7027288675308228 | validation loss: 1.4668647050857544 | lr: 0.0025 | K: -0.119083344653241 
+
+2021-04-08 10:38:51,748:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:41:20,820:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:41:20,830:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:41:20,850:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:41:22,351:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:22,351:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:22,508:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:22,508:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:22,508:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 10:41:22,639:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:22,639:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:22,807:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:22,807:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:22,807:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 10:41:22,941:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:22,941:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:23,113:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:41:23,113:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:41:23,113:<module>:INFO:            | real z: None | learnt z: None
+2021-04-08 10:41:23,113:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 10:42:23,275:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:42:23,285:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:42:23,304:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:42:23,306:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 10:42:23,548:<module>:INFO:EPOCH 0 finished with training loss: 4.646002769470215 | validation loss: 2.1954195499420166 | lr: 0.01 
+
+2021-04-08 10:42:23,549:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:42:26,253:<module>:INFO:EPOCH 10 finished with training loss: 4.47330904006958 | validation loss: 1.949189305305481 | lr: 0.01 
+
+2021-04-08 10:42:26,254:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:42:31,844:<module>:INFO:EPOCH 20 finished with training loss: 4.214110851287842 | validation loss: 1.830389380455017 | lr: 0.01 
+
+2021-04-08 10:42:31,845:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:42:41,175:<module>:INFO:EPOCH 30 finished with training loss: 3.8625354766845703 | validation loss: 1.6840689182281494 | lr: 0.01 
+
+2021-04-08 10:42:41,176:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:42:55,471:<module>:INFO:EPOCH 40 finished with training loss: 3.44524884223938 | validation loss: 1.5239112377166748 | lr: 0.01 
+
+2021-04-08 10:42:55,472:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:43:13,656:<module>:INFO:EPOCH 50 finished with training loss: 2.98085880279541 | validation loss: 1.3623921871185303 | lr: 0.01 
+
+2021-04-08 10:43:13,658:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:43:32,763:<module>:INFO:EPOCH 60 finished with training loss: 2.5349059104919434 | validation loss: 1.2512214183807373 | lr: 0.01 
+
+2021-04-08 10:43:32,763:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:43:53,202:<module>:INFO:EPOCH 70 finished with training loss: 2.178938865661621 | validation loss: 1.3055994510650635 | lr: 0.01 
+
+2021-04-08 10:43:53,203:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:44:15,348:<module>:INFO:EPOCH 80 finished with training loss: 2.0093491077423096 | validation loss: 1.443543553352356 | lr: 0.005 
+
+2021-04-08 10:44:15,348:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:44:41,964:<module>:INFO:EPOCH 90 finished with training loss: 1.9483776092529297 | validation loss: 1.5288442373275757 | lr: 0.0025 
+
+2021-04-08 10:44:41,965:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:45:08,088:<module>:INFO:EPOCH 100 finished with training loss: 1.9235281944274902 | validation loss: 1.5688204765319824 | lr: 0.00125 
+
+2021-04-08 10:45:08,089:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:45:31,554:<module>:INFO:EPOCH 110 finished with training loss: 1.9121501445770264 | validation loss: 1.5862699747085571 | lr: 0.000625 
+
+2021-04-08 10:45:31,555:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:45:53,723:<module>:INFO:EPOCH 120 finished with training loss: 1.9065433740615845 | validation loss: 1.5941451787948608 | lr: 0.0003125 
+
+2021-04-08 10:45:53,724:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 10:46:00,058:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 10:46:00,068:<module>:INFO:Shape of d_train: (16, 2001, 3)
+2021-04-08 10:46:00,087:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 10:46:01,459:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:01,460:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:01,599:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:01,600:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:01,600:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 10:46:01,715:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:01,716:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:01,868:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:01,868:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:01,868:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 10:46:01,992:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:01,992:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:02,139:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 10:46:02,140:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 10:46:02,140:<module>:INFO:            | real z: None | learnt z: None
+2021-04-08 10:46:02,140:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 11:03:21,884:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 11:03:21,893:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 11:03:21,911:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 11:03:21,913:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 11:03:22,680:<module>:INFO:EPOCH 0 finished with training loss: 47.8720817565918 | validation loss: 54.360130310058594 | lr: 0.01 
+
+2021-04-08 11:03:22,681:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:03:34,221:<module>:INFO:EPOCH 10 finished with training loss: 44.30765151977539 | validation loss: 48.48750686645508 | lr: 0.01 
+
+2021-04-08 11:03:34,222:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:04:04,208:<module>:INFO:EPOCH 20 finished with training loss: 40.543968200683594 | validation loss: 42.61576461791992 | lr: 0.01 
+
+2021-04-08 11:04:04,209:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:05:01,829:<module>:INFO:EPOCH 30 finished with training loss: 37.19607925415039 | validation loss: 38.54084014892578 | lr: 0.01 
+
+2021-04-08 11:05:01,830:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:06:13,948:<module>:INFO:EPOCH 40 finished with training loss: 34.008968353271484 | validation loss: 34.97380447387695 | lr: 0.01 
+
+2021-04-08 11:06:13,949:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:07:36,380:<module>:INFO:EPOCH 50 finished with training loss: 30.328447341918945 | validation loss: 30.952821731567383 | lr: 0.01 
+
+2021-04-08 11:07:36,381:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:09:17,788:<module>:INFO:EPOCH 60 finished with training loss: 26.746654510498047 | validation loss: 26.775062561035156 | lr: 0.01 
+
+2021-04-08 11:09:17,789:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:10:49,288:<module>:INFO:EPOCH 70 finished with training loss: 23.76886749267578 | validation loss: 22.72761344909668 | lr: 0.01 
+
+2021-04-08 11:10:49,289:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:12:11,332:<module>:INFO:EPOCH 80 finished with training loss: 21.660188674926758 | validation loss: 19.780242919921875 | lr: 0.01 
+
+2021-04-08 11:12:11,333:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:13:22,747:<module>:INFO:EPOCH 90 finished with training loss: 20.332429885864258 | validation loss: 18.00103187561035 | lr: 0.01 
+
+2021-04-08 11:13:22,748:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:14:40,275:<module>:INFO:EPOCH 100 finished with training loss: 19.509845733642578 | validation loss: 17.04123878479004 | lr: 0.01 
+
+2021-04-08 11:14:40,276:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:16:21,270:<module>:INFO:EPOCH 110 finished with training loss: 18.914094924926758 | validation loss: 16.508892059326172 | lr: 0.01 
+
+2021-04-08 11:16:21,270:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:18:13,494:<module>:INFO:EPOCH 120 finished with training loss: 18.378318786621094 | validation loss: 16.146203994750977 | lr: 0.01 
+
+2021-04-08 11:18:13,495:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:20:11,663:<module>:INFO:EPOCH 130 finished with training loss: 17.83483123779297 | validation loss: 15.829904556274414 | lr: 0.01 
+
+2021-04-08 11:20:11,664:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:22:31,765:<module>:INFO:EPOCH 140 finished with training loss: 17.243009567260742 | validation loss: 15.481598854064941 | lr: 0.01 
+
+2021-04-08 11:22:31,766:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:24:55,761:<module>:INFO:EPOCH 150 finished with training loss: 16.53732681274414 | validation loss: 15.087785720825195 | lr: 0.01 
+
+2021-04-08 11:24:55,762:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:27:31,970:<module>:INFO:EPOCH 160 finished with training loss: 15.751322746276855 | validation loss: 14.579192161560059 | lr: 0.01 
+
+2021-04-08 11:27:31,971:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:30:12,403:<module>:INFO:EPOCH 170 finished with training loss: 14.843178749084473 | validation loss: 13.897444725036621 | lr: 0.01 
+
+2021-04-08 11:30:12,404:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:33:05,615:<module>:INFO:EPOCH 180 finished with training loss: 13.762040138244629 | validation loss: 13.000389099121094 | lr: 0.01 
+
+2021-04-08 11:33:05,618:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:36:02,337:<module>:INFO:EPOCH 190 finished with training loss: 12.559255599975586 | validation loss: 11.789155960083008 | lr: 0.01 
+
+2021-04-08 11:36:02,337:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:39:13,758:<module>:INFO:EPOCH 200 finished with training loss: 11.272597312927246 | validation loss: 10.396316528320312 | lr: 0.01 
+
+2021-04-08 11:39:13,759:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:42:24,609:<module>:INFO:EPOCH 210 finished with training loss: 10.002408027648926 | validation loss: 8.868824005126953 | lr: 0.01 
+
+2021-04-08 11:42:24,610:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:46:29,308:<module>:INFO:EPOCH 220 finished with training loss: 8.851545333862305 | validation loss: 7.400168418884277 | lr: 0.01 
+
+2021-04-08 11:46:29,309:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:49:59,506:<module>:INFO:EPOCH 230 finished with training loss: 7.902467727661133 | validation loss: 6.316701412200928 | lr: 0.01 
+
+2021-04-08 11:49:59,507:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:53:07,624:<module>:INFO:EPOCH 240 finished with training loss: 7.162883281707764 | validation loss: 5.671065807342529 | lr: 0.01 
+
+2021-04-08 11:53:07,628:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:56:10,178:<module>:INFO:EPOCH 250 finished with training loss: 6.601402282714844 | validation loss: 5.201813220977783 | lr: 0.01 
+
+2021-04-08 11:56:10,178:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 11:59:11,790:<module>:INFO:EPOCH 260 finished with training loss: 6.144533157348633 | validation loss: 4.699839115142822 | lr: 0.01 
+
+2021-04-08 11:59:11,791:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:02:12,882:<module>:INFO:EPOCH 270 finished with training loss: 5.765798091888428 | validation loss: 4.557002067565918 | lr: 0.01 
+
+2021-04-08 12:02:12,883:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:05:33,262:<module>:INFO:EPOCH 280 finished with training loss: 5.449116230010986 | validation loss: 4.330628871917725 | lr: 0.01 
+
+2021-04-08 12:05:33,262:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:08:52,818:<module>:INFO:EPOCH 290 finished with training loss: 5.171335697174072 | validation loss: 4.134746074676514 | lr: 0.01 
+
+2021-04-08 12:08:52,819:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:12:17,793:<module>:INFO:EPOCH 300 finished with training loss: 4.929481029510498 | validation loss: 4.001275062561035 | lr: 0.01 
+
+2021-04-08 12:12:17,793:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:15:35,350:<module>:INFO:EPOCH 310 finished with training loss: 4.718072891235352 | validation loss: 3.89111065864563 | lr: 0.01 
+
+2021-04-08 12:15:35,351:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:19:05,377:<module>:INFO:EPOCH 320 finished with training loss: 4.5308051109313965 | validation loss: 3.8004746437072754 | lr: 0.01 
+
+2021-04-08 12:19:05,378:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:22:52,491:<module>:INFO:EPOCH 330 finished with training loss: 4.360174655914307 | validation loss: 3.7279953956604004 | lr: 0.01 
+
+2021-04-08 12:22:52,491:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:26:49,684:<module>:INFO:EPOCH 340 finished with training loss: 4.208990573883057 | validation loss: 3.6632347106933594 | lr: 0.01 
+
+2021-04-08 12:26:49,684:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:30:02,562:<module>:INFO:EPOCH 350 finished with training loss: 4.1011199951171875 | validation loss: 3.4600260257720947 | lr: 0.01 
+
+2021-04-08 12:30:02,563:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:32:49,078:<module>:INFO:EPOCH 360 finished with training loss: 3.962599039077759 | validation loss: 3.5020711421966553 | lr: 0.01 
+
+2021-04-08 12:32:49,079:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:36:14,964:<module>:INFO:EPOCH 370 finished with training loss: 3.889108419418335 | validation loss: 3.571568727493286 | lr: 0.005 
+
+2021-04-08 12:36:14,965:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 12:39:54,495:<module>:INFO:EPOCH 380 finished with training loss: 3.855354070663452 | validation loss: 3.533031463623047 | lr: 0.0025 
+
+2021-04-08 12:39:54,496:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 13:04:24,505:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 13:04:24,517:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 13:04:24,545:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 13:04:29,696:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:04:29,696:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:04:29,896:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:04:29,896:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:04:29,897:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-08 13:04:30,053:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:04:30,053:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:04:30,241:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:04:30,241:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:04:30,241:<module>:INFO:            | real y: None | learnt y: None
+2021-04-08 13:04:30,608:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:04:30,608:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:04:30,608:<module>:INFO:            | real z: 0.9730547281115818 | learnt z: None
+2021-04-08 13:04:30,608:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 13:05:02,663:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 13:05:02,674:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 13:05:02,699:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 13:05:07,502:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:05:07,502:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:05:07,559:<module>:INFO:0-1 test of | real x: None | learnt x: 0.9275655995667491
+2021-04-08 13:05:07,604:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:05:07,604:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:05:07,656:<module>:INFO:            | real y: None | learnt y: 0.9598772957950612
+2021-04-08 13:05:07,761:<module>:INFO:            | real z: 0.9237700443613386 | learnt z: 0.7238379900197988
+2021-04-08 13:05:07,762:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-08 13:06:19,616:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 13:06:19,625:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 13:06:19,643:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 13:06:23,526:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:06:23,526:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:06:23,572:<module>:INFO:0-1 test of | real x: None | learnt x: 0.9765463999672268
+2021-04-08 13:06:23,613:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-08 13:06:23,613:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-08 13:06:23,659:<module>:INFO:            | real y: None | learnt y: 0.9739069211349806
+2021-04-08 13:06:23,750:<module>:INFO:            | real z: 0.8733753844494958 | learnt z: 0.7775515931655685
+2021-04-08 13:06:23,750:<module>:INFO:
+ REACHED END OF MAIN

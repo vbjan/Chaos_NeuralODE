@@ -1,3 +1,7 @@
+'''
+TODO:
+    - write save models and save optimizer function
+'''
 import torch.nn as nn
 import torch
 import logging
@@ -57,6 +61,37 @@ def get_lr(opt):
         return param_group['lr']
 
 
+def save_optimizer(save_dir, opt):
+    """
+    :param save_dir: location to save in | example: Models/examplemodel
+    :param opt: optimizer to be saved (max=1)
+    """
+    if save_dir is not None:
+        ckpt_path = save_dir + 'opt.pth'
+        torch.save({
+            'optimizer': opt.state_dict(),
+        }, ckpt_path)
+        logging.debug('Saved optimizer')
+
+
+def save_models(save_dir, *models):
+    """
+    :param save_dir: location to save in | example: Models/examplemodel
+    :param models:
+    :return: any number of pytorch NNs to be saved
+    """
+    if save_dir is not None:
+        i = 0
+        for model in models:
+            ckpt_path = save_dir + 'model' + str(i) + '.pth'
+            torch.save({
+                'model' + str(i): model.state_dict()
+            }, ckpt_path)
+            i += 1
+        logging.info('Stored ckpt at {}'.format(ckpt_path))
+
+'''
+
 def save_models(save_dir, opt, *models):
     """
     :param save_dir: location to save in | example: Models/examplemodel
@@ -97,20 +132,34 @@ def load_models(save_dir, opt, *models):
             model.load_state_dict(checkpoint['model'+str(i)])
             i += 1
         logging.debug('Loaded all the models')
-    logging.debug('Loaded ckpt from {}'.format(ckpt_path))
+    logging.debug('Loaded ckpt from {}'.format(ckpt_path))'''
 
 
-def load_only_models(save_dir, *models):
+def load_models(save_dir, *models):
+    """
+    :param save_dir: location to load from | example: Models/examplemodel
+    :param models: the same models in same order as saved with "save_models" to be loaded
+    """
+    i = 0
+    for model in models:
+        ckpt_path = save_dir + 'model' + str(i) + '.pth'
+        print(ckpt_path)
+        checkpoint = torch.load(ckpt_path)
+        model.load_state_dict(checkpoint['model' + str(i)])
+        i += 1
+    logging.debug('Loaded all the models')
+
+
+def load_optimizer(save_dir, opt):
+    """
+    :param save_dir: location to load from | example: Models/examplemodel
+    :param opt: optimizer that was saved with "save_optimizer"
+    """
     ckpt_path = save_dir + 'opt.pth'
     if os.path.exists(ckpt_path):
-        i = 0
-        for model in models:
-            ckpt_path = save_dir + 'model' + str(i) + '.pth'
-            checkpoint = torch.load(ckpt_path)
-            model.load_state_dict(checkpoint['model' + str(i)])
-            i += 1
-        logging.debug('Loaded all the models')
-    logging.debug('Loaded ckpt from {}'.format(ckpt_path))
+        checkpoint = torch.load(ckpt_path)
+        opt.load_state_dict(checkpoint['optimizer'])
+        logging.debug('Loaded optimizer')
 
 
 def split_sequence(sequence, lookahead, tau, k, max_blocks):
@@ -125,9 +174,10 @@ def split_sequence(sequence, lookahead, tau, k, max_blocks):
     sequence_len = sequence.shape[0]
     histories = []
     futures = []
-    for i in range(k * tau, sequence_len - lookahead):
-        histories.append(sequence[i - k * tau:i - tau + 1:tau])
-        futures.append(sequence[i - tau:i + lookahead:1])
+    for i in range((k-1) * tau, sequence_len - lookahead):
+        prev_i = i
+        histories.append(sequence[i - (k-1) * tau:i + 1:tau])
+        futures.append(sequence[i:i + lookahead + 1 :1])
         if len(histories) == max_blocks:
             break
     histories, futures = np.stack(histories), np.stack(futures)
