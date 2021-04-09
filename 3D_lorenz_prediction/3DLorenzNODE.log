@@ -6634,3 +6634,221 @@ STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead:
 2021-04-08 13:06:23,750:<module>:INFO:            | real z: 0.8733753844494958 | learnt z: 0.7775515931655685
 2021-04-08 13:06:23,750:<module>:INFO:
  REACHED END OF MAIN
+2021-04-08 16:30:20,415:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:30:20,435:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:30:20,475:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 16:30:20,476:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:30:21,023:<module>:INFO:EPOCH 0 finished with training loss: 41.00006866455078 | validation loss: 53.29483413696289 | lr: 0.01 
+
+2021-04-08 16:30:21,024:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:35:00,912:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:35:00,923:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:35:00,947:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 16:35:00,948:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:35:01,056:<module>:INFO:EPOCH 0 finished with training loss: 40.94981384277344 | validation loss: 53.40204620361328 | lr: 0.01 
+
+2021-04-08 16:35:01,058:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:35:16,759:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:35:16,769:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:35:16,788:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 16:35:16,789:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:35:16,868:<module>:INFO:EPOCH 0 finished with training loss: 40.948753356933594 | validation loss: 53.21274948120117 | lr: 0.01 
+
+2021-04-08 16:35:16,869:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:36:53,904:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:36:53,914:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:36:53,932:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-08 16:36:53,932:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:36:54,026:<module>:INFO:EPOCH 0 finished with training loss: 40.91709518432617 | validation loss: 53.24703598022461 | lr: 0.01 
+
+2021-04-08 16:36:54,027:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:41:39,115:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:41:39,124:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:41:39,142:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-08 16:41:39,142:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:44:44,044:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:44:44,054:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:44:44,074:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-08 16:44:44,074:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 10 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:44:44,369:<module>:INFO:EPOCH 0 finished with training loss: 40.951297760009766 | validation loss: 53.58921432495117 | lr: 0.01 
+
+2021-04-08 16:44:44,370:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:45:51,030:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:45:51,039:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:45:51,057:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-08 16:45:51,061:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:45:52,711:<module>:INFO:EPOCH 0 finished with training loss: 45.41246795654297 | validation loss: 48.622318267822266 | lr: 0.01 
+
+2021-04-08 16:45:52,713:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:48:52,735:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:48:52,745:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:48:52,763:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-08 16:48:52,763:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:48:53,258:<module>:INFO:EPOCH 0 finished with training loss: 40.94456481933594 | validation loss: 28.3493709564209 | lr: 0.01 
+
+2021-04-08 16:48:53,260:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:49:56,123:<module>:INFO:EPOCH 10 finished with training loss: 19.96799659729004 | validation loss: 7.805283546447754 | lr: 0.01 
+
+2021-04-08 16:49:56,124:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:53:00,452:<module>:INFO:EPOCH 20 finished with training loss: 16.683332443237305 | validation loss: 9.107173919677734 | lr: 0.005 
+
+2021-04-08 16:53:00,453:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:55:23,354:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-08 16:55:23,363:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-08 16:55:23,381:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-08 16:55:23,383:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | n_of_batches: 1 | lookahead: 2
+2021-04-08 16:55:23,728:<module>:INFO:EPOCH 0 finished with training loss: 49.23268127441406 | validation loss: 48.963172912597656 | lr: 0.01 
+
+2021-04-08 16:55:23,728:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:55:36,774:<module>:INFO:EPOCH 10 finished with training loss: 45.781856536865234 | validation loss: 45.042152404785156 | lr: 0.01 
+
+2021-04-08 16:55:36,774:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:56:10,435:<module>:INFO:EPOCH 20 finished with training loss: 41.97665786743164 | validation loss: 40.93077850341797 | lr: 0.01 
+
+2021-04-08 16:56:10,436:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:57:03,003:<module>:INFO:EPOCH 30 finished with training loss: 38.601837158203125 | validation loss: 37.59989547729492 | lr: 0.01 
+
+2021-04-08 16:57:03,004:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:58:05,263:<module>:INFO:EPOCH 40 finished with training loss: 34.879005432128906 | validation loss: 33.79024124145508 | lr: 0.01 
+
+2021-04-08 16:58:05,264:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 16:59:23,438:<module>:INFO:EPOCH 50 finished with training loss: 29.677383422851562 | validation loss: 28.485109329223633 | lr: 0.01 
+
+2021-04-08 16:59:23,439:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:00:47,994:<module>:INFO:EPOCH 60 finished with training loss: 24.789661407470703 | validation loss: 23.372465133666992 | lr: 0.01 
+
+2021-04-08 17:00:47,995:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:02:18,739:<module>:INFO:EPOCH 70 finished with training loss: 22.5701961517334 | validation loss: 21.077974319458008 | lr: 0.01 
+
+2021-04-08 17:02:18,740:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:03:52,051:<module>:INFO:EPOCH 80 finished with training loss: 20.967830657958984 | validation loss: 19.524982452392578 | lr: 0.01 
+
+2021-04-08 17:03:52,052:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:05:43,095:<module>:INFO:EPOCH 90 finished with training loss: 19.940935134887695 | validation loss: 18.439672470092773 | lr: 0.01 
+
+2021-04-08 17:05:43,096:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:07:36,657:<module>:INFO:EPOCH 100 finished with training loss: 19.27257537841797 | validation loss: 17.70077133178711 | lr: 0.01 
+
+2021-04-08 17:07:36,658:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:09:30,599:<module>:INFO:EPOCH 110 finished with training loss: 18.76155662536621 | validation loss: 17.194740295410156 | lr: 0.01 
+
+2021-04-08 17:09:30,599:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:11:28,980:<module>:INFO:EPOCH 120 finished with training loss: 18.267728805541992 | validation loss: 16.65196418762207 | lr: 0.01 
+
+2021-04-08 17:11:28,982:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:13:31,710:<module>:INFO:EPOCH 130 finished with training loss: 17.728925704956055 | validation loss: 16.117225646972656 | lr: 0.01 
+
+2021-04-08 17:13:31,711:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:18:39,920:<module>:INFO:EPOCH 140 finished with training loss: 17.047243118286133 | validation loss: 15.453370094299316 | lr: 0.01 
+
+2021-04-08 17:18:39,921:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:34:14,816:<module>:INFO:EPOCH 150 finished with training loss: 16.124832153320312 | validation loss: 14.522531509399414 | lr: 0.01 
+
+2021-04-08 17:34:14,817:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:36:28,581:<module>:INFO:EPOCH 160 finished with training loss: 14.811552047729492 | validation loss: 13.182873725891113 | lr: 0.01 
+
+2021-04-08 17:36:28,582:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:38:48,194:<module>:INFO:EPOCH 170 finished with training loss: 12.882096290588379 | validation loss: 11.199336051940918 | lr: 0.01 
+
+2021-04-08 17:38:48,195:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:41:24,197:<module>:INFO:EPOCH 180 finished with training loss: 10.391042709350586 | validation loss: 8.801270484924316 | lr: 0.01 
+
+2021-04-08 17:41:24,197:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:43:58,998:<module>:INFO:EPOCH 190 finished with training loss: 8.32258129119873 | validation loss: 7.063138484954834 | lr: 0.01 
+
+2021-04-08 17:43:59,001:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:46:30,815:<module>:INFO:EPOCH 200 finished with training loss: 6.948512077331543 | validation loss: 6.077355861663818 | lr: 0.01 
+
+2021-04-08 17:46:30,817:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:49:08,775:<module>:INFO:EPOCH 210 finished with training loss: 5.951567649841309 | validation loss: 5.320355415344238 | lr: 0.01 
+
+2021-04-08 17:49:08,778:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:51:53,681:<module>:INFO:EPOCH 220 finished with training loss: 5.313302040100098 | validation loss: 4.851300239562988 | lr: 0.01 
+
+2021-04-08 17:51:53,684:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:54:49,383:<module>:INFO:EPOCH 230 finished with training loss: 4.880431175231934 | validation loss: 4.540377140045166 | lr: 0.01 
+
+2021-04-08 17:54:49,385:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 17:57:33,774:<module>:INFO:EPOCH 240 finished with training loss: 4.728208541870117 | validation loss: 4.318053722381592 | lr: 0.01 
+
+2021-04-08 17:57:33,776:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 18:59:12,995:<module>:INFO:EPOCH 250 finished with training loss: 4.337669849395752 | validation loss: 4.038325309753418 | lr: 0.01 
+
+2021-04-08 18:59:12,996:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 19:32:03,953:<module>:INFO:EPOCH 260 finished with training loss: 4.128270149230957 | validation loss: 3.8361403942108154 | lr: 0.01 
+
+2021-04-08 19:32:03,954:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth
+2021-04-08 20:24:24,916:<module>:INFO:EPOCH 270 finished with training loss: 3.961167097091675 | validation loss: 3.6836328506469727 | lr: 0.01 
+
+2021-04-08 20:24:24,918:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth

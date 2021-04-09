@@ -1,6 +1,6 @@
 '''
 TODO:
-    - write save models and save optimizer function
+
 '''
 import torch.nn as nn
 import torch
@@ -162,13 +162,13 @@ def load_optimizer(save_dir, opt):
         logging.debug('Loaded optimizer')
 
 
-def split_sequence(sequence, lookahead, tau, k, max_blocks):
+def split_sequence(sequence, lookahead, tau, k, max_blocks=0):
     """
     :param sequence: data sequence with dimensions (sequence length, data dimension)
     :param lookahead: number of steps to predict
     :param tau: stepsize of history (see Takens theorem)
     :param k: number of steps of history
-    :param max_blocks: maximum number of training points per batch
+    :param max_blocks: maximum number of training points per batch (=0 for backward compatibility)
     :return: torch.tensor of history and future of dimensions (nblocks, future/history length, data dimension)
     """
     sequence_len = sequence.shape[0]
@@ -178,10 +178,12 @@ def split_sequence(sequence, lookahead, tau, k, max_blocks):
         prev_i = i
         histories.append(sequence[i - (k-1) * tau:i + 1:tau])
         futures.append(sequence[i:i + lookahead + 1 :1])
-        if len(histories) == max_blocks:
+        if max_blocks != 0 and len(histories) == max_blocks:
+            break
+        elif len(histories) == sequence_len - tau*k - lookahead - 10:  # -10 just to be sure
             break
     histories, futures = np.stack(histories), np.stack(futures)
-    if histories.shape[0] != max_blocks:
+    if max_blocks != 0 and histories.shape[0] != max_blocks:
         logging.warning("histories.shape: {}, max_blocks: {}".format(histories.shape, max_blocks))
         assert histories.shape[0] == max_blocks
     histories, futures = torch.from_numpy(histories).float(), torch.from_numpy(futures).float()

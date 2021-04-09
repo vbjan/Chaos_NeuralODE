@@ -1,10 +1,9 @@
 '''
-Version: 6.1
+Version: 7 check2
 TODO:
-- delete xi return of data functions?
-- write so that logging.info appears in console as well
-- save checkpoints of good models better!
-- Use all the steps for training
+    - save checkpoints of good models better!
+    - Try out different dts (what is the best dt?!) for training
+    - Check if problem was actually with data on server!
 '''
 
 import numpy as np
@@ -24,7 +23,7 @@ from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
 from utils import save_models, load_models, save_optimizer, load_optimizer
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
-logging.basicConfig(filename="3D_lorenz_prediction/3DLorenzNODE.log", level=logging.INFO,
+logging.basicConfig(filename="3D_lorenz_prediction/ANODE.log", level=logging.INFO,
                     format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
@@ -48,14 +47,43 @@ class Net(nn.Module):
         #self.acti = nn.Tanh()
         self.acti = nn.LeakyReLU()
         self.layer1 = nn.Linear(self.io_dim, hidden_dim)
-        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self,t , x):
         x = self.acti(self.layer1(x))
+        x = self.acti(self.layer2(x))
+        x = self.layer3(x)
+        return x
+
+
+class ANODE(nn.Module):
+    """
+    Augmented Neural ODE
+    """
+    def __init__(self, aug_dim, hidden_dim=100):
+        super().__init__()  # Run init of parent class
+        self.io_dim = 3 + aug_dim
+        #self.acti = nn.Tanh()
+        self.acti = nn.LeakyReLU()
+        self.layer1 = nn.Linear(self.io_dim, hidden_dim)
+        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        self.layer3 = nn.Linear(hidden_dim, self.io_dim)
+
+    def forward(self, t, x):
+        x = self.acti(self.layer1(x))
         #x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
+
+
+class DeAugmenter(nn.Module):
+    def __init__(self, aug_dim):
+        super().__init__()
+        self.layer1 = nn.Linear(3+aug_dim, 3)
+
+    def forward(self, x):
+        return self.layer1(x)
 
 
 def get_approx_k_of_model(model, val_data):
@@ -84,7 +112,8 @@ if __name__ == "__main__":
     train_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/train/data.h5"
     val_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/val/data.h5"
     figures_dir = project_dir + "/3D_lorenz_prediction/figures"
-    model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+    #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+    model_dir = project_dir + '/3D_lorenz_prediction/models/ANODE'
 
     # Load in the data
     d_train = load_h5_data(train_data_dir)
@@ -92,7 +121,7 @@ if __name__ == "__main__":
     d_val = load_h5_data(val_data_dir)
     d_test = load_h5_data(test_data_dir)
     n_of_data = len(d_train[1])
-    dt = 0.01    # read out from simulation script
+    dt = 0.005    # read out from simulation script
     lookahead = 2
     n_of_batches = 1
     max_blocks = 500
@@ -100,19 +129,26 @@ if __name__ == "__main__":
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
 
     # Settings
-    TRAIN_MODEL = False
+    TRAIN_MODEL = True
     LOAD_THEN_TRAIN = False
-    EPOCHS = 500
+    EPOCHS = 2000
     LR = 0.01
+    augmentation_dim = 0
 
     # Construct model
-    f = Net(hidden_dim=256)
+    #f = Net(hidden_dim=256)
+    f = ANODE(aug_dim=augmentation_dim, hidden_dim=256)
     logging.info(f)
 
-    params = list(f.parameters())
+    #deaug = DeAugmenter(augmentation_dim)
+    #logging.info(deaug)
+
+    params = (list(f.parameters()))
     optimizer = optim.Adam(params, lr=LR)
     #scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=200, gamma=0.8)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=10, verbose=False, min_lr=LR/100)
+
+
 
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
@@ -152,14 +188,22 @@ if __name__ == "__main__":
                 batch_X0, batch_X = batches_X0[n].view(-1, 3), batches_X[n]
 
                 optimizer.zero_grad()
-                X_pred = odeint(f, batch_X0, t).permute(1, 0, 2)
+                # build ANODE -> concat batch_X0 (blocks, x_dim) with 0s
+                # concat along dim=1
+                batch_a = torch.zeros(max_blocks, augmentation_dim) #TODO: requires grad??
+                augm_X0 = torch.cat((batch_X0, batch_a), dim=1)
+                augm_X_pred = odeint(f, augm_X0, t).permute(1, 0, 2)
+                X_pred = augm_X_pred[:, :, :3]
 
                 loss = torch.mean(torch.abs(X_pred - batch_X) ** 2)
                 loss.backward()
                 optimizer.step()
 
-            train_losses.append(float(loss))
-            X_val_pred = odeint(f, val_X0, t).permute(1, 0, 2)
+            train_losses.append(float(loss.detach()))
+            val_batch_a = torch.zeros(val_max_blocks, augmentation_dim)
+            augm_val_X0 = torch.cat((val_X0, val_batch_a), dim=1).detach()
+            augm_X_val_pred = odeint(f, augm_val_X0, t.detach()).permute(1, 0, 2)
+            X_val_pred = augm_X_val_pred[:, :, 0:3]
             val_loss = torch.mean(torch.abs(X_val_pred - val_X) ** 2)
             val_losses.append(float(val_loss))
             scheduler.step(val_loss)
@@ -184,13 +228,17 @@ if __name__ == "__main__":
         load_optimizer(model_dir, optimizer)
 
     with torch.no_grad():
-        idx = 8
+        idx = 2
         ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
+        augm_ic_state = torch.cat((ic_state, torch.zeros(1, augmentation_dim)), dim=1)
         dt_test = dt
         t = torch.arange(0, 1, dt_test)
         N = len(t)
         #t = t + 0.9*dt_test*np.random.rand(N)
-        ex_traj = np.array(odeint(f, ic_state, t).view(-1, 3))
+        augm_ex_traj = np.array(odeint(f, augm_ic_state, t).view(-1, 3 + augmentation_dim))
+        #ex_traj = np.array(deaug(odeint(f, augm_ic_state, t).permute(1, 0, 2)).view(-1, 3 + augmentation_dim))
+        #ex_traj = augm_ex_traj
+        ex_traj = augm_ex_traj[:, :3]
 
         # example plot of data
         end = 200
