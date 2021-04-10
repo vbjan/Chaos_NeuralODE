@@ -88,7 +88,7 @@ def save_models(save_dir, *models):
                 'model' + str(i): model.state_dict()
             }, ckpt_path)
             i += 1
-        logging.info('Stored ckpt at {}'.format(ckpt_path))
+        logging.debug('Stored ckpt at {}'.format(ckpt_path))
 
 '''
 
@@ -244,7 +244,6 @@ def z1test(x, show_warnings=True, plotting=False):
             return None
         else:
             pass
-
     if plotting:
         plt.figure()
         plt.plot(c, kcorr, 'o')

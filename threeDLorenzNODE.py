@@ -1,9 +1,15 @@
 '''
-Version: 7 check2
-TODO:
-    - save checkpoints of good models better!
-    - Try out different dts (what is the best dt?!) for training
-    - Check if problem was actually with data on server!
+
+    Version: 10 BIG
+    TODO:
+        - save checkpoints of good models better!
+        - Try out different dts (what is the best dt?!) for training
+        - ANODE is extremely unstable!! change dimension?
+
+    Learnings:
+        - ANODE becomes unstable for chaotic systems. Penalty by putting augmented dimensions in loss function,
+        creates periodic behavior. -> Solution (?): Use Sigmoid as activation function of augmented states
+
 '''
 
 import numpy as np
@@ -14,6 +20,7 @@ from mpl_toolkits.mplot3d import Axes3D # <--- This is important for 3d plotting
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.utils.data import DataLoader
 from torchdiffeq import odeint_adjoint as odeint
 from tqdm import tqdm
 import os
@@ -21,13 +28,7 @@ import logging
 from utils import get_lr
 from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
 from utils import save_models, load_models, save_optimizer, load_optimizer
-
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
-logging.basicConfig(filename="3D_lorenz_prediction/ANODE.log", level=logging.INFO,
-                    format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-logging.getLogger('').addHandler(console)
+from Datasets import DDDLorenzData
 
 
 def plot_lorenz(x1, x2, x3, end=100, label="plot"):
@@ -67,23 +68,14 @@ class ANODE(nn.Module):
         #self.acti = nn.Tanh()
         self.acti = nn.LeakyReLU()
         self.layer1 = nn.Linear(self.io_dim, hidden_dim)
-        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self, t, x):
         x = self.acti(self.layer1(x))
-        #x = self.acti(self.layer2(x))
+        x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
-
-
-class DeAugmenter(nn.Module):
-    def __init__(self, aug_dim):
-        super().__init__()
-        self.layer1 = nn.Linear(3+aug_dim, 3)
-
-    def forward(self, x):
-        return self.layer1(x)
 
 
 def get_approx_k_of_model(model, val_data):
@@ -105,117 +97,108 @@ def get_approx_k_of_model(model, val_data):
 
 
 if __name__ == "__main__":
+
+    # logging settings
+    os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+    logging.basicConfig(filename="3D_lorenz_prediction/ANODE.log", level=logging.INFO,
+                        format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    logging.getLogger('').addHandler(console)
     logging.info("\n ----------------------- Starting of new script ----------------------- \n")
 
+    # directory settings
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    test_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/test/data.h5"
-    train_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/train/data.h5"
-    val_data_dir = project_dir + "/3D_lorenz_prediction/Data3D/val/data.h5"
+    test_data_dir = project_dir + "/3D_lorenz_prediction/Data3D0.01/test/data.h5"
+    train_data_dir = project_dir + "/3D_lorenz_prediction/Data3D0.01/train/data.h5"
+    val_data_dir = project_dir + "/3D_lorenz_prediction/Data3D0.01/val/data.h5"
     figures_dir = project_dir + "/3D_lorenz_prediction/figures"
-    #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
-    model_dir = project_dir + '/3D_lorenz_prediction/models/ANODE'
+    model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+    #model_dir = project_dir + '/3D_lorenz_prediction/models/ANODE'
 
-    # Load in the data
-    d_train = load_h5_data(train_data_dir)
-    logging.info("Shape of d_train: {}".format(d_train.shape))
-    d_val = load_h5_data(val_data_dir)
-    d_test = load_h5_data(test_data_dir)
-    n_of_data = len(d_train[1])
-    dt = 0.005    # read out from simulation script
+    # data settings
+    dt = 0.01    # read out from simulation script
     lookahead = 2
-    n_of_batches = 1
-    max_blocks = 500
-    val_max_blocks = 10
+    batch_size = 200
     t = torch.from_numpy(np.arange(0, (1+lookahead) * dt, dt))
+    n_groups = 2
 
-    # Settings
+    # model settings
     TRAIN_MODEL = True
     LOAD_THEN_TRAIN = False
-    EPOCHS = 2000
+    EPOCHS = 1000
     LR = 0.01
     augmentation_dim = 0
 
-    # Construct model
-    #f = Net(hidden_dim=256)
-    f = ANODE(aug_dim=augmentation_dim, hidden_dim=256)
+    # construct model
+    f = Net(hidden_dim=500)
+    #f = ANODE(aug_dim=augmentation_dim, hidden_dim=256)
     logging.info(f)
-
-    #deaug = DeAugmenter(augmentation_dim)
-    #logging.info(deaug)
 
     params = (list(f.parameters()))
     optimizer = optim.Adam(params, lr=LR)
     #scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=200, gamma=0.8)
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=10, verbose=False, min_lr=LR/100)
-
-
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=5, verbose=False, min_lr=LR/100)
 
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
             load_models(model_dir, f)
             load_optimizer(model_dir, optimizer)
 
-        batches_X0, batches_X = make_batches_from_stack(
-                                                    d_train,
-                                                    lookahead,
-                                                    tau=1,
-                                                    k=1,
-                                                    n_batches=n_of_batches,
-                                                    max_blocks=max_blocks
-                                                    )
+        train_dataset = DDDLorenzData(train_data_dir, lookahead, tau=1, k=1)
+        train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True, n_groups=n_groups)
 
-        val_X0, val_X = make_batches_from_stack(d_val,
-                                                lookahead,
-                                                tau=1,
-                                                k=1,
-                                                n_batches=1,
-                                                max_blocks=val_max_blocks
-                                                )
-
-        val_X0, val_X = val_X0[0].view(-1, 3), val_X[0]
+        val_dataset = DDDLorenzData(val_data_dir, lookahead, tau=1, k=1)
+        val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
         val_losses = []
         train_losses = []
         pre_val_loss = 1000000
 
-        logging.info("\nSTARTING TO TRAIN MODEL | EPOCHS : {} | lr: {} | n_of_batches: {} | lookahead: {}"
-                     .format(EPOCHS, LR, n_of_batches, lookahead))
+        n_iterations = int(len(train_dataset)/batch_size)
+        logging.info("\nSTARTING TO TRAIN MODEL | EPOCHS : {} | lr: {} | batchsize: {} | lookahead: {}"
+                     .format(EPOCHS, LR, batch_size, lookahead))
+        logging.info("                          | augmented dimension: {} | iterations: {} \n"
+                                                .format(augmentation_dim, n_iterations))
 
         pre_train_time = time.time()
         for EPOCH in range(EPOCHS):
 
-            for n in range(n_of_batches):
-                batch_X0, batch_X = batches_X0[n].view(-1, 3), batches_X[n]
+            for n, (batch_X0, batch_X) in enumerate(train_dataloader):
 
                 optimizer.zero_grad()
+                batch_X0 = batch_X0.view(batch_size, 3)
                 # build ANODE -> concat batch_X0 (blocks, x_dim) with 0s
                 # concat along dim=1
-                batch_a = torch.zeros(max_blocks, augmentation_dim) #TODO: requires grad??
+                batch_a = torch.zeros(batch_size, augmentation_dim)
                 augm_X0 = torch.cat((batch_X0, batch_a), dim=1)
                 augm_X_pred = odeint(f, augm_X0, t).permute(1, 0, 2)
                 X_pred = augm_X_pred[:, :, :3]
-
-                loss = torch.mean(torch.abs(X_pred - batch_X) ** 2)
+                loss = torch.mean(torch.abs(X_pred - batch_X) ** 2) + torch.mean(augm_X_pred[:, :, 3:]**2)
                 loss.backward()
                 optimizer.step()
 
             train_losses.append(float(loss.detach()))
-            val_batch_a = torch.zeros(val_max_blocks, augmentation_dim)
+
+            val_X0, val_X = next(iter(val_dataloader))
+            val_X0 = val_X0.view(batch_size, 3)
+            val_batch_a = torch.zeros(batch_size, augmentation_dim)
             augm_val_X0 = torch.cat((val_X0, val_batch_a), dim=1).detach()
             augm_X_val_pred = odeint(f, augm_val_X0, t.detach()).permute(1, 0, 2)
             X_val_pred = augm_X_val_pred[:, :, 0:3]
             val_loss = torch.mean(torch.abs(X_val_pred - val_X) ** 2)
             val_losses.append(float(val_loss))
+
             scheduler.step(val_loss)
 
-            if EPOCH % 10 == 0:
-                logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} \n"
+            if EPOCH % 5 == 0:
+                logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} "
                       .format(EPOCH, loss, val_loss, get_lr(optimizer)))
                 save_models(model_dir, f)
                 save_optimizer(model_dir, optimizer)
-                #if val_loss > pre_val_loss and EPOCH % 30 == 0:
-                #    logging.info("\n STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!\n")
-                #    break
+                if val_loss > pre_val_loss and EPOCH % 20 == 0:
+                    logging.info("\n STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!\n")
+                    break
             pre_val_loss = val_loss
 
         post_train_time = time.time()
@@ -228,118 +211,60 @@ if __name__ == "__main__":
         load_optimizer(model_dir, optimizer)
 
     with torch.no_grad():
-        idx = 2
-        ic_state = torch.from_numpy(d_test[idx][0, :]).float().view(1, 3)
+
+        N = 50
+        test_dataset = DDDLorenzData(test_data_dir, lookahead=N, tau=1, k=1)
+        test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
+        ic_state, ic_future = next(iter(test_dataloader))
+        ic_state = ic_state.view(1, 3)
         augm_ic_state = torch.cat((ic_state, torch.zeros(1, augmentation_dim)), dim=1)
-        dt_test = dt
-        t = torch.arange(0, 1, dt_test)
-        N = len(t)
-        #t = t + 0.9*dt_test*np.random.rand(N)
+        dt_test = 0.002
+        N_pred = int(N*dt/dt_test)
+        t = torch.arange(0, N_pred*dt_test, dt_test)
         augm_ex_traj = np.array(odeint(f, augm_ic_state, t).view(-1, 3 + augmentation_dim))
-        #ex_traj = np.array(deaug(odeint(f, augm_ic_state, t).permute(1, 0, 2)).view(-1, 3 + augmentation_dim))
-        #ex_traj = augm_ex_traj
         ex_traj = augm_ex_traj[:, :3]
 
         # example plot of data
-        end = 200
-        x = d_test[idx][:, 0].reshape(-1)
-        y = d_test[idx][:, 1].reshape(-1)
-        z = d_test[idx][:, 2].reshape(-1)
+        x = ic_future[:, :, 0].view(-1)
+        y = ic_future[:, :, 1].view(-1)
+        z = ic_future[:, :, 2].view(-1)
         ax = plt.axes(projection='3d')
-        ax.plot3D(x[:end], y[:end], z[:end], '-', label='Real Lorenz')
+        ax.plot3D(x, y, z, '-', label='Real Lorenz')
         ax.plot3D(ex_traj[:, 0], ex_traj[:, 1], ex_traj[:, 2], '-', label="Learnt Lorenz")
         ax.legend()
         plt.savefig(figures_dir + "/lorenz3d.png")
         plt.show()
 
-
-        # Compare x, y and z of real and learnt trajectory
+        data_time = np.arange(0, (N+1)*dt, dt)
+        # compare x, y and z of real and learnt trajectory
         plt.figure()
-        plt.plot(x[:N], label='Real x')
-        plt.plot(ex_traj[:, 0], label='Learnt x')
+        plt.plot(data_time, x, label='Real x')
+        plt.plot(t, ex_traj[:, 0], label='Learnt x')
+        plt.xlabel('time t')
         plt.legend()
         plt.savefig(figures_dir + "/lorenzx.png")
         plt.show()
 
         plt.figure()
-        plt.plot(y[:N], label='Real y')
-        plt.plot(ex_traj[:, 1], label='Learnt y')
+        plt.plot(data_time, y, label='Real y')
+        plt.plot(t, ex_traj[:, 1], label='Learnt y')
+        plt.xlabel('time t')
         plt.legend()
         plt.savefig(figures_dir + "/lorenzy.png")
         plt.show()
 
         plt.figure()
-        plt.plot(z[:N], label='Real z')
-        plt.plot(ex_traj[:, 2], label='Learnt z')
+        plt.plot(data_time, z, label='Real z')
+        plt.plot(t, ex_traj[:, 2], label='Learnt z')
+        plt.xlabel('time t')
         plt.legend()
         plt.savefig(figures_dir + "/lorenzz.png")
         plt.show()
 
         # 0-1 Test for chaos in real and learnt trajectories
-        logging.info("0-1 test of | real x: {} | learnt x: {}".format(z1test(x[:N]), z1test(ex_traj[:, 0])))
-        logging.info("            | real y: {} | learnt y: {}".format(z1test(y[:N]), z1test(ex_traj[:, 1])))
-        logging.info("            | real z: {} | learnt z: {}".format(z1test(z[:N]), z1test(ex_traj[:, 2])))
+        logging.info("0-1 test of | real x: {} | learnt x: {}".format(z1test(x.numpy()), z1test(ex_traj[:, 0])))
+        logging.info("            | real y: {} | learnt y: {}".format(z1test(y.numpy()), z1test(ex_traj[:, 1])))
+        logging.info("            | real z: {} | learnt z: {}".format(z1test(z.numpy()), z1test(ex_traj[:, 2])))
 
 
     logging.info("\n REACHED END OF MAIN")
-
-
-
-
-
-'''
-def recast_sequence_to_batches(sequence, lookah):
-    """
-    :param sequence: numpy array with trajectory
-    :param lookah: lookahead for input output split
-    :return: np array with all the states and np stack with the resulting trajectories
-    """
-    N = len(sequence)
-
-    x0s = sequence[0::lookah + 1]
-    xis = []
-    xs = []
-    for i in range(N):
-        if i % (lookah+1) == 0:
-            xis.append(sequence[i+1:i+lookah+1:1])
-            xs.append(sequence[i:i+lookah+1:1])
-    # Cut last x0 if sequence was not long enough
-    xis = np.stack(xis[:-1])
-    xs = np.stack(xs[:-1])
-    if x0s.shape[0] != xis.shape[0]:
-        x0s = x0s[:-1]
-    #logging.info(len(x0s), len(xis), len(xs))
-    assert len(x0s) == len(xis) and len(x0s) == len(xs)
-    return x0s, xis, xs  # x0s.dim=(n_batches,3), xis.dim=(n_batches, lookah, 3)
-'''
-
-'''
-def make_trainable_data_from_sequence(sequence, lookah):
-    """
-    :param sequence: data sequence to make data from
-    :param lookah: lookahead parameter for data splitting
-    :return: x0, xi and x as torch tensors of size (n_batches, 1 or 1+lookah, 3)
-    """
-    x0, xi, x = recast_sequence_to_batches(sequence, lookah)
-    x0 = torch.from_numpy(x0).float()
-    xi = torch.from_numpy(xi).float()
-    x = torch.from_numpy(x).float()
-    return x0, xi, x
-'''
-
-
-'''
-def make_trainable_batches_from_stack(stack, lookah, n_batches):
-    batches_xs = []
-    batches_xis = []
-    batches_x0s = []
-    for i in range(n_batches):
-        sequence = stack[i][:, :]
-        x0s, xis, xs = make_trainable_data_from_sequence(sequence, lookah)
-        batches_xs.append(xs)
-        batches_x0s.append(x0s)
-        batches_xis.append(xis)
-
-    return batches_x0s, batches_xis, batches_xs
-'''
-

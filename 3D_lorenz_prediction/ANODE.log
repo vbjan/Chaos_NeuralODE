@@ -2406,3 +2406,1720 @@ STARTING TO TRAIN MODEL | EPOCHS : 2000 | lr: 0.01 | n_of_batches: 4 | lookahead
 2021-04-09 13:46:09,592:<module>:INFO:EPOCH 180 finished with training loss: 3.58769154548645 | validation loss: 4.107210159301758 | lr: 0.01 
 
 2021-04-09 13:46:09,594:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 13:51:48,853:<module>:INFO:EPOCH 190 finished with training loss: 3.4818167686462402 | validation loss: 3.982020139694214 | lr: 0.01 
+
+2021-04-09 13:51:48,854:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 13:57:31,272:<module>:INFO:EPOCH 200 finished with training loss: 3.386629343032837 | validation loss: 3.864445209503174 | lr: 0.01 
+
+2021-04-09 13:57:31,273:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 14:03:06,758:<module>:INFO:EPOCH 210 finished with training loss: 3.299243927001953 | validation loss: 3.755068063735962 | lr: 0.01 
+
+2021-04-09 14:03:06,762:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 14:09:32,585:<module>:INFO:EPOCH 220 finished with training loss: 3.218766212463379 | validation loss: 3.6552958488464355 | lr: 0.01 
+
+2021-04-09 14:09:32,586:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 14:15:22,375:<module>:INFO:EPOCH 230 finished with training loss: 3.1432101726531982 | validation loss: 3.5632266998291016 | lr: 0.01 
+
+2021-04-09 14:15:22,379:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 14:20:21,410:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:20:21,423:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:20:21,446:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 14:20:38,230:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:20:38,239:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:20:38,256:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:21:34,014:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:21:34,023:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:21:34,041:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:21:36,099:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:21:36,099:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:21:36,099:<module>:INFO:0-1 test of | real x: 0.9061555220248644 | learnt x: None
+2021-04-09 14:21:36,183:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:21:36,183:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:21:36,183:<module>:INFO:            | real y: 0.9677506579333547 | learnt y: None
+2021-04-09 14:21:36,262:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:21:36,262:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:21:36,263:<module>:INFO:            | real z: 0.8451749778983735 | learnt z: None
+2021-04-09 14:21:36,263:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 14:22:46,804:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:22:46,813:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:22:46,834:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:22:48,855:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:22:48,856:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:22:48,856:<module>:INFO:0-1 test of | real x: 0.8115785284502726 | learnt x: None
+2021-04-09 14:22:48,935:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:22:48,935:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:22:48,935:<module>:INFO:            | real y: 0.9523269547190754 | learnt y: None
+2021-04-09 14:22:49,011:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:22:49,012:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:22:49,012:<module>:INFO:            | real z: 0.8450563258950574 | learnt z: None
+2021-04-09 14:22:49,012:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 14:23:06,980:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:23:06,996:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:23:07,023:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:23:08,415:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:23:08,415:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:23:08,415:<module>:INFO:0-1 test of | real x: 0.9522456457665851 | learnt x: None
+2021-04-09 14:23:08,459:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:23:08,459:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:23:08,460:<module>:INFO:            | real y: 0.9797170168012095 | learnt y: None
+2021-04-09 14:23:08,509:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:23:08,510:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:23:08,510:<module>:INFO:            | real z: 0.983082461462343 | learnt z: None
+2021-04-09 14:23:08,510:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 14:24:19,265:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:24:19,275:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:24:19,294:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:24:20,736:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:24:20,736:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:24:20,736:<module>:INFO:0-1 test of | real x: 0.9120539900626268 | learnt x: None
+2021-04-09 14:24:20,782:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:24:20,782:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:24:20,782:<module>:INFO:            | real y: 0.9782673720611579 | learnt y: None
+2021-04-09 14:24:20,824:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 14:24:20,824:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 14:24:20,824:<module>:INFO:            | real z: 0.9782365906420059 | learnt z: None
+2021-04-09 14:24:20,824:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 14:24:36,675:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:24:36,685:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:24:36,705:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:24:50,969:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:24:50,978:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:24:50,995:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:25:57,281:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:25:57,296:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:25:57,321:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:26:17,054:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:26:17,068:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:26:17,094:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:26:35,982:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:26:35,993:<module>:INFO:Shape of d_train: (16, 1001, 3)
+2021-04-09 14:26:36,013:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:37:24,078:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:37:24,078:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:37:24,090:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:37:24,091:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:37:24,091:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:37:24,103:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:37:24,104:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:37:24,104:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:37:24,104:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 64 | lookahead: 2
+2021-04-09 14:38:38,203:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:38:38,206:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:38:38,219:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:38:38,220:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:38:38,220:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:38:38,232:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:38:38,232:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:38:38,232:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:38:38,232:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 64 | lookahead: 2
+2021-04-09 14:39:24,875:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:39:24,876:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:39:24,888:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:39:24,889:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:39:24,889:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:39:24,900:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:39:24,900:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:39:24,900:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:39:24,901:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 64 | lookahead: 2
+2021-04-09 14:39:42,081:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:39:42,081:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:39:42,095:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:39:42,095:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:39:42,095:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:39:42,108:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:39:42,108:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:39:42,108:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:39:42,108:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 64 | lookahead: 2
+2021-04-09 14:40:21,947:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 14:40:21,948:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 14:40:21,961:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:40:21,961:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:40:21,961:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:40:21,973:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 14:40:21,973:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 14:40:21,973:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 14:40:21,973:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 64 | lookahead: 2
+2021-04-09 14:40:31,436:<module>:INFO:EPOCH 0 finished with training loss: 43.25743865966797 | validation loss: 48.48045349121094 | lr: 0.01 
+
+2021-04-09 14:40:31,437:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 14:47:59,457:<module>:INFO:EPOCH 10 finished with training loss: 25.03964614868164 | validation loss: 22.80977439880371 | lr: 0.01 
+
+2021-04-09 14:47:59,458:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 15:03:57,475:<module>:INFO:EPOCH 20 finished with training loss: 21.799219131469727 | validation loss: 14.23828125 | lr: 0.01 
+
+2021-04-09 15:03:57,478:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 15:21:28,018:<module>:INFO:EPOCH 30 finished with training loss: 11.881317138671875 | validation loss: 12.22128963470459 | lr: 0.01 
+
+2021-04-09 15:21:28,019:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 15:42:46,445:<module>:INFO:EPOCH 40 finished with training loss: 6.806760787963867 | validation loss: 6.725622177124023 | lr: 0.01 
+
+2021-04-09 15:42:46,448:save_models:INFO:Stored ckpt at /Users/jan-philippvonbassewitz/Documents/Studium/Semester_6/Bachelor_Thesis/LatentODELorentz/MyNeuralODE/3D_lorenz_prediction/models/ANODEmodel0.pth
+2021-04-09 15:44:08,627:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:44:08,628:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:44:20,815:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:44:20,816:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:44:20,831:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:44:20,831:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:44:20,831:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:45:07,415:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:45:07,416:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:45:07,432:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:45:07,432:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:45:07,432:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:46:30,778:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:46:30,779:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:46:30,799:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:46:30,799:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:46:30,799:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:47:16,937:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:47:16,938:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:47:16,953:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:47:16,953:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:47:16,953:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:47:52,543:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:47:52,544:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:47:52,560:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:47:52,560:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:47:52,560:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:48:03,585:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:48:03,586:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:48:03,601:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:48:03,601:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:48:03,601:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:49:37,645:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:49:37,646:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:49:37,664:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:49:37,664:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:49:37,664:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:50:26,201:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:50:26,202:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:50:26,218:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:50:26,218:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:50:26,218:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:51:21,943:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:51:21,944:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:51:21,964:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:51:21,965:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:51:21,965:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:51:39,105:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:51:39,106:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:51:39,121:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:51:39,121:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:51:39,121:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:52:13,053:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:52:13,054:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:52:13,072:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:52:13,072:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:52:13,072:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:52:40,707:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:52:40,709:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:52:40,725:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:52:40,725:__init__:INFO:   lookahead: 5 | tau: 1 | k: 1
+2021-04-09 15:52:40,725:__init__:INFO:size of histories: torch.Size([985, 1, 3]) | size of futures: torch.Size([985, 6, 3])
+
+2021-04-09 15:53:03,775:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:53:03,777:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:53:03,803:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:53:03,804:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:53:03,804:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:53:36,687:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:53:36,688:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:53:36,705:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:53:36,705:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:53:36,705:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:54:21,170:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:54:21,172:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:54:21,188:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:54:21,188:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:54:21,188:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:54:35,252:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:54:35,254:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:54:35,269:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:54:35,270:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:54:35,270:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:55:27,679:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:55:27,680:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:55:27,700:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:55:27,701:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:55:27,701:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:55:30,951:<module>:INFO:0-1 test of | real x: 0.8326235415955258 | learnt x: 0.8873809390391884
+2021-04-09 15:55:31,009:<module>:INFO:            | real y: 0.9717207347803927 | learnt y: 0.9899304426869324
+2021-04-09 15:55:31,066:<module>:INFO:            | real z: 0.9714795409370213 | learnt z: 0.9696259580135697
+2021-04-09 15:55:31,066:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 15:56:02,522:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:56:02,523:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-09 15:56:02,542:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:56:02,542:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 15:56:02,542:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 15:56:05,958:<module>:INFO:0-1 test of | real x: 0.856281988207453 | learnt x: 0.9368129577869464
+2021-04-09 15:56:06,011:<module>:INFO:            | real y: 0.9732735561930232 | learnt y: 0.9907674252834312
+2021-04-09 15:56:06,062:<module>:INFO:            | real z: 0.9619707352303133 | learnt z: 0.9580280866893622
+2021-04-09 15:56:06,062:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 15:58:20,753:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:58:20,756:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:58:20,778:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:58:20,778:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:58:20,779:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:58:20,795:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:58:20,795:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:58:20,795:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:58:20,795:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.001 | batchsize: 64 | lookahead: 2
+2021-04-09 15:58:20,795:<module>:INFO:        augmented dimension: 2 | iterations: 15
+2021-04-09 15:58:42,710:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:58:42,711:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:58:42,725:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:58:42,725:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:58:42,725:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:58:42,738:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:58:42,738:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:58:42,738:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:58:42,739:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.001 | batchsize: 64 | lookahead: 2
+2021-04-09 15:58:42,739:<module>:INFO:        augmented dimension: 2 | iterations: 15
+2021-04-09 15:59:07,772:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:59:07,773:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:59:07,793:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:07,793:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:07,793:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:07,811:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:07,812:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:07,812:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:07,813:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.001 | batchsize: 64 | lookahead: 2
+2021-04-09 15:59:07,813:<module>:INFO:        augmented dimension: 2 | iterations: 15
+2021-04-09 15:59:38,028:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:59:38,029:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:59:38,042:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:38,042:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:38,042:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:38,054:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:38,054:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:38,055:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:38,055:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.001 | batchsize: 64 | lookahead: 2
+2021-04-09 15:59:38,055:<module>:INFO:               augmented dimension: 2 | iterations: 15 
+
+2021-04-09 15:59:48,851:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 15:59:48,852:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 15:59:48,865:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:48,865:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:48,865:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:48,878:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 15:59:48,878:__init__:INFO:   lookahead: 2 | tau: 1 | k: 1
+2021-04-09 15:59:48,878:__init__:INFO:size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 15:59:48,878:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.001 | batchsize: 64 | lookahead: 2
+2021-04-09 15:59:48,878:<module>:INFO:               augmented dimension: 2 | iterations: 15 
+
+2021-04-09 15:59:53,217:<module>:INFO:EPOCH 0 finished with training loss: 55.500003814697266 | validation loss: 46.72468566894531 | lr: 0.001 
+
+2021-04-09 16:00:31,061:<module>:INFO:EPOCH 5 finished with training loss: 39.56173324584961 | validation loss: 49.940460205078125 | lr: 0.001 
+
+2021-04-09 16:02:32,014:<module>:INFO:EPOCH 10 finished with training loss: 39.31330871582031 | validation loss: 40.33519744873047 | lr: 0.001 
+
+2021-04-09 16:05:36,700:<module>:INFO:EPOCH 15 finished with training loss: 29.414562225341797 | validation loss: 40.762027740478516 | lr: 0.001 
+
+2021-04-09 16:09:34,310:<module>:INFO:EPOCH 20 finished with training loss: 27.746788024902344 | validation loss: 41.200538635253906 | lr: 0.001 
+
+2021-04-09 16:13:59,331:<module>:INFO:EPOCH 25 finished with training loss: 24.113554000854492 | validation loss: 35.06564712524414 | lr: 0.001 
+
+2021-04-09 16:18:42,529:<module>:INFO:EPOCH 30 finished with training loss: 34.07482147216797 | validation loss: 35.550235748291016 | lr: 0.001 
+
+2021-04-09 16:18:42,531:<module>:INFO:
+ STOPPING TRAINING EARLY BECAUSE VAL.LOSS STOPPED IMPROVING!
+
+2021-04-09 16:18:42,531:<module>:INFO:
+TRAINING FINISHED after 1133 seconds
+2021-04-09 16:18:42,805:__init__:INFO:
+ Constructed 3D Lorenz dataset with: 
+2021-04-09 16:18:42,806:__init__:INFO:   lookahead: 50 | tau: 1 | k: 1
+2021-04-09 16:18:42,806:__init__:INFO:size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 16:18:44,119:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 16:18:44,119:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 16:18:44,119:<module>:INFO:0-1 test of | real x: 0.8292838063343912 | learnt x: None
+2021-04-09 16:18:44,169:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 16:18:44,170:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 16:18:44,170:<module>:INFO:            | real y: 0.9752229150401499 | learnt y: None
+2021-04-09 16:18:44,218:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 16:18:44,218:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 16:18:44,219:<module>:INFO:            | real z: 0.9875368204715852 | learnt z: None
+2021-04-09 16:18:44,219:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 16:20:40,037:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 16:20:40,039:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 16:20:51,526:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 16:20:51,527:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 16:20:51,542:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 16:20:51,543:__init__:INFO:     lookahead: 2 | tau: 1 | k: 1
+2021-04-09 16:20:51,545:__init__:INFO:     size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 16:20:51,559:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 16:20:51,559:__init__:INFO:     lookahead: 2 | tau: 1 | k: 1
+2021-04-09 16:20:51,559:__init__:INFO:     size of histories: torch.Size([988, 1, 3]) | size of futures: torch.Size([988, 3, 3])
+
+2021-04-09 16:20:51,559:<module>:INFO:
+STARTING TO TRAIN MODEL | EPOCHS : 500 | lr: 0.01 | batchsize: 100 | lookahead: 2
+2021-04-09 16:20:51,559:<module>:INFO:                          | augmented dimension: 2 | iterations: 9 
+
+2021-04-09 16:21:25,882:<module>:INFO:EPOCH 0 finished with training loss: 30.393878936767578 | validation loss: 30.0535945892334 | lr: 0.001 
+2021-04-09 16:24:06,590:<module>:INFO:EPOCH 5 finished with training loss: 30.993959426879883 | validation loss: 28.180828094482422 | lr: 0.001 
+2021-04-09 16:26:45,491:<module>:INFO:EPOCH 10 finished with training loss: 26.513031005859375 | validation loss: 31.950695037841797 | lr: 0.001 
+2021-04-09 16:29:26,052:<module>:INFO:EPOCH 15 finished with training loss: 18.62594223022461 | validation loss: 23.605064392089844 | lr: 0.001 
+2021-04-09 16:32:02,120:<module>:INFO:EPOCH 20 finished with training loss: 24.903963088989258 | validation loss: 25.11573600769043 | lr: 0.001 
+2021-04-09 16:34:30,783:<module>:INFO:EPOCH 25 finished with training loss: 24.845598220825195 | validation loss: 25.691680908203125 | lr: 0.0005 
+2021-04-09 16:37:53,661:<module>:INFO:EPOCH 30 finished with training loss: 22.15883445739746 | validation loss: 24.288841247558594 | lr: 0.00025 
+2021-04-09 19:02:10,361:<module>:INFO:EPOCH 35 finished with training loss: 24.77251434326172 | validation loss: 24.027456283569336 | lr: 0.00025 
+2021-04-09 23:24:23,768:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:24:23,769:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:24:35,388:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:24:35,389:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:24:35,413:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:24:35,413:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-09 23:24:35,413:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 23:24:39,279:<module>:INFO:0-1 test of | real x: 0.8504516558275867 | learnt x: 0.9664864096404129
+2021-04-09 23:24:39,330:<module>:INFO:            | real y: 0.9660515599516195 | learnt y: 0.9908202097244522
+2021-04-09 23:24:39,382:<module>:INFO:            | real z: 0.9840868985223798 | learnt z: 0.9847003731441892
+2021-04-09 23:24:39,382:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:25:31,108:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:25:31,114:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:25:31,141:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:25:31,142:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-09 23:25:31,142:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 23:25:34,815:<module>:INFO:0-1 test of | real x: 0.8155028076849844 | learnt x: 0.8574168042959622
+2021-04-09 23:25:34,871:<module>:INFO:            | real y: 0.9589375539972468 | learnt y: 0.8952172796254058
+2021-04-09 23:25:34,924:<module>:INFO:            | real z: 0.9842013647193979 | learnt z: 0.9740115625572348
+2021-04-09 23:25:34,924:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:27:04,846:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:27:04,848:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:27:04,873:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:27:04,874:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-09 23:27:04,874:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-09 23:27:10,297:<module>:INFO:0-1 test of | real x: 0.7253717939414259 | learnt x: 0.9694846465962563
+2021-04-09 23:27:10,355:<module>:INFO:            | real y: 0.9293694908395954 | learnt y: 0.9680295583634606
+2021-04-09 23:27:10,409:<module>:INFO:            | real z: 0.984765227324193 | learnt z: 0.9797752762037036
+2021-04-09 23:27:10,409:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:27:18,799:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:27:18,801:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:27:18,817:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:27:18,818:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-09 23:27:18,818:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-09 23:27:25,787:<module>:INFO:0-1 test of | real x: 0.8308053717014923 | learnt x: 0.7683113760493738
+2021-04-09 23:27:25,875:<module>:INFO:            | real y: 0.9754126199629103 | learnt y: 0.8990759946319421
+2021-04-09 23:27:25,968:<module>:INFO:            | real z: 0.8352446903261852 | learnt z: 0.8342559911264815
+2021-04-09 23:27:25,969:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:27:39,735:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:27:39,736:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:27:39,753:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:27:39,753:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-09 23:27:39,754:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-09 23:27:47,265:<module>:INFO:0-1 test of | real x: 0.9080072425205206 | learnt x: 0.8202818330527621
+2021-04-09 23:27:47,348:<module>:INFO:            | real y: 0.9564833431260042 | learnt y: 0.9188497059546376
+2021-04-09 23:27:47,429:<module>:INFO:            | real z: 0.8685894631770761 | learnt z: 0.7974976417818762
+2021-04-09 23:27:47,429:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:27:56,349:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:27:56,351:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:27:56,367:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:27:56,367:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-09 23:27:56,367:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-09 23:28:03,635:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 23:28:03,635:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 23:28:03,678:<module>:INFO:0-1 test of | real x: None | learnt x: 0.8531829510477558
+2021-04-09 23:28:03,722:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-09 23:28:03,722:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-09 23:28:03,763:<module>:INFO:            | real y: None | learnt y: 0.9239829378423978
+2021-04-09 23:28:03,846:<module>:INFO:            | real z: 0.9118353023145396 | learnt z: 0.8019253725983156
+2021-04-09 23:28:03,846:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:28:13,493:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:28:13,495:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:28:13,514:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:28:13,514:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-09 23:28:13,514:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-09 23:28:19,984:<module>:INFO:0-1 test of | real x: 0.8415456736223217 | learnt x: 0.8786702668226959
+2021-04-09 23:28:20,069:<module>:INFO:            | real y: 0.9780941691537965 | learnt y: 0.9583404962296307
+2021-04-09 23:28:20,159:<module>:INFO:            | real z: 0.8807716389416655 | learnt z: 0.8583531377676152
+2021-04-09 23:28:20,159:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:28:52,974:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:28:52,975:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:28:52,992:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:28:52,992:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-09 23:28:52,992:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-09 23:29:03,924:<module>:INFO:0-1 test of | real x: 0.9240694135525787 | learnt x: 0.7924213290414261
+2021-04-09 23:29:04,044:<module>:INFO:            | real y: 0.9811367681400599 | learnt y: 0.9504709732906051
+2021-04-09 23:29:04,163:<module>:INFO:            | real z: 0.8917672648406665 | learnt z: 0.8642559567382747
+2021-04-09 23:29:04,163:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:29:26,863:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:29:26,864:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:29:26,882:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:29:26,882:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-09 23:29:26,882:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-09 23:29:36,602:<module>:INFO:0-1 test of | real x: 0.93941630736514 | learnt x: 0.8990499009079749
+2021-04-09 23:29:36,730:<module>:INFO:            | real y: 0.9903224482983142 | learnt y: 0.9362128504363478
+2021-04-09 23:29:36,847:<module>:INFO:            | real z: 0.9194666563296863 | learnt z: 0.8793656617105837
+2021-04-09 23:29:36,847:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-09 23:29:55,968:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-09 23:29:55,970:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-09 23:29:55,987:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-09 23:29:55,987:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-09 23:29:55,987:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-09 23:30:07,160:<module>:INFO:0-1 test of | real x: 0.8094273752985199 | learnt x: 0.6550724473782422
+2021-04-09 23:30:07,284:<module>:INFO:            | real y: 0.9763322522746531 | learnt y: 0.9455431976002138
+2021-04-09 23:30:07,411:<module>:INFO:            | real z: 0.8743290068484197 | learnt z: 0.8986174666585303
+2021-04-09 23:30:07,411:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:04:30,945:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:04:30,947:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:04:30,969:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:04:30,969:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:04:30,969:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:04:40,419:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:04:40,419:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:04:40,419:<module>:INFO:0-1 test of | real x: 0.6812686595280515 | learnt x: None
+2021-04-10 11:04:40,553:<module>:INFO:            | real y: 0.9367762690815493 | learnt y: 0.8519550020475563
+2021-04-10 11:04:40,681:<module>:INFO:            | real z: 0.9104378950447306 | learnt z: 0.8234075427412759
+2021-04-10 11:04:40,682:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:05:11,453:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:05:11,458:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:05:11,478:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:05:11,479:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:05:11,479:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:05:18,456:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:05:18,457:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:05:18,457:<module>:INFO:0-1 test of | real x: 0.8581364002715068 | learnt x: None
+2021-04-10 11:05:18,540:<module>:INFO:            | real y: 0.9672496627855058 | learnt y: 0.9062780293787476
+2021-04-10 11:05:18,618:<module>:INFO:            | real z: 0.846501257838507 | learnt z: 0.7927315633828065
+2021-04-10 11:05:18,619:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:05:29,739:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:05:29,740:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:05:29,758:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:05:29,758:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:05:29,758:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:05:37,258:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:05:37,259:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:05:37,259:<module>:INFO:0-1 test of | real x: 0.9026436215678613 | learnt x: None
+2021-04-10 11:05:37,307:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:05:37,307:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:05:37,354:<module>:INFO:            | real y: None | learnt y: 0.9389926199764673
+2021-04-10 11:05:37,438:<module>:INFO:            | real z: 0.8844239650223756 | learnt z: 0.7439647729059047
+2021-04-10 11:05:37,439:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:05:49,171:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:05:49,173:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:05:49,190:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:05:49,191:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:05:49,191:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:05:54,109:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:05:54,109:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:05:54,109:<module>:INFO:0-1 test of | real x: 0.8507593805083038 | learnt x: None
+2021-04-10 11:05:54,195:<module>:INFO:            | real y: 0.9836410989936784 | learnt y: 0.9413371376919287
+2021-04-10 11:05:54,280:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:05:54,281:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:05:54,281:<module>:INFO:            | real z: 0.8336491402493642 | learnt z: None
+2021-04-10 11:05:54,281:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:06:27,477:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:06:27,478:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:06:27,495:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:06:27,495:__init__:INFO:     lookahead: 10 | tau: 1 | k: 1
+2021-04-10 11:06:27,495:__init__:INFO:     size of histories: torch.Size([980, 1, 3]) | size of futures: torch.Size([980, 11, 3])
+
+2021-04-10 11:20:31,698:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:20:31,703:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:20:45,450:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:20:45,452:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:20:45,472:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:20:45,472:__init__:INFO:     lookahead: 10 | tau: 1 | k: 1
+2021-04-10 11:20:45,472:__init__:INFO:     size of histories: torch.Size([980, 1, 3]) | size of futures: torch.Size([980, 11, 3])
+
+2021-04-10 11:21:25,313:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:21:25,318:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:21:25,343:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:21:25,343:__init__:INFO:     lookahead: 10 | tau: 1 | k: 1
+2021-04-10 11:21:25,343:__init__:INFO:     size of histories: torch.Size([1960, 1, 3]) | size of futures: torch.Size([1960, 11, 3])
+
+2021-04-10 11:27:12,263:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:27:12,265:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:27:12,281:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:27:12,282:__init__:INFO:     lookahead: 10 | tau: 1 | k: 1
+2021-04-10 11:27:12,282:__init__:INFO:     size of histories: torch.Size([980, 1, 3]) | size of futures: torch.Size([980, 11, 3])
+
+2021-04-10 11:27:24,634:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:27:24,636:<module>:INFO:ANODE(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=5, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=5, bias=True)
+)
+2021-04-10 11:27:24,652:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:27:24,652:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:27:24,652:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:27:29,821:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:27:29,821:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:27:29,821:<module>:INFO:0-1 test of | real x: 0.8405985300438024 | learnt x: None
+2021-04-10 11:27:29,865:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:27:29,865:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:27:29,906:<module>:INFO:            | real y: None | learnt y: 0.735039844117727
+2021-04-10 11:27:29,987:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:27:29,987:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:27:29,987:<module>:INFO:            | real z: 0.8815175193947852 | learnt z: None
+2021-04-10 11:27:29,987:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:28:25,604:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:28:25,605:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:28:25,626:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:28:25,626:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:28:25,626:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:28:30,897:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:28:30,897:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:28:30,897:<module>:INFO:0-1 test of | real x: 0.8031336852322948 | learnt x: None
+2021-04-10 11:28:30,987:<module>:INFO:            | real y: 0.9630374946445666 | learnt y: 0.9614377088400339
+2021-04-10 11:28:31,071:<module>:INFO:            | real z: 0.8690876744480337 | learnt z: 0.8330221032861904
+2021-04-10 11:28:31,071:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:29:01,897:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:29:01,899:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:29:01,915:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:29:01,915:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:29:01,915:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:29:07,357:<module>:INFO:0-1 test of | real x: 0.8851766944458479 | learnt x: 0.9063535250595546
+2021-04-10 11:29:07,440:<module>:INFO:            | real y: 0.9581194369054435 | learnt y: 0.973100432358553
+2021-04-10 11:29:07,526:<module>:INFO:            | real z: 0.8749640408397408 | learnt z: 0.8901817760718967
+2021-04-10 11:29:07,526:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:29:38,615:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:29:38,617:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:29:38,632:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:29:38,632:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:29:38,632:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:29:42,015:<module>:INFO:0-1 test of | real x: 0.824049583907011 | learnt x: 0.9000861335949686
+2021-04-10 11:29:42,069:<module>:INFO:            | real y: 0.925303540924867 | learnt y: 0.9738477541557531
+2021-04-10 11:29:42,127:<module>:INFO:            | real z: 0.9873091691990131 | learnt z: 0.9876734128709804
+2021-04-10 11:29:42,127:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:29:55,087:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:29:55,088:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:29:55,107:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:29:55,107:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:29:55,107:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:29:58,337:<module>:INFO:0-1 test of | real x: 0.8481551920156776 | learnt x: 0.7590225667328024
+2021-04-10 11:29:58,390:<module>:INFO:            | real y: 0.9864331040736259 | learnt y: 0.9411888066384531
+2021-04-10 11:29:58,439:<module>:INFO:            | real z: 0.988374173088872 | learnt z: 0.9878388141808135
+2021-04-10 11:29:58,439:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:32:17,273:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:32:17,278:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:32:17,303:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:32:17,303:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:32:17,303:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:32:20,576:<module>:INFO:0-1 test of | real x: 0.8388738473346639 | learnt x: 0.925247376798098
+2021-04-10 11:32:20,627:<module>:INFO:            | real y: 0.9777470438727531 | learnt y: 0.9877551914676052
+2021-04-10 11:32:20,679:<module>:INFO:            | real z: 0.9592213972312846 | learnt z: 0.9378638586212307
+2021-04-10 11:32:20,679:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:33:20,309:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:33:20,311:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:33:20,327:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:33:20,328:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:33:20,328:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:33:23,580:<module>:INFO:0-1 test of | real x: 0.9097166306767197 | learnt x: 0.939000839516812
+2021-04-10 11:33:23,647:<module>:INFO:            | real y: 0.9749442956324667 | learnt y: 0.9741472163276581
+2021-04-10 11:33:23,701:<module>:INFO:            | real z: 0.9714999354824465 | learnt z: 0.974482846719921
+2021-04-10 11:33:23,701:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:34:07,300:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:34:07,301:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:34:07,317:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:34:07,317:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:34:07,318:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:34:10,492:<module>:INFO:0-1 test of | real x: 0.8409855500035974 | learnt x: 0.8403786195043714
+2021-04-10 11:34:10,546:<module>:INFO:            | real y: 0.9551037891442612 | learnt y: 0.963199806171157
+2021-04-10 11:34:10,599:<module>:INFO:            | real z: 0.9825750903310693 | learnt z: 0.9850293302348622
+2021-04-10 11:34:10,599:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:34:16,749:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:34:16,750:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:34:16,766:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:34:16,766:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:34:16,766:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:34:19,982:<module>:INFO:0-1 test of | real x: 0.8203865174613582 | learnt x: 0.8790695207293111
+2021-04-10 11:34:20,034:<module>:INFO:            | real y: 0.9578133290948252 | learnt y: 0.966379506282954
+2021-04-10 11:34:20,084:<module>:INFO:            | real z: 0.9629026562389014 | learnt z: 0.9510745465215533
+2021-04-10 11:34:20,084:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:34:26,114:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:34:26,115:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:34:26,132:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:34:26,132:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:34:26,132:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:34:29,275:<module>:INFO:0-1 test of | real x: 0.9191138426768637 | learnt x: 0.9407163968291337
+2021-04-10 11:34:29,333:<module>:INFO:            | real y: 0.9656471925378708 | learnt y: 0.9868455751246832
+2021-04-10 11:34:29,388:<module>:INFO:            | real z: 0.9799207687392733 | learnt z: 0.981423960196611
+2021-04-10 11:34:29,388:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:34:38,580:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:34:38,587:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:34:38,607:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:34:38,607:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:34:38,607:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:34:41,667:<module>:INFO:0-1 test of | real x: 0.8068248478502282 | learnt x: 0.962155021368936
+2021-04-10 11:34:41,723:<module>:INFO:            | real y: 0.8927162727424998 | learnt y: 0.9907809836427306
+2021-04-10 11:34:41,774:<module>:INFO:            | real z: 0.98162808991727 | learnt z: 0.979977383038481
+2021-04-10 11:34:41,775:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:34:55,735:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:34:55,737:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:34:55,752:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:34:55,752:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:34:55,753:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:34:59,109:<module>:INFO:0-1 test of | real x: 0.9376913215026872 | learnt x: 0.9782957970949377
+2021-04-10 11:34:59,173:<module>:INFO:            | real y: 0.9897856141336876 | learnt y: 0.9882675650331427
+2021-04-10 11:34:59,235:<module>:INFO:            | real z: 0.9633737254358135 | learnt z: 0.9629033618721048
+2021-04-10 11:34:59,236:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:35:19,876:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:35:19,877:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:35:19,893:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:35:19,893:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:35:19,893:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:35:23,004:<module>:INFO:0-1 test of | real x: 0.8752745130833697 | learnt x: 0.7909790572429858
+2021-04-10 11:35:23,055:<module>:INFO:            | real y: 0.9895584624319509 | learnt y: 0.9592270214046216
+2021-04-10 11:35:23,105:<module>:INFO:            | real z: 0.965642082020117 | learnt z: 0.9620014742457208
+2021-04-10 11:35:23,105:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:35:29,991:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:35:29,992:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:35:30,009:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:35:30,009:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:35:30,009:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:35:33,023:<module>:INFO:0-1 test of | real x: 0.8677866483140946 | learnt x: 0.9032084178816184
+2021-04-10 11:35:33,074:<module>:INFO:            | real y: 0.9733817111931304 | learnt y: 0.9866774338228621
+2021-04-10 11:35:33,124:<module>:INFO:            | real z: 0.9833729502958336 | learnt z: 0.9828643847102233
+2021-04-10 11:35:33,124:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:35:47,499:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:35:47,504:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:35:47,526:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:35:47,526:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:35:47,526:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:35:55,074:<module>:INFO:0-1 test of | real x: 0.9294974391022014 | learnt x: 0.8991468226797754
+2021-04-10 11:35:55,188:<module>:INFO:            | real y: 0.9891970298669451 | learnt y: 0.9816901215583851
+2021-04-10 11:35:55,302:<module>:INFO:            | real z: 0.894668250155791 | learnt z: 0.8790499160971013
+2021-04-10 11:35:55,303:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:36:42,849:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:36:42,850:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:36:42,867:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:36:42,868:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:36:42,868:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:36:47,309:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:36:47,310:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:36:47,310:<module>:INFO:0-1 test of | real x: 0.9155930843572604 | learnt x: None
+2021-04-10 11:36:47,373:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:36:47,373:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:36:47,437:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:36:47,438:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:36:47,438:<module>:INFO:            | real y: None | learnt y: None
+2021-04-10 11:36:47,571:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:36:47,571:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:36:47,571:<module>:INFO:            | real z: 0.9411281377498815 | learnt z: None
+2021-04-10 11:36:47,572:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:37:48,663:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:37:48,667:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:37:48,690:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:37:48,690:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:37:48,690:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:37:56,273:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:37:56,273:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:37:56,273:<module>:INFO:0-1 test of | real x: 0.926188614049173 | learnt x: None
+2021-04-10 11:37:56,442:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:37:56,442:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:37:56,442:<module>:INFO:            | real y: 0.9891804383021164 | learnt y: None
+2021-04-10 11:37:56,610:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:37:56,610:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:37:56,610:<module>:INFO:            | real z: 0.9156583007845214 | learnt z: None
+2021-04-10 11:37:56,610:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:39:06,882:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:39:06,884:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:39:06,901:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:39:06,901:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:39:06,901:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:40:21,951:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:40:21,952:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:40:21,969:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:40:21,969:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:40:21,969:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:40:30,103:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:40:30,104:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:40:30,104:<module>:INFO:0-1 test of | real x: 0.7539165712755883 | learnt x: None
+2021-04-10 11:40:30,269:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:40:30,269:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:40:30,269:<module>:INFO:            | real y: 0.918418762295306 | learnt y: None
+2021-04-10 11:40:30,434:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:40:30,434:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:40:30,434:<module>:INFO:            | real z: 0.7990672404082371 | learnt z: None
+2021-04-10 11:40:30,434:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:40:56,195:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:40:56,196:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:40:56,213:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:40:56,213:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:40:56,213:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:41:06,298:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:06,298:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:06,298:<module>:INFO:0-1 test of | real x: 0.8516935490790745 | learnt x: None
+2021-04-10 11:41:06,449:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:06,450:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:06,608:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:06,608:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:06,608:<module>:INFO:            | real y: None | learnt y: None
+2021-04-10 11:41:06,791:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:06,791:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:06,792:<module>:INFO:            | real z: 0.9405310013332355 | learnt z: None
+2021-04-10 11:41:06,792:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:41:31,266:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:41:31,271:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:41:31,292:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:41:31,292:__init__:INFO:     lookahead: 150 | tau: 1 | k: 1
+2021-04-10 11:41:31,292:__init__:INFO:     size of histories: torch.Size([840, 1, 3]) | size of futures: torch.Size([840, 151, 3])
+
+2021-04-10 11:41:39,477:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:39,478:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:39,478:<module>:INFO:0-1 test of | real x: 0.8867716820020588 | learnt x: None
+2021-04-10 11:41:39,876:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:39,876:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:39,876:<module>:INFO:            | real y: 0.9635152044017512 | learnt y: None
+2021-04-10 11:41:40,246:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:41:40,246:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:41:40,246:<module>:INFO:            | real z: 0.891171255067788 | learnt z: None
+2021-04-10 11:41:40,246:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:42:07,678:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:42:07,683:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:42:07,705:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:42:07,705:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:42:07,705:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:42:13,167:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:13,167:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:13,167:<module>:INFO:0-1 test of | real x: 0.8841185780284604 | learnt x: None
+2021-04-10 11:42:13,208:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:13,209:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:13,396:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:13,396:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:13,397:<module>:INFO:            | real y: None | learnt y: None
+2021-04-10 11:42:13,640:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:13,641:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:13,641:<module>:INFO:            | real z: 0.9070561186787669 | learnt z: None
+2021-04-10 11:42:13,641:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:42:22,537:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:42:22,539:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:42:22,554:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:42:22,554:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:42:22,555:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:42:28,340:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:28,340:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:28,340:<module>:INFO:0-1 test of | real x: 0.8417162807906862 | learnt x: None
+2021-04-10 11:42:28,589:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:28,589:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:28,589:<module>:INFO:            | real y: 0.9877230394265144 | learnt y: None
+2021-04-10 11:42:28,837:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:28,837:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:28,837:<module>:INFO:            | real z: 0.8745908580770623 | learnt z: None
+2021-04-10 11:42:28,837:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:42:51,618:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:42:51,620:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:42:51,637:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:42:51,637:__init__:INFO:     lookahead: 100 | tau: 1 | k: 1
+2021-04-10 11:42:51,637:__init__:INFO:     size of histories: torch.Size([890, 1, 3]) | size of futures: torch.Size([890, 101, 3])
+
+2021-04-10 11:42:57,058:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:57,058:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:57,058:<module>:INFO:0-1 test of | real x: 0.8881808720048634 | learnt x: None
+2021-04-10 11:42:57,291:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:57,291:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:57,291:<module>:INFO:            | real y: 0.9737506905548147 | learnt y: None
+2021-04-10 11:42:57,541:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:42:57,541:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:42:57,541:<module>:INFO:            | real z: 0.8416919997035159 | learnt z: None
+2021-04-10 11:42:57,542:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:43:10,690:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:43:10,691:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:43:10,709:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:43:10,709:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:43:10,709:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:43:13,947:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:13,947:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:13,947:<module>:INFO:0-1 test of | real x: 0.8799888899138483 | learnt x: None
+2021-04-10 11:43:14,064:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:14,064:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:14,064:<module>:INFO:            | real y: 0.949274328585932 | learnt y: None
+2021-04-10 11:43:14,091:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:14,091:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:14,185:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:14,185:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:14,185:<module>:INFO:            | real z: None | learnt z: None
+2021-04-10 11:43:14,185:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:43:36,344:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:43:36,345:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:43:36,361:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:43:36,362:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:43:36,362:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:43:39,529:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:39,529:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:39,529:<module>:INFO:0-1 test of | real x: 0.8814355183284249 | learnt x: None
+2021-04-10 11:43:39,649:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:39,649:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:39,649:<module>:INFO:            | real y: 0.942915808119721 | learnt y: None
+2021-04-10 11:43:39,778:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:43:39,778:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:43:39,778:<module>:INFO:            | real z: 0.961272792503698 | learnt z: None
+2021-04-10 11:43:39,778:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:43:58,795:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:43:58,797:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:43:58,813:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:43:58,813:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:43:58,813:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:44:02,026:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:44:02,026:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:44:02,026:<module>:INFO:0-1 test of | real x: 0.9449977032748282 | learnt x: None
+2021-04-10 11:44:02,140:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:44:02,140:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:44:02,140:<module>:INFO:            | real y: 0.9545337049125335 | learnt y: None
+2021-04-10 11:44:02,256:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:44:02,256:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:44:02,256:<module>:INFO:            | real z: 0.9635773990653145 | learnt z: None
+2021-04-10 11:44:02,256:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:44:51,532:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:44:51,533:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:44:51,550:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:44:51,551:__init__:INFO:     lookahead: 300 | tau: 1 | k: 1
+2021-04-10 11:44:51,551:__init__:INFO:     size of histories: torch.Size([690, 1, 3]) | size of futures: torch.Size([690, 301, 3])
+
+2021-04-10 11:45:05,821:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:05,821:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:06,417:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:06,417:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:06,417:<module>:INFO:0-1 test of | real x: None | learnt x: None
+2021-04-10 11:45:06,529:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:06,529:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:07,185:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:07,185:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:07,185:<module>:INFO:            | real y: None | learnt y: None
+2021-04-10 11:45:07,954:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:07,954:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:07,954:<module>:INFO:            | real z: 0.9733610303834104 | learnt z: None
+2021-04-10 11:45:07,954:<module>:INFO:
+ REACHED END OF MAIN
+2021-04-10 11:45:30,980:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-10 11:45:30,985:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-10 11:45:31,006:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-10 11:45:31,006:__init__:INFO:     lookahead: 50 | tau: 1 | k: 1
+2021-04-10 11:45:31,006:__init__:INFO:     size of histories: torch.Size([940, 1, 3]) | size of futures: torch.Size([940, 51, 3])
+
+2021-04-10 11:45:34,402:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:34,402:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:34,402:<module>:INFO:0-1 test of | real x: 0.8470209314371835 | learnt x: None
+2021-04-10 11:45:34,526:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:34,526:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:34,526:<module>:INFO:            | real y: 0.9375918963012126 | learnt y: None
+2021-04-10 11:45:34,648:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-10 11:45:34,648:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-10 11:45:34,648:<module>:INFO:            | real z: 0.9788607085997427 | learnt z: None
+2021-04-10 11:45:34,648:<module>:INFO:
+ REACHED END OF MAIN

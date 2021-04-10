@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/1D_lorenz_prediction/models/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1D_lorenz_prediction/models/3DLorenzmodelmodel1.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1D_lorenz_prediction/models/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/ANODE.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/small_dt_model/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/small_dt_model/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/untested_model/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/untested_model/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datasets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/3Dmodel/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/3Dmodel/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.7/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.7/3DLorenzmodelopt.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D0.01/test/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D0.01/train/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D0.01/val/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/Data3D0.01/test/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/Data3D0.01/train/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/Data3D0.01/val/data.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/IdentifyIC.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Modelshuffled1.9/3DLorenzmodelmodel0.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IdentifyIC/models/Modelshuffled1.9/3DLorenzmodelopt.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/3DLorenzNODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/3DLorenzNODE.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/ANODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/ANODE.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/test/data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/train/data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/Data3D/val/data.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" afterDir="false" />
@@ -30,7 +23,21 @@
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/losses.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/losses.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEmodel0.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/ANODEopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Datasets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IdentifyIC.py" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/Data3D/test/data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/Data3D/train/data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/Data3D/val/data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelmodel0.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC/models/3DLorenzmodelopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelmodel0.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5/3DLorenzmodelopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.7/3DLorenzmodelmodel0.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.7/3DLorenzmodelopt.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss3/3DLorenzmodelmodel0.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss3/3DLorenzmodelopt.pth" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/threeDLorenzNODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/threeDLorenzNODE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
@@ -86,7 +93,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Results/PartiallyObservedPrediction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Results/FullyObservedPrediction" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -99,22 +106,22 @@
     <option name="myShowDebugConsoleByDefault" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../Results/PartiallyObservedPrediction" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../Results/FullyObservedPrediction" />
+      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models" />
       <recent name="$PROJECT_DIR$/IdentifyIC/models" />
+      <recent name="$PROJECT_DIR$/IdentifyIC/models/Modelshuffled1.9" />
+      <recent name="$PROJECT_DIR$/../../Results/PartiallyObservedPrediction" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/IdentifyIC/models/Model_w_loss1.5" />
+      <recent name="$PROJECT_DIR$/IdentifyIC/models" />
+      <recent name="$PROJECT_DIR$/../../Results/PartiallyObservedPrediction" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/1D_lorenz_prediction" />
-      <recent name="$PROJECT_DIR$/seq2seq_lorenz_prediction" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../Results/PartiallyObservedPrediction" />
-      <recent name="$PROJECT_DIR$/IdentifyIC/models" />
-      <recent name="$PROJECT_DIR$/IdentifyIC/models/3Dmodel" />
-      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models" />
-      <recent name="$PROJECT_DIR$/3D_lorenz_prediction/models/untested_model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.IdentifyIC">
+  <component name="RunManager" selected="Python.threeDLorenzNODE">
     <configuration name="FigureOutCuda" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MyNeuralODE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -391,7 +398,8 @@
       <workItem from="1617777310565" duration="413000" />
       <workItem from="1617784549407" duration="20556000" />
       <workItem from="1617830048825" duration="514000" />
-      <workItem from="1617865293398" duration="26890000" />
+      <workItem from="1617865293398" duration="38041000" />
+      <workItem from="1618045381154" duration="3220000" />
     </task>
     <task id="LOCAL-00001" summary="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)">
       <created>1617726734700</created>
@@ -421,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617880386929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="First implementation of Augmented NODE and Dataloader of Lorenz3D">
+      <created>1617968859820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617968859820</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +449,8 @@
     <MESSAGE value="Added file for predicting Lorenz using history of only one state." />
     <MESSAGE value="Added one component history to three state encoder and added 1D component prediction following paper." />
     <MESSAGE value="Debugged IdentifyIC.py and it know works quite well. Changed Data from 0.0025 data to 0.01 data again." />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugged IdentifyIC.py and it know works quite well. Changed Data from 0.0025 data to 0.01 data again." />
+    <MESSAGE value="First implementation of Augmented NODE and Dataloader of Lorenz3D" />
+    <option name="LAST_COMMIT_MESSAGE" value="First implementation of Augmented NODE and Dataloader of Lorenz3D" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1680" y="327" key="#Deployment" timestamp="1617105380080">
@@ -460,61 +476,61 @@
     </state>
     <state x="-1584" y="472" key="#com.intellij.fileTypes.FileTypeChooser/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617435005666" />
     <state x="549" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1617568876366" />
-    <state x="115" y="49" key="CommitChangelistDialog2" timestamp="1617880386595">
+    <state x="115" y="49" key="CommitChangelistDialog2" timestamp="1617968859503">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="115" y="49" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1617880386595" />
-    <state width="1398" height="335" key="GridCell.Tab.0.bottom" timestamp="1617968781031">
+    <state x="115" y="49" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1617968859503" />
+    <state width="1398" height="114" key="GridCell.Tab.0.bottom" timestamp="1618047971425">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
-    <state width="1398" height="335" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1617968781031" />
-    <state width="1398" height="335" key="GridCell.Tab.0.center" timestamp="1617968781031">
+    <state width="1398" height="114" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618047971425" />
+    <state width="1398" height="114" key="GridCell.Tab.0.center" timestamp="1618047971424">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="335" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1617968781031" />
-    <state width="1398" height="335" key="GridCell.Tab.0.left" timestamp="1617968781030">
+    <state width="1398" height="114" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1618047971424" />
+    <state width="1398" height="114" key="GridCell.Tab.0.left" timestamp="1618047971424">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="335" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1617968781030" />
-    <state width="1398" height="335" key="GridCell.Tab.0.right" timestamp="1617968781031">
+    <state width="1398" height="114" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1618047971424" />
+    <state width="1398" height="114" key="GridCell.Tab.0.right" timestamp="1618047971425">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.0.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684054" />
-    <state width="1398" height="335" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1617968781031" />
-    <state width="1398" height="353" key="GridCell.Tab.1.bottom" timestamp="1617958277436">
+    <state width="1398" height="114" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1618047971425" />
+    <state width="1398" height="353" key="GridCell.Tab.1.bottom" timestamp="1618003949893">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.1.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684056" />
-    <state width="1398" height="353" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1617958277436" />
-    <state width="1398" height="353" key="GridCell.Tab.1.center" timestamp="1617958277436">
+    <state width="1398" height="353" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618003949893" />
+    <state width="1398" height="353" key="GridCell.Tab.1.center" timestamp="1618003949893">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.1.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
-    <state width="1398" height="353" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1617958277436" />
-    <state width="1398" height="353" key="GridCell.Tab.1.left" timestamp="1617958277436">
+    <state width="1398" height="353" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1618003949893" />
+    <state width="1398" height="353" key="GridCell.Tab.1.left" timestamp="1618003949893">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.1.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
-    <state width="1398" height="353" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1617958277436" />
-    <state width="1398" height="353" key="GridCell.Tab.1.right" timestamp="1617958277436">
+    <state width="1398" height="353" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1618003949893" />
+    <state width="1398" height="353" key="GridCell.Tab.1.right" timestamp="1618003949893">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2518" height="508" key="GridCell.Tab.1.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617295684055" />
-    <state width="1398" height="353" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1617958277436" />
+    <state width="1398" height="353" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1618003949893" />
     <state x="-2085" y="383" key="SettingsEditor" timestamp="1617387961675">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
     <state x="-2085" y="383" key="SettingsEditor/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617387961675" />
     <state x="84" y="172" key="SettingsEditor/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092299055" />
-    <state x="512" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1617865293622">
+    <state x="512" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1618045381017">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1649" y="521" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617434936987" />
     <state x="-2060" y="494" key="com.intellij.ide.util.TipDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617090992574" />
-    <state x="512" y="360" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1617865293622" />
+    <state x="512" y="360" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1618045381017" />
     <state x="506" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617726817409">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -542,12 +558,12 @@
     <state x="-1615" y="276" width="670" height="676" key="search.everywhere.popup/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1616778566587" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MyNeuralODE$IdentifyIC.coverage" NAME="IdentifyIC Coverage Results" MODIFIED="1617968780999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$IdentifyIC.coverage" NAME="IdentifyIC Coverage Results" MODIFIED="1617975836910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$oneDLorenzNODE.coverage" NAME="oneDLorenzNODE Coverage Results" MODIFIED="1617808731017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$LorentzLatentODE.coverage" NAME="LorentzLatentODE Coverage Results" MODIFIED="1617006792003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$FigureOutCuda.coverage" NAME="FigureOutCuda Coverage Results" MODIFIED="1616770663897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$3DLorenzNODE.coverage" NAME="3DLorenzNODE Coverage Results" MODIFIED="1617726397871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$threeDLorenzNODE.coverage" NAME="threeDLorenzNODE Coverage Results" MODIFIED="1617963702954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$threeDLorenzNODE.coverage" NAME="threeDLorenzNODE Coverage Results" MODIFIED="1618047929201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="create_data Coverage Results" MODIFIED="1617876767907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Lorenz3D" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$Neural_oDE.coverage" NAME="Neural oDE Coverage Results" MODIFIED="1617279851054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$SimpleSinNeuralODE.coverage" NAME="SimpleSinNeuralODE Coverage Results" MODIFIED="1616776260798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

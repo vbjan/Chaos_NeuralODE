@@ -26,7 +26,7 @@ def predict_state(history_x):
     # encode history into 3D initial condition vector (out)
     hid = encoder_rnn.init_hidden()
     for i in range(k):
-        x = history_x[:, i, :].view(max_blocks, 1, 1)
+        x = history_x[:, i, :].view(-1, 1, 1)
         out, hid = encoder_rnn.forward(x, hid)
     return out
 
@@ -52,35 +52,34 @@ class Net(nn.Module):
 
 
 if __name__ == "__main__":
+    # Set up logging
+    logging.basicConfig(filename="IdentifyIC/IdentifyIC.log", level=logging.INFO,
+                        format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    logging.getLogger('').addHandler(console)
+
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    dddtest_data_dir = project_dir + "/IdentifyIC/Data3D/test/data.h5"
-    dddtrain_data_dir = project_dir + "/IdentifyIC/Data3D/train/data.h5"
-    dddval_data_dir = project_dir + "/IdentifyIC/Data3D/val/data.h5"
-    #dddtest_data_dir = project_dir + "/IdentifyIC/Data3D/val/data.h5"
+    dddtest_data_dir = project_dir + "/IdentifyIC/Data3D0.01/test/data.h5"
+    dddtrain_data_dir = project_dir + "/IdentifyIC/Data3D0.01/train/data.h5"
+    dddval_data_dir = project_dir + "/IdentifyIC/Data3D0.01/val/data.h5"
     figures_dir = project_dir + "/IdentifyIC/figures"
     model_dir = project_dir + '/IdentifyIC/models/3DLorenzmodel'
     ddd_model_dir = project_dir + '/IdentifyIC/models/3Dmodel/3DLorenzmodel'
-
-    # Load in the data
-    d_train = load_h5_data(dddtrain_data_dir)
-    print("Shape of d_train: {}".format(d_train.shape))
-    d_val = load_h5_data(dddval_data_dir)
-    d_test = load_h5_data(dddtest_data_dir)
 
     dt = 0.01  # read out from simulation script
     k = 8
     tau = 1
     latent_dim = 3
-    #n_of_batches = 1
     lookahead = 0
-    max_blocks = 900
+    batch_size = 200
     t = torch.from_numpy(np.arange(0, (1 + lookahead) * dt, dt))
 
     # Settings
     TRAIN_MODEL = False
     LOAD_THEN_TRAIN = False
-    EPOCHS = 700
-    LR = 0.001
+    EPOCHS = 35
+    LR = 0.01
     HIDDEN_DIM = 500
     num_rnn_layers = 2
 
@@ -90,7 +89,7 @@ if __name__ == "__main__":
         hidden_dim=HIDDEN_DIM,
         num_layers=num_rnn_layers,
         output_dim=latent_dim,
-        nbatch=max_blocks
+        nbatch=batch_size
     )
     print(encoder_rnn)
     params = list(encoder_rnn.parameters())
@@ -99,64 +98,56 @@ if __name__ == "__main__":
     f = Net(hidden_dim=256)
     load_models(ddd_model_dir, f)
 
-    dataset = DDDLorenzData(dddtrain_data_dir, lookahead, tau=3, k=3)
-    dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
-    dataiter = iter(dataloader)
-    hist, fut = dataiter.next()
-    print("EXAMPLE: {}, {}".format(hist.size(), fut.size()))
-
     if TRAIN_MODEL:
-        print("d_train howl: {}".format(d_train.shape))
-        print("d_train seq: {}".format(d_train[1, :, :].shape))
-        print("d_train seq reshaped: {}".format(d_train[1, :, :].reshape(1, -1, 3).shape))
-        history_Us, future_Us = split_sequence(
-            d_train[1, :, :],
-            lookahead,
-            tau=tau,
-            k=k,
-            max_blocks=max_blocks
-        )
-        val_history_Us, val_future_Us = split_sequence(
-            d_val[1, :, :],
-            lookahead,
-            tau=tau,
-            k=k,
-            max_blocks=max_blocks
-        )
-        print("history_Us: {}, future_Us: {}".format(history_Us.size(), future_Us.size()))
-        history_Xs = history_Us[:, :, 0].view(-1, k, 1)
-        val_history_Xs = val_history_Us[:, :, 0].view(-1, k, 1)
-        print("history_Xs: {}".format(history_Xs.size()))
+
+        train_dataset = DDDLorenzData(dddtrain_data_dir, lookahead=lookahead, tau=tau, k=8)
+        train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
+
+        val_dataset = DDDLorenzData(dddval_data_dir, lookahead, tau, k)
+        val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
         train_losses = []
         val_losses = []
+
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.1, patience=5, verbose=False,
+                                                               min_lr=LR/100)
+
         if LOAD_THEN_TRAIN:
             load_optimizer(model_dir, optimizer)
             load_models(model_dir, encoder_rnn)
 
         for EPOCH in range(EPOCHS):
-            optimizer.zero_grad()
 
-            # encode history into 3D initial condition vector (out)
-            inferred_U = predict_state(history_Xs)
+            for i, (history_Us, future_Us) in enumerate(train_dataloader):
 
-            #print("out: {}, future_Us: {}".format(inferred_U.size(), future_Us.size()))
-            #print("future_Us: {} \n, inferred_Us: {}\n".format(future_Us, inferred_U))
-            loss = torch.mean(torch.abs(inferred_U - future_Us)**2)
+                optimizer.zero_grad()
+
+                # encode history into 3D initial condition vector (out)
+                history_Xs = history_Us[:, :, 0].view(-1, k, 1)
+                inferred_U = predict_state(history_Xs)
+
+                loss = torch.mean(torch.abs(inferred_U - future_Us)**2)
+
+                loss.backward()
+                optimizer.step()
+
             train_losses.append(float(loss))
-            loss.backward()
-            optimizer.step()
-
+            val_history_Us, val_future_Us = next(iter(val_dataloader))
+            val_history_Xs = val_history_Us[:, :, 0].view(-1, k, 1)
             inferred_U_val = predict_state(val_history_Xs)
             val_loss = torch.mean(torch.abs(inferred_U_val.detach() - val_future_Us.detach())**2)
             val_losses.append(float(val_loss))
+            scheduler.step(val_loss)
 
-            if EPOCH % 10 == 0:
+            if EPOCH % 2 == 0:
                 print("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} "
                       .format(EPOCH, loss, val_loss, get_lr(optimizer)))
+                save_models(model_dir, encoder_rnn)
+                save_optimizer(model_dir, optimizer)
 
         print("TRAINING IS FINISHED!")
-        plt.plot(train_losses), plt.plot(val_losses), plt.show()
+        plt.plot(np.log(train_losses), label='train loss'), plt.plot(np.log(val_losses), label="validation loss")
+        plt.legend(), plt.show()
         save_models(model_dir, encoder_rnn)
         save_optimizer(model_dir, optimizer)
     else:
@@ -165,27 +156,12 @@ if __name__ == "__main__":
 
     with torch.no_grad():
 
-        # Computing loss on large amount of testing data
-        test_history_Us, test_future_Us = split_sequence(
-            d_test[1, :, :],
-            lookahead,
-            tau=tau,
-            k=k,
-            max_blocks=max_blocks
-        )
-        test_history_Xs = test_history_Us[:, :, 0].view(-1, k, 1)
-        inferred_U = predict_state(test_history_Xs)
-        test_loss = torch.mean(torch.abs(inferred_U - test_future_Us) ** 2)
-        print("Loss on large amount of testing data: {}".format(test_loss))
-
         # create and plot the testing trajectory
-        idx = 12
         N = 50
-        testU_history, testU_future = split_sequence(d_test[idx, :, :],
-                                                     lookahead=N,
-                                                     tau=tau,
-                                                     k=k,
-                                                     max_blocks=1)
+        test_dataset = DDDLorenzData(dddtest_data_dir, lookahead=N, tau=tau, k=k)
+        test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
+        testU_history, testU_future = next(iter(test_dataloader))
+
         testU_ic = testU_future[:, 0, :]
         print("Real initial condition: {}".format(testU_ic))
         logging.debug("testU_history: {}, testu_future: {}".format(testU_history.size(), testU_future.size()))
@@ -212,7 +188,7 @@ if __name__ == "__main__":
         logging.debug("extraj {}".format(ex_traj.shape))
         logging.debug("t_future: {}".format(t_future.shape))
 
-        plt.plot(t_future, ex_traj[:, 0], 'k',label='Prediction of x')
+        plt.plot(t_future, ex_traj[:, 0], 'k', label='Prediction of x')
         plt.plot(tau*k*dt, out[:, :, 0].detach().float(), 'cx', label='inferred point')
         plt.title("Partially Observed Lorenz Prediction")
         plt.xlabel('time t')
