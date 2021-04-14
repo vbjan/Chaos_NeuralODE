@@ -90,49 +90,14 @@ def save_models(save_dir, *models):
             i += 1
         logging.debug('Stored ckpt at {}'.format(ckpt_path))
 
-'''
 
-def save_models(save_dir, opt, *models):
+def get_num_trainable_params(parameters):
     """
-    :param save_dir: location to save in | example: Models/examplemodel
-    :param opt: optimizer to be saved (max=1)
-    :param models: any number of pytorch NNs to be saved
+    :param parameters: Pytorch parameters of NN (can be multiple models)
+    :return: total number of trainable parameters
     """
-    if save_dir is not None:
-        ckpt_path = save_dir + 'opt.pth'
-        torch.save({
-            'optimizer': opt.state_dict(),
-        }, ckpt_path)
-        logging.debug('Saved optimizer')
-        i = 0
-        for model in models:
-            ckpt_path = save_dir + 'model' + str(i) + '.pth'
-            torch.save({
-                'model'+str(i): model.state_dict()
-            }, ckpt_path)
-            i += 1
-        logging.info('Stored ckpt at {}'.format(ckpt_path))
-
-
-def load_models(save_dir, opt, *models):
-    """
-    :param save_dir: location to load from | example: Models/examplemodel
-    :param opt: optimizer that was saved with "save_models"
-    :param models: the same models in same order as saved with "save_models" to be loaded
-    """
-    ckpt_path = save_dir + 'opt.pth'
-    if os.path.exists(ckpt_path):
-        checkpoint = torch.load(ckpt_path)
-        opt.load_state_dict(checkpoint['optimizer'])
-        logging.debug('Loaded optimizer')
-        i = 0
-        for model in models:
-            ckpt_path = save_dir + 'model' + str(i) + '.pth'
-            checkpoint = torch.load(ckpt_path)
-            model.load_state_dict(checkpoint['model'+str(i)])
-            i += 1
-        logging.debug('Loaded all the models')
-    logging.debug('Loaded ckpt from {}'.format(ckpt_path))'''
+    pytorch_total_params = sum(p.numel() for p in parameters if p.requires_grad)
+    return pytorch_total_params
 
 
 def load_models(save_dir, *models):
@@ -256,3 +221,28 @@ def z1test(x, show_warnings=True, plotting=False):
     return np.median(kcorr)
 
 
+def func(x, y):
+    return - x - y + 25
+
+
+if __name__ == "__main__":
+    """
+    Using pytorch for some basic optimization 
+    """
+    x = [torch.randn(2, dtype=torch.float, requires_grad=True)]
+    print(x)
+
+    optimizer = torch.optim.Adam(list(x), lr=0.1)
+    losses = []
+
+    for EPOCH in range(1000):
+        optimizer.zero_grad()
+        loss = abs(func(x[0][0], x[0][1]))
+        losses.append(float(loss))
+        loss.backward()
+        optimizer.step()
+
+    plt.plot(losses)
+    plt.show()
+
+    print(x)
