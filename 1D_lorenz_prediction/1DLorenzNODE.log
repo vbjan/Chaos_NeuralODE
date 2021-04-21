@@ -8067,3 +8067,254 @@ STARTING TO TRAIN MODEL
 2021-04-14 11:25:35,679:<module>:INFO:EPOCH 18 finished with training loss: 0.876613199710846 | lr: 0.001 | delta time: 17.731961965560913s
 2021-04-14 11:25:54,143:<module>:INFO:EPOCH 20 finished with training loss: 0.8214118480682373 | lr: 0.001 | delta time: 18.455934047698975s
 2021-04-14 11:26:12,550:<module>:INFO:EPOCH 22 finished with training loss: 0.7826341390609741 | lr: 0.001 | delta time: 18.39983105659485s
+2021-04-14 11:26:29,961:<module>:INFO:EPOCH 24 finished with training loss: 0.7507907152175903 | lr: 0.001 | delta time: 17.400266885757446s
+2021-04-14 11:26:47,223:<module>:INFO:EPOCH 26 finished with training loss: 0.7019283175468445 | lr: 0.001 | delta time: 17.2554612159729s
+2021-04-14 11:27:01,905:<module>:INFO:EPOCH 28 finished with training loss: 0.6771956086158752 | lr: 0.001 | delta time: 14.670078039169312s
+2021-04-14 11:27:19,616:<module>:INFO:EPOCH 30 finished with training loss: 0.6307290196418762 | lr: 0.001 | delta time: 17.70393705368042s
+2021-04-14 11:27:36,494:<module>:INFO:EPOCH 32 finished with training loss: 0.606840968132019 | lr: 0.001 | delta time: 16.870306968688965s
+2021-04-14 11:28:47,288:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-14 11:28:47,290:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-14 11:28:47,290:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-14 11:28:47,304:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-14 11:28:47,304:__init__:INFO:     lookahead: 2 | tau: 1 | k: 7
+2021-04-14 11:28:47,304:__init__:INFO:     size of histories: torch.Size([982, 7, 1]) | size of futures: torch.Size([982, 3, 1])
+
+2021-04-14 11:28:47,317:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-14 11:28:47,317:__init__:INFO:     lookahead: 2 | tau: 1 | k: 7
+2021-04-14 11:28:47,317:__init__:INFO:     size of histories: torch.Size([982, 7, 1]) | size of futures: torch.Size([982, 3, 1])
+
+2021-04-14 11:28:47,317:<module>:INFO:
+STARTING TO TRAIN MODEL
+2021-04-14 11:28:47,317:<module>:INFO:EPOCHS : 200 | lr: 0.001 | batchsize: 300 | lookahead: 2 | iterations: 3 | #trainable parameters: 124198
+2021-04-14 11:28:48,002:<module>:INFO:EPOCH 0 finished with training loss: 55.76296615600586 | lr: 0.001 | delta time: 0.6842329502105713s
+2021-04-14 11:28:49,203:<module>:INFO:EPOCH 2 finished with training loss: 41.859291076660156 | lr: 0.001 | delta time: 1.197026014328003s
+2021-04-14 11:28:50,575:<module>:INFO:EPOCH 4 finished with training loss: 31.360483169555664 | lr: 0.001 | delta time: 1.3685870170593262s
+2021-04-14 11:28:51,934:<module>:INFO:EPOCH 6 finished with training loss: 26.055490493774414 | lr: 0.001 | delta time: 1.3543288707733154s
+2021-04-14 11:28:53,299:<module>:INFO:EPOCH 8 finished with training loss: 20.755483627319336 | lr: 0.001 | delta time: 1.362001895904541s
+2021-04-14 11:28:54,907:<module>:INFO:EPOCH 10 finished with training loss: 15.966279983520508 | lr: 0.001 | delta time: 1.6045329570770264s
+2021-04-14 11:28:56,367:<module>:INFO:EPOCH 12 finished with training loss: 13.46233081817627 | lr: 0.001 | delta time: 1.4567208290100098s
+2021-04-14 11:28:58,052:<module>:INFO:EPOCH 14 finished with training loss: 12.047683715820312 | lr: 0.001 | delta time: 1.680462121963501s
+2021-04-14 11:29:00,021:<module>:INFO:EPOCH 16 finished with training loss: 10.54907512664795 | lr: 0.001 | delta time: 1.9629020690917969s
+2021-04-14 11:29:02,627:<module>:INFO:EPOCH 18 finished with training loss: 9.444220542907715 | lr: 0.001 | delta time: 2.6006929874420166s
+2021-04-14 11:29:05,180:<module>:INFO:EPOCH 20 finished with training loss: 8.517693519592285 | lr: 0.001 | delta time: 2.5494630336761475s
+2021-04-14 11:29:07,305:<module>:INFO:EPOCH 22 finished with training loss: 7.553399562835693 | lr: 0.001 | delta time: 2.1213998794555664s
+2021-04-14 11:29:09,433:<module>:INFO:EPOCH 24 finished with training loss: 6.719028472900391 | lr: 0.001 | delta time: 2.123867988586426s
+2021-04-14 11:29:11,425:<module>:INFO:EPOCH 26 finished with training loss: 5.951636791229248 | lr: 0.001 | delta time: 1.987281084060669s
+2021-04-14 11:29:13,433:<module>:INFO:EPOCH 28 finished with training loss: 5.3579254150390625 | lr: 0.001 | delta time: 2.0038089752197266s
+2021-04-14 11:29:15,790:<module>:INFO:EPOCH 30 finished with training loss: 4.864563465118408 | lr: 0.001 | delta time: 2.3539960384368896s
+2021-04-14 11:29:18,077:<module>:INFO:EPOCH 32 finished with training loss: 4.43376350402832 | lr: 0.001 | delta time: 2.282914876937866s
+2021-04-14 11:29:20,474:<module>:INFO:EPOCH 34 finished with training loss: 4.093356609344482 | lr: 0.001 | delta time: 2.393437147140503s
+2021-04-14 11:29:23,016:<module>:INFO:EPOCH 36 finished with training loss: 3.8602285385131836 | lr: 0.001 | delta time: 2.538771867752075s
+2021-04-14 11:29:25,475:<module>:INFO:EPOCH 38 finished with training loss: 3.705493688583374 | lr: 0.001 | delta time: 2.4547479152679443s
+2021-04-14 11:29:28,223:<module>:INFO:EPOCH 40 finished with training loss: 3.607553482055664 | lr: 0.001 | delta time: 2.7446610927581787s
+2021-04-14 11:29:30,928:<module>:INFO:EPOCH 42 finished with training loss: 3.5406808853149414 | lr: 0.001 | delta time: 2.7017276287078857s
+2021-04-14 11:29:33,805:<module>:INFO:EPOCH 44 finished with training loss: 3.4884209632873535 | lr: 0.001 | delta time: 2.873264789581299s
+2021-04-14 11:29:36,880:<module>:INFO:EPOCH 46 finished with training loss: 3.4472546577453613 | lr: 0.001 | delta time: 3.071709156036377s
+2021-04-14 11:29:40,059:<module>:INFO:EPOCH 48 finished with training loss: 3.4132697582244873 | lr: 0.001 | delta time: 3.174501895904541s
+2021-04-14 11:29:43,883:<module>:INFO:EPOCH 50 finished with training loss: 3.3809561729431152 | lr: 0.001 | delta time: 3.8163719177246094s
+2021-04-14 11:29:48,107:<module>:INFO:EPOCH 52 finished with training loss: 3.349376678466797 | lr: 0.001 | delta time: 4.219803810119629s
+2021-04-14 11:29:52,555:<module>:INFO:EPOCH 54 finished with training loss: 3.317727565765381 | lr: 0.001 | delta time: 4.443955898284912s
+2021-04-14 11:29:57,390:<module>:INFO:EPOCH 56 finished with training loss: 3.28427791595459 | lr: 0.001 | delta time: 4.831120252609253s
+2021-04-14 11:30:02,423:<module>:INFO:EPOCH 58 finished with training loss: 3.2477688789367676 | lr: 0.001 | delta time: 5.029491186141968s
+2021-04-14 11:30:07,801:<module>:INFO:EPOCH 60 finished with training loss: 3.2066638469696045 | lr: 0.001 | delta time: 5.374395132064819s
+2021-04-14 11:30:13,531:<module>:INFO:EPOCH 62 finished with training loss: 3.159640312194824 | lr: 0.001 | delta time: 5.7266011238098145s
+2021-04-14 11:30:19,543:<module>:INFO:EPOCH 64 finished with training loss: 3.1055216789245605 | lr: 0.001 | delta time: 6.008838176727295s
+2021-04-14 11:30:26,523:<module>:INFO:EPOCH 66 finished with training loss: 3.0435280799865723 | lr: 0.001 | delta time: 6.97542405128479s
+2021-04-14 11:30:33,800:<module>:INFO:EPOCH 68 finished with training loss: 2.973264455795288 | lr: 0.001 | delta time: 7.273335933685303s
+2021-04-14 11:30:41,175:<module>:INFO:EPOCH 70 finished with training loss: 2.894712448120117 | lr: 0.001 | delta time: 7.371706247329712s
+2021-04-14 11:30:48,585:<module>:INFO:EPOCH 72 finished with training loss: 2.8082008361816406 | lr: 0.001 | delta time: 7.405935049057007s
+2021-04-14 11:30:56,329:<module>:INFO:EPOCH 74 finished with training loss: 2.714517116546631 | lr: 0.001 | delta time: 7.740169048309326s
+2021-04-14 11:31:05,620:<module>:INFO:EPOCH 76 finished with training loss: 2.6147942543029785 | lr: 0.001 | delta time: 9.287482976913452s
+2021-04-14 11:31:15,952:<module>:INFO:EPOCH 78 finished with training loss: 2.510183572769165 | lr: 0.001 | delta time: 10.328196048736572s
+2021-04-14 11:31:27,514:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-14 11:31:27,516:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-14 11:31:27,516:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-14 11:31:27,534:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-14 11:31:27,534:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7
+2021-04-14 11:31:27,535:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+
+2021-04-14 11:31:41,570:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-14 11:31:41,573:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-14 11:31:41,573:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-14 11:31:41,594:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-14 11:31:41,594:__init__:INFO:     lookahead: 2 | tau: 1 | k: 7
+2021-04-14 11:31:41,594:__init__:INFO:     size of histories: torch.Size([982, 7, 1]) | size of futures: torch.Size([982, 3, 1])
+
+2021-04-14 11:31:41,614:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-14 11:31:41,614:__init__:INFO:     lookahead: 2 | tau: 1 | k: 7
+2021-04-14 11:31:41,614:__init__:INFO:     size of histories: torch.Size([982, 7, 1]) | size of futures: torch.Size([982, 3, 1])
+
+2021-04-14 11:31:41,614:<module>:INFO:
+STARTING TO TRAIN MODEL
+2021-04-14 11:31:41,614:<module>:INFO:EPOCHS : 200 | lr: 0.001 | batchsize: 300 | lookahead: 2 | iterations: 3 | #trainable parameters: 124198
+2021-04-14 11:31:47,611:<module>:INFO:EPOCH 0 finished with training loss: 2.456190824508667 | lr: 0.001 | delta time: 5.997282266616821s
+2021-04-14 11:31:59,063:<module>:INFO:EPOCH 2 finished with training loss: 2.345949411392212 | lr: 0.001 | delta time: 11.446274995803833s
+2021-04-14 11:32:11,448:<module>:INFO:EPOCH 4 finished with training loss: 2.2329649925231934 | lr: 0.001 | delta time: 12.379153966903687s
+2021-04-14 11:32:23,428:<module>:INFO:EPOCH 6 finished with training loss: 2.1185998916625977 | lr: 0.001 | delta time: 11.972701072692871s
+2021-04-14 11:32:34,931:<module>:INFO:EPOCH 8 finished with training loss: 2.004302740097046 | lr: 0.001 | delta time: 11.498607873916626s
+2021-04-14 11:32:44,388:<module>:INFO:EPOCH 10 finished with training loss: 1.891406536102295 | lr: 0.001 | delta time: 9.451681852340698s
+2021-04-14 11:32:53,341:<module>:INFO:EPOCH 12 finished with training loss: 1.7811975479125977 | lr: 0.001 | delta time: 8.949007034301758s
+2021-04-14 11:33:05,340:<module>:INFO:EPOCH 14 finished with training loss: 1.674967885017395 | lr: 0.001 | delta time: 11.992733240127563s
+2021-04-14 11:33:16,591:<module>:INFO:EPOCH 16 finished with training loss: 1.5739295482635498 | lr: 0.001 | delta time: 11.246213912963867s
+2021-04-14 11:33:30,094:<module>:INFO:EPOCH 18 finished with training loss: 1.4789303541183472 | lr: 0.001 | delta time: 13.498719930648804s
+2021-04-14 11:33:41,353:<module>:INFO:EPOCH 20 finished with training loss: 1.3905259370803833 | lr: 0.001 | delta time: 11.25344204902649s
+2021-04-14 11:33:53,412:<module>:INFO:EPOCH 22 finished with training loss: 1.3088616132736206 | lr: 0.001 | delta time: 12.055680990219116s
+2021-04-14 11:34:04,253:<module>:INFO:EPOCH 24 finished with training loss: 1.2339386940002441 | lr: 0.001 | delta time: 10.835854053497314s
+2021-04-14 11:34:15,902:<module>:INFO:EPOCH 26 finished with training loss: 1.1656792163848877 | lr: 0.001 | delta time: 11.643637895584106s
+2021-04-14 11:34:28,479:<module>:INFO:EPOCH 28 finished with training loss: 1.1037120819091797 | lr: 0.001 | delta time: 12.570868968963623s
+2021-04-14 11:34:43,388:<module>:INFO:EPOCH 30 finished with training loss: 1.0474966764450073 | lr: 0.001 | delta time: 14.90225100517273s
+2021-04-14 11:34:54,574:<module>:INFO:EPOCH 32 finished with training loss: 0.9964560270309448 | lr: 0.001 | delta time: 11.180485725402832s
+2021-04-14 11:35:06,218:<module>:INFO:EPOCH 34 finished with training loss: 0.9500730037689209 | lr: 0.001 | delta time: 11.640263319015503s
+2021-04-14 11:35:18,534:<module>:INFO:EPOCH 36 finished with training loss: 0.907767117023468 | lr: 0.001 | delta time: 12.311489582061768s
+2021-04-14 11:35:28,392:<module>:INFO:EPOCH 38 finished with training loss: 0.869209885597229 | lr: 0.001 | delta time: 9.850603818893433s
+2021-04-14 11:35:41,057:<module>:INFO:EPOCH 40 finished with training loss: 0.8338257074356079 | lr: 0.001 | delta time: 12.657119989395142s
+2021-04-14 11:35:52,709:<module>:INFO:EPOCH 42 finished with training loss: 0.8011792898178101 | lr: 0.001 | delta time: 11.641924142837524s
+2021-04-14 11:36:05,503:<module>:INFO:EPOCH 44 finished with training loss: 0.77129727602005 | lr: 0.001 | delta time: 12.788450002670288s
+2021-04-14 11:36:14,577:<module>:INFO:EPOCH 46 finished with training loss: 0.7441489696502686 | lr: 0.001 | delta time: 9.069695949554443s
+2021-04-14 11:36:23,014:<module>:INFO:EPOCH 48 finished with training loss: 0.7197201251983643 | lr: 0.001 | delta time: 8.42988395690918s
+2021-04-14 11:36:32,890:<module>:INFO:EPOCH 50 finished with training loss: 0.6949659585952759 | lr: 0.001 | delta time: 9.871690034866333s
+2021-04-14 11:36:41,415:<module>:INFO:EPOCH 52 finished with training loss: 0.6733716130256653 | lr: 0.001 | delta time: 8.519899129867554s
+2021-04-14 11:36:49,349:<module>:INFO:EPOCH 54 finished with training loss: 0.6577329635620117 | lr: 0.001 | delta time: 7.930660247802734s
+2021-04-14 11:36:57,398:<module>:INFO:EPOCH 56 finished with training loss: 0.6432127952575684 | lr: 0.001 | delta time: 8.045564889907837s
+2021-04-14 11:37:05,928:<module>:INFO:EPOCH 58 finished with training loss: 0.6283708810806274 | lr: 0.001 | delta time: 8.5258469581604s
+2021-04-15 18:54:58,120:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:54:58,122:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:54:58,122:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:55:57,920:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:55:57,922:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:55:57,922:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:56:46,686:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:56:46,688:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:56:46,688:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:56:46,706:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-15 18:56:46,706:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value
+2021-04-15 18:56:46,706:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+
+2021-04-15 18:57:12,764:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:57:12,766:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:57:12,766:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:57:12,787:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-15 18:57:12,788:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value 17.243309020996094
+2021-04-15 18:57:12,788:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+
+2021-04-15 18:57:46,950:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:57:46,951:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:57:46,952:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:57:46,969:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-15 18:57:46,969:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value 17.243309020996094
+2021-04-15 18:57:46,969:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+
+2021-04-15 18:58:53,393:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 18:58:53,395:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 18:58:53,396:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 18:58:53,414:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-15 18:58:53,414:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value 17.243309020996094
+2021-04-15 18:58:53,415:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+
+2021-04-15 19:45:03,375:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-15 19:45:03,377:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-15 19:45:03,377:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-15 19:45:03,406:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-15 19:45:03,406:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value 17.243309020996094
+2021-04-15 19:45:03,406:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
+

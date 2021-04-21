@@ -33,7 +33,6 @@ class CreationRNN(nn.Module):
     """
     GRU class for encoding and decoding
     """
-
     def __init__(self, input_dim, hidden_dim, num_layers, output_dim, nbatch):
         super(CreationRNN, self).__init__()
         self.num_layers = num_layers
@@ -44,7 +43,6 @@ class CreationRNN(nn.Module):
 
     def init_hidden(self):
         return torch.zeros(self.num_layers, self.nbatch, self.hidden_dim)  # used to set hidden vector to zeros
-
 
     def forward(self, x, hid):
         #skip = x

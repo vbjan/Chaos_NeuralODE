@@ -60,9 +60,9 @@ if __name__ == "__main__":
     logging.getLogger('').addHandler(console)
 
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    dddtest_data_dir = project_dir + "/IdentifyIC/Data3D0.01/test/data.h5"
-    dddtrain_data_dir = project_dir + "/IdentifyIC/Data3D0.01/train/data.h5"
-    dddval_data_dir = project_dir + "/IdentifyIC/Data3D0.01/val/data.h5"
+    dddtest_data_dir = project_dir + "/data/Data3D0.01/test/data.h5"
+    dddtrain_data_dir = project_dir + "/data/Data3D0.01/train/data.h5"
+    dddval_data_dir = project_dir + "/data/Data3D0.01/val/data.h5"
     figures_dir = project_dir + "/IdentifyIC/figures"
     model_dir = project_dir + '/IdentifyIC/models/3DLorenzmodel'
     ddd_model_dir = project_dir + '/IdentifyIC/models/3Dmodel/3DLorenzmodel'

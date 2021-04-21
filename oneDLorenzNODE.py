@@ -46,12 +46,12 @@ class Net(nn.Module):
         #self.acti = nn.Tanh()
         self.acti = nn.LeakyReLU()
         self.layer1 = nn.Linear(self.io_dim, hidden_dim)
-        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self,t , x):
         x = self.acti(self.layer1(x))
-        x = self.acti(self.layer2(x))
+        #x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
 
@@ -130,9 +130,9 @@ if __name__ == "__main__":
 
     # directory settings
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    test_data_dir = project_dir + "/1D_lorenz_prediction/Data1D0.005/test/data.h5"
-    train_data_dir = project_dir + "/1D_lorenz_prediction/Data1D0.005/train/data.h5"
-    val_data_dir = project_dir + "/1D_lorenz_prediction/Data1D0.005/val/data.h5"
+    test_data_dir = project_dir + "/data/Data1D0.005/test/data.h5"
+    train_data_dir = project_dir + "/data/Data1D0.005/train/data.h5"
+    val_data_dir = project_dir + "/data/Data1D0.005/val/data.h5"
     figures_dir = project_dir + "/1D_lorenz_prediction/figures"
     model_dir = project_dir + '/1D_lorenz_prediction/models/3DLorenzmodel'
 
@@ -150,12 +150,11 @@ if __name__ == "__main__":
 
     # Settings
     TRAIN_MODEL = False
-    LOAD_THEN_TRAIN = True
+    LOAD_THEN_TRAIN = False
     EPOCHS = 200
     LR = 0.001
     rnn_hidden_dim = 200
-    rnn_num_layers = 2
-    augmented_dim = 2
+    rnn_num_layers = 1
 
     # Construct model
     encoder_rnn = CreationRNN(
@@ -166,20 +165,17 @@ if __name__ == "__main__":
                             nbatch=batch_size
                             )
     f = Net(latent_dim=latent_dim, hidden_dim=256)
-    decoder = Decoder(latent_dim=latent_dim, hidden_dim=20)
     logging.info(encoder_rnn)
     logging.info(f)
 
-    train_batch_y = torch.zeros((batch_size, augmented_dim), requires_grad=True)
-    param_train_batch_y = [train_batch_y]
 
     params = list(f.parameters()) + list(encoder_rnn.parameters())
     optimizer = optim.Adam(params, lr=LR)
 
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
-            #load_optimizer(model_dir, optimizer)
-            load_models(model_dir, f, encoder_rnn, decoder)
+            load_optimizer(model_dir, optimizer)
+            load_models(model_dir, f, encoder_rnn)
 
         train_dataset = DDDLorenzData(train_data_dir, lookahead=lookahead, tau=tau, k=k, n_groups=n_groups, dim=1)
         train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False, drop_last=True)
@@ -223,7 +219,6 @@ if __name__ == "__main__":
                         U_t[j, n, :] = out[j+n, :, :].view(-1)
 
                 x_t = future_Xs[:-lookahead, :, :]
-
                 x_t_hat = U_t_hat[:, :, 0].view(-1, lookahead+1, 1)
 
                 #print("U_t: ", U_t.size())
@@ -234,7 +229,7 @@ if __name__ == "__main__":
                 train_losses.append(loss)
                 loss.backward()
                 optimizer.step()
-                break
+                #break
 
             if EPOCH % 2 == 0:
                 time_for_epochs = time.time() - now
@@ -249,18 +244,18 @@ if __name__ == "__main__":
 
                 logging.info("EPOCH {} finished with training loss: {} | lr: {} | delta time: {}s"
                       .format(EPOCH, loss, get_lr(optimizer), time_for_epochs))
-                save_models(model_dir, f, encoder_rnn, decoder)
+                save_models(model_dir, f, encoder_rnn)
                 save_optimizer(model_dir, optimizer)
                 now = time.time()
 
         print("TRAINING IS FINISHED")
-        save_models(model_dir, f, encoder_rnn, decoder)
+        save_models(model_dir, f, encoder_rnn)
         save_optimizer(model_dir, optimizer)
         plt.plot(np.log(train_losses)), plt.show()
         #print("out.size: {}, U_pred.size: {}, U_t_hat.size: {}, U_t.size: {}".format(out.size(), U_pred.size(), U_t_hat.size(), U_t.size()))
         #print("x_t: {}, U_t[0]: {}, U_t: {}, U_t_hat: {}".format(x_t.size(), U_pred[:-2, 0, :].view(-1, lookahead+1, 1).size(), U_t.size(), U_t_hat.size() ))
     else:
-        load_models(model_dir, f, encoder_rnn, decoder)
+        load_models(model_dir, f, encoder_rnn)
         load_optimizer(model_dir, optimizer)
 
     with torch.no_grad():
