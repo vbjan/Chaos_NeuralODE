@@ -451,3 +451,222 @@
 2021-04-09 15:43:58,276:__init__:INFO:   lookahead: 50 | tau: 1 | k: 8
 2021-04-09 15:43:58,276:__init__:INFO:size of histories: torch.Size([933, 8, 3]) | size of futures: torch.Size([933, 51, 3])
 
+2021-04-28 15:17:23,875:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:17:23,876:__init__:INFO:     lookahead: 50 | tau: 1 | k: 8
+2021-04-28 15:17:23,876:__init__:INFO:     size of histories: torch.Size([232, 8, 3]) | size of futures: torch.Size([232, 51, 3])
+
+2021-04-28 15:17:25,869:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:17:25,869:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:17:41,884:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:17:41,884:__init__:INFO:     lookahead: 50 | tau: 1 | k: 8
+2021-04-28 15:17:41,884:__init__:INFO:     size of histories: torch.Size([232, 8, 3]) | size of futures: torch.Size([232, 51, 3])
+
+2021-04-28 15:17:44,530:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:17:44,530:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:19:00,330:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:19:00,330:__init__:INFO:     lookahead: 50 | tau: 1 | k: 8
+2021-04-28 15:19:00,330:__init__:INFO:     size of histories: torch.Size([232, 8, 3]) | size of futures: torch.Size([232, 51, 3])
+
+2021-04-28 15:19:20,147:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:19:20,147:__init__:INFO:     lookahead: 50 | tau: 1 | k: 8
+2021-04-28 15:19:20,148:__init__:INFO:     size of histories: torch.Size([232, 8, 3]) | size of futures: torch.Size([232, 51, 3])
+
+2021-04-28 15:19:21,462:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:19:21,463:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:19:57,954:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:19:57,954:__init__:INFO:     lookahead: 50 | tau: 1 | k: 8
+2021-04-28 15:19:57,954:__init__:INFO:     size of histories: torch.Size([232, 8, 3]) | size of futures: torch.Size([232, 51, 3])
+
+2021-04-28 15:19:59,030:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:19:59,031:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:21:05,656:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:21:05,656:__init__:INFO:     lookahead: 200 | tau: 1 | k: 8
+2021-04-28 15:21:05,656:__init__:INFO:     size of histories: torch.Size([82, 8, 3]) | size of futures: torch.Size([82, 201, 3])
+
+2021-04-28 15:21:14,748:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:21:14,748:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:21:14,825:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:21:14,825:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:23:36,606:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:23:36,607:__init__:INFO:     lookahead: 200 | tau: 1 | k: 8
+2021-04-28 15:23:36,607:__init__:INFO:     size of histories: torch.Size([82, 8, 3]) | size of futures: torch.Size([82, 201, 3])
+
+2021-04-28 15:24:26,587:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:24:26,587:__init__:INFO:     lookahead: 200 | tau: 1 | k: 8
+2021-04-28 15:24:26,587:__init__:INFO:     size of histories: torch.Size([82, 8, 3]) | size of futures: torch.Size([82, 201, 3])
+
+2021-04-28 15:24:54,804:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:24:54,804:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:24:54,804:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:25:06,722:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:25:06,722:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:25:06,723:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:25:38,373:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:25:38,374:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:25:38,374:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:26:13,224:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:26:13,224:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:26:13,224:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:26:18,139:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:26:18,139:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:26:18,179:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:26:18,180:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:26:43,153:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:26:43,153:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:26:43,153:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:26:47,939:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:26:47,939:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:26:57,713:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:26:57,713:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:26:57,713:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:27:18,846:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:27:18,846:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:27:18,846:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:27:35,485:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:27:35,485:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:27:35,485:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:27:58,388:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:27:58,388:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:27:58,388:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:28:12,785:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:28:12,785:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:28:12,785:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:28:18,194:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:28:18,194:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:28:18,194:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:28:22,918:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:28:22,918:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:29:33,004:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:29:33,004:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:29:33,004:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:30:26,107:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:30:26,107:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:30:26,107:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:30:26,848:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:30:26,848:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:30:26,889:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:30:26,890:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:30:40,408:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:30:40,408:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:30:40,408:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:31:27,561:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:31:27,562:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:31:27,562:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:31:32,768:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:31:32,769:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:31:48,715:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:31:48,715:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:31:48,715:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:31:53,604:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:31:53,604:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:31:53,987:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:31:53,987:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:32:22,159:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:32:22,159:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:32:22,159:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:32:27,231:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:32:27,231:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:33:59,846:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:33:59,846:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:33:59,846:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:34:04,659:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:34:04,659:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:34:12,836:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:34:12,836:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:34:12,836:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:34:26,503:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:34:26,503:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:34:26,503:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:38:49,303:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:38:49,303:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:38:49,303:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:39:06,785:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:39:06,785:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:39:06,785:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:39:11,623:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:39:11,623:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:39:17,853:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:39:17,853:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:39:17,853:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:39:22,465:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:39:22,466:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:39:26,916:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:39:26,917:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:39:26,917:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:39:31,908:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:39:31,908:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:39:45,291:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:39:45,291:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:39:45,292:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:39:49,946:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:39:49,946:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:39:55,492:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:39:55,493:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:39:55,493:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-04-28 15:40:00,148:z1test:WARNING:Warning: data is probably oversampled.
+2021-04-28 15:40:00,148:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-04-28 15:40:06,094:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:40:06,094:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-04-28 15:40:06,094:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+

@@ -130,9 +130,9 @@ if __name__ == "__main__":
 
     # directory settings
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    test_data_dir = project_dir + "/data/Data1D0.005/test/data.h5"
-    train_data_dir = project_dir + "/data/Data1D0.005/train/data.h5"
-    val_data_dir = project_dir + "/data/Data1D0.005/val/data.h5"
+    test_data_dir = project_dir + "/data/Data3D0.01/test/data.h5"
+    train_data_dir = project_dir + "/data/Data3D0.01/train/data.h5"
+    val_data_dir = project_dir + "/data/Data3D0.01/val/data.h5"
     figures_dir = project_dir + "/1D_lorenz_prediction/figures"
     model_dir = project_dir + '/1D_lorenz_prediction/models/3DLorenzmodel'
 
@@ -146,6 +146,7 @@ if __name__ == "__main__":
     force = 0.1
     n_groups = 1
     batch_size = 300
+    max_len = 400
     t = torch.from_numpy(np.arange(0, (1 + lookahead) * dt, dt))
 
     # Settings
@@ -177,10 +178,10 @@ if __name__ == "__main__":
             load_optimizer(model_dir, optimizer)
             load_models(model_dir, f, encoder_rnn)
 
-        train_dataset = DDDLorenzData(train_data_dir, lookahead=lookahead, tau=tau, k=k, n_groups=n_groups, dim=1)
+        train_dataset = DDDLorenzData(train_data_dir, lookahead=lookahead, tau=tau, k=k, n_groups=n_groups, dim=1, max_len=max_len)
         train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False, drop_last=True)
 
-        val_dataset = DDDLorenzData(val_data_dir, lookahead=lookahead, tau=tau, k=k, n_groups=n_groups, dim=1)
+        val_dataset = DDDLorenzData(val_data_dir, lookahead=lookahead, tau=tau, k=k, n_groups=n_groups, dim=1, max_len=max_len)
         val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, drop_last=True)
 
         val_losses = []
@@ -262,7 +263,7 @@ if __name__ == "__main__":
 
         # create and plot the testing trajectory
         N = 100
-        test_dataset = DDDLorenzData(test_data_dir, lookahead=N, tau=tau, k=k, dim=1)
+        test_dataset = DDDLorenzData(test_data_dir, lookahead=N, tau=tau, k=k, dim=1, max_len=max_len)
         test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
         test_history_Xs, testX_future = next(iter(test_dataloader))
 

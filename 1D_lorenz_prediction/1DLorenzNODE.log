@@ -8318,3 +8318,68 @@ Constructed 3D Lorenz dataset with:
 2021-04-15 19:45:03,406:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7 | max_value 17.243309020996094
 2021-04-15 19:45:03,406:__init__:INFO:     size of histories: torch.Size([884, 7, 1]) | size of futures: torch.Size([884, 101, 1])
 
+2021-04-28 15:08:17,928:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-28 15:08:17,931:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-28 15:08:17,931:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-28 15:09:14,786:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-28 15:09:14,788:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-28 15:09:14,788:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-28 15:09:30,848:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-28 15:09:30,850:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-28 15:09:30,850:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-28 15:15:23,777:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-28 15:15:23,778:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-28 15:15:23,779:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-28 15:15:58,139:<module>:INFO:
+ ----------------------- Starting of new script ----------------------- 
+
+2021-04-28 15:15:58,141:<module>:INFO:CreationRNN(
+  (rnn): GRU(1, 200, batch_first=True)
+  (o2o): Linear(in_features=200, out_features=3, bias=True)
+)
+2021-04-28 15:15:58,141:<module>:INFO:Net(
+  (acti): LeakyReLU(negative_slope=0.01)
+  (layer1): Linear(in_features=3, out_features=256, bias=True)
+  (layer3): Linear(in_features=256, out_features=3, bias=True)
+)
+2021-04-28 15:15:58,152:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-04-28 15:15:58,152:__init__:INFO:     lookahead: 100 | tau: 1 | k: 7
+2021-04-28 15:15:58,152:__init__:INFO:     size of histories: torch.Size([283, 7, 1]) | size of futures: torch.Size([283, 101, 1])
+

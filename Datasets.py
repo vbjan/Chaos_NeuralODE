@@ -1,5 +1,11 @@
-import logging
+"""
+    Created by: Jan-Philipp von Bassewitz, CSE-lab, ETH Zurich
+    pytorch data sets of:
+        - Lorenz system
+        - Van der Pol oscillator
+"""
 
+import logging
 import torch
 from torch.utils.data import Dataset
 
@@ -67,7 +73,7 @@ class DDDLorenzData(Dataset):
         return self.n_samples
 
 
-class VanDePol(Dataset):
+class VanDerPol(Dataset):
     """
         Van de Pol Oscilator dataset:
             data_dir:       string      -> directory to load .h5 data from
@@ -78,13 +84,13 @@ class VanDePol(Dataset):
             normalize:      bool        -> specifies wether to normalize data
     """
     def __init__(self, data_dir, lookahead, tau, k, max_len, normalize=False):
-        super(VanDePol, self).__init__()
+        super(VanDerPol, self).__init__()
         self.data_dir = data_dir
         self.lookahead = lookahead
         self.tau = tau
         self.k = k
         self.max_len = max_len
-        self.data_dim = 2
+        self.data_dim = 3
 
         # load simulated data
         self.traj = torch.load(self.data_dir)

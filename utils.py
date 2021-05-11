@@ -1,7 +1,6 @@
-'''
-TODO:
-
-'''
+"""
+    Created by: Jan-Philipp von Bassewitz, CSE-lab, ETH Zurich
+"""
 import torch.nn as nn
 import torch
 import logging
@@ -219,28 +218,5 @@ def z1test(x, show_warnings=True, plotting=False):
     return np.median(kcorr)
 
 
-def func(x, y):
-    return - x - y + 25
 
 
-if __name__ == "__main__":
-    """
-    Using pytorch for some basic optimization 
-    """
-    x = [torch.randn(2, dtype=torch.float, requires_grad=True)]
-    print(x)
-
-    optimizer = torch.optim.Adam(list(x), lr=0.1)
-    losses = []
-
-    for EPOCH in range(1000):
-        optimizer.zero_grad()
-        loss = abs(func(x[0][0], x[0][1]))
-        losses.append(float(loss))
-        loss.backward()
-        optimizer.step()
-
-    plt.plot(losses)
-    plt.show()
-
-    print(x)

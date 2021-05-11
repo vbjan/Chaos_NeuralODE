@@ -1,7 +1,9 @@
 '''
 Version 2.0 by Jan-Philipp von Bassewitz
-TODO:
-    -
+
+    Learning effective Neural ODE dynamics with partial state observations:
+        - Infer entire state from history of one component with GRU
+        - Couple NODE of Lorenz system with GRU to predict future of that component
 '''
 
 import numpy as np
@@ -60,18 +62,20 @@ if __name__ == "__main__":
     logging.getLogger('').addHandler(console)
 
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    dddtest_data_dir = project_dir + "/data/Data3D0.01/test/data.h5"
-    dddtrain_data_dir = project_dir + "/data/Data3D0.01/train/data.h5"
-    dddval_data_dir = project_dir + "/data/Data3D0.01/val/data.h5"
+    dddtest_data_dir = project_dir + "/data/Data3D0.1/test/data.h5"
+    dddtrain_data_dir = project_dir + "/data/Data3D0.1/train/data.h5"
+    dddval_data_dir = project_dir + "/data/Data3D0.1/val/data.h5"
     figures_dir = project_dir + "/IdentifyIC/figures"
     model_dir = project_dir + '/IdentifyIC/models/3DLorenzmodel'
     ddd_model_dir = project_dir + '/IdentifyIC/models/3Dmodel/3DLorenzmodel'
 
-    dt = 0.01  # read out from simulation script
+    dt_data = 0.1
+    dt = dt_data/10  # read out from simulation script
     k = 8
     tau = 1
     latent_dim = 3
     lookahead = 0
+    max_len = 300
     batch_size = 200
     t = torch.from_numpy(np.arange(0, (1 + lookahead) * dt, dt))
 
@@ -100,10 +104,10 @@ if __name__ == "__main__":
 
     if TRAIN_MODEL:
 
-        train_dataset = DDDLorenzData(dddtrain_data_dir, lookahead=lookahead, tau=tau, k=8)
+        train_dataset = DDDLorenzData(dddtrain_data_dir, lookahead=lookahead, tau=tau, k=8, max_len=max_len)
         train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
-        val_dataset = DDDLorenzData(dddval_data_dir, lookahead, tau, k)
+        val_dataset = DDDLorenzData(dddval_data_dir, lookahead, tau, k, max_len=max_len)
         val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
         train_losses = []
@@ -157,8 +161,8 @@ if __name__ == "__main__":
     with torch.no_grad():
 
         # create and plot the testing trajectory
-        N = 50
-        test_dataset = DDDLorenzData(dddtest_data_dir, lookahead=N, tau=tau, k=k)
+        N = 100
+        test_dataset = DDDLorenzData(dddtest_data_dir, lookahead=N, tau=tau, k=k, max_len=max_len)
         test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
         testU_history, testU_future = next(iter(test_dataloader))
 
@@ -167,8 +171,8 @@ if __name__ == "__main__":
         logging.debug("testU_history: {}, testu_future: {}".format(testU_history.size(), testU_future.size()))
         testx_history = testU_history[:, :, 0].view(1, k, 1)
         testx_future = testU_future[:, :, 0].view(1, -1, 1)
-        t_history = np.linspace(0, tau*dt*k, k)
-        t_future = np.linspace(tau*dt*k, dt*(k+N+1), N+1)
+        t_history = np.linspace(0, tau*dt_data*k, k)
+        t_future = np.linspace(tau*dt_data*k, dt_data*(k+N+1), N+1)
         plt.figure()
         plt.plot(t_history, testx_history.view(-1), 'ro-', label="known history of x")
         plt.plot(t_future, testx_future.view(-1), 'go-', label="unknown future of x")
@@ -189,10 +193,10 @@ if __name__ == "__main__":
         logging.debug("t_future: {}".format(t_future.shape))
 
         plt.plot(t_future, ex_traj[:, 0], 'k', label='Prediction of x')
-        plt.plot(tau*k*dt, out[:, :, 0].detach().float(), 'cx', label='inferred point')
-        plt.title("Partially Observed Lorenz Prediction")
+        plt.plot(tau*k*dt_data, out[:, :, 0].detach().float(), 'cx', label='inferred point')
+        #plt.title("Partially Observed Lorenz Prediction")
         plt.xlabel('time t')
-        plt.ylabel('x-component of Lorenz system')
+        plt.ylabel('x component')
         plt.legend(), plt.show()
 
         print("0-1 test of | real x: {} | learnt x: {}".format(z1test(testx_future.view(-1).numpy()),

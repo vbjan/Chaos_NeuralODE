@@ -1,18 +1,21 @@
-'''
-
+"""
+    Created by: Jan-Philipp von Bassewitz, CSE-lab, ETH Zurich
+    Learning effective NODE dynamics with and without prior knowledge
     Version: 13
+
     TODO:
-        - catching data problems in trainer
+        - Clearer settings area
 
     Learnings:
         - ANODE becomes unstable for chaotic systems. Penalty by putting augmented dimensions in loss function,
         creates periodic behavior.
-'''
+"""
 
 import numpy as np
 import h5py
 import time
 import matplotlib.pyplot as plt
+from scipy.signal import argrelextrema
 from mpl_toolkits.mplot3d import Axes3D # <--- This is important for 3d plotting
 import torch
 import torch.nn as nn
@@ -25,7 +28,7 @@ import logging
 from utils import get_lr
 from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
 from utils import save_models, load_models, save_optimizer, load_optimizer, get_num_trainable_params
-from Datasets import DDDLorenzData, VanDePol
+from Datasets import DDDLorenzData, VanDerPol
 
 
 class Net(nn.Module):
@@ -37,7 +40,6 @@ class Net(nn.Module):
         self.io_dim = io_dim
         self.time_dependent = time_dependent
         self.acti = nn.LeakyReLU()
-        #self.acti = nn.Tanh()
 
         if self.time_dependent:
             self.layer1 = nn.Linear(self.io_dim + 1, hidden_dim)
@@ -78,13 +80,14 @@ def get_approx_k_of_model(model, val_data):
     return model_k
 
 
-# Lorenz Models:
+# Prior Lorenz Models:
 class LorenzModel(nn.Module):
     """
         Model of the real Lorenz System
     """
-    def __init__(self,sigma = 10, rho = 28, beta=8./3):
+    def __init__(self, sigma=10, rho=28, beta=8./3):
         super(LorenzModel, self).__init__()
+        #self.temp = nn.Linear(1, 1)
         self.sigma = sigma
         self.rho = rho
         self.beta = beta
@@ -103,7 +106,7 @@ class PeriodicApprox(nn.Module):
     """
     def __init__(self):
         super(PeriodicApprox, self).__init__()
-        self.temp = 0
+        #self.temp = nn.Linear(1, 1)
 
     def forward(self, t, x):
         dxdt = torch.zeros(x.size())
@@ -113,8 +116,32 @@ class PeriodicApprox(nn.Module):
         return dxdt
 
 
+# Van der Pol prior models
+class VanDerPolModel(nn.Module):
+    def __init__(self, mu=0.2, time_dependent=True):
+        super(VanDerPolModel, self).__init__()
+        self.mu = mu
+        self.temp = nn.Linear(1, 1)
+        self.time_dependent = time_dependent
+
+    def forward(self, t, x):
+        dxdt = torch.zeros(x.size())
+        dxdt[:, 0] = x[:, 1]
+        if self.time_dependent:
+            dxdt[:, 1] = -x[:, 0] + self.mu * (x[:, 1] - x[:, 0] ** 2 * x[:, 1]) + 0.32 * torch.sin(1.15 * x[:, 2])
+            dxdt[:, 2] = 1
+        else:
+            dxdt[:, 1] = -x[:, 0] + self.mu * (x[:, 1] - x[:, 0] ** 2 * x[:, 1])
+            dxdt[:, 2] = 0
+        return dxdt
+
+
+# knowledge based ODEnets:
 class KnowledgeModel(nn.Module):
-    def __init__(self, hidden_dim, known_model, io_dim):
+    """
+        Embedded knowledge based model
+    """
+    def __init__(self, hidden_dim, known_model, io_dim=3):
         super().__init__()       # Run init of parent class
         self.acti = nn.LeakyReLU()
         self.io_dim = io_dim
@@ -129,30 +156,38 @@ class KnowledgeModel(nn.Module):
         x_net = self.layer2(x_net)
 
         # prediction of known model
-        temp = torch.zeros(1)
-        x_known_model = self.known_model(temp, x)
+        x_known_model = self.known_model(t, x)
 
         x_combined = torch.cat((x_net, x_known_model), dim=1)
         x = self.layer3(x_combined)
         return x
 
 
-# Van de Pol Models
-class VanDePolModel(nn.Module):
-    def __init__(self, mu=0.2):
-        super(VanDePolModel, self).__init__()
-        self.mu = mu
-        self.temp = nn.Linear(1, 1)
+class SumKnowledgeModel(nn.Module):
+    """
+        Added knowledge based model
+    """
+    def __init__(self, hidden_dim, known_model, io_dim=3):
+        super().__init__()       # Run init of parent class
+        self.acti = nn.LeakyReLU()
+        self.io_dim = io_dim
+        self.layer1 = nn.Linear(self.io_dim, hidden_dim)
+        self.layer2 = nn.Linear(hidden_dim, self.io_dim)
+        self.known_model = known_model
 
     def forward(self, t, x):
-        dxdt = torch.zeros(x.size())
-        dxdt[:, 0] = x[:, 1]
-        dxdt[:, 1] = -x[:, 0] + self.mu * (x[:, 1] - x[:, 0] ** 2 * x[:, 1]) + 0.32 * torch.sin(1.15 * t)
-        #dxdt[:, 2] = 1
-        return dxdt
+        # prediction of NN
+        x_net = self.acti(self.layer1(x))
+        x_net = self.layer2(x_net)
+
+        # prediction of known model
+        x_known_model = self.known_model(t, x)
+
+        x = x_known_model + x_net
+        return x
 
 
-class Trainer():
+class Trainer:
     def __init__(self, model, optimizer, train_dataset, val_dataset, model_dir, epochs, batch_size, lr, shuffle=False,
                  train_on_one_batch=False):
         self.model = model
@@ -179,7 +214,7 @@ class Trainer():
         train_losses = []
         pre_val_loss = 1000000
 
-        n_iterations = int(len(self.train_dataset) / self.batch_size)
+        assert(n_iterations == int(len(self.train_dataset) / self.batch_size))
         logging.info("\nSTARTING TO TRAIN MODEL | EPOCHS : {} | lr: {} | batchsize: {} | lookahead: {}"
                      .format(self.epochs, self.lr, self.batch_size, lookahead))
         logging.info("                        | iterations: {} | #trainable parameters: {} \n"
@@ -210,7 +245,7 @@ class Trainer():
 
             # scheduler.step(val_loss)
 
-            if epoch % 2 == 0:
+            if epoch % 10 == 0:
                 time_for_epochs = int(time.time() - now)
                 logging.info("EPOCH {} finished with training loss: {} | validation loss: {} | lr: {} | delta time: {}s"
                              .format(epoch, loss, val_loss, get_lr(self.optimizer), time_for_epochs))
@@ -229,14 +264,26 @@ class Trainer():
         plt.legend(), plt.savefig(figures_dir + '/losses.png'), plt.show()
 
 
-def test_lorenz():
+# plot example testing predictions
+def test_lorenz(show_prior=False):
     # example plot of data
     x = ic_future[:, :, 0].view(-1).detach().numpy()
     y = ic_future[:, :, 1].view(-1).detach().numpy()
     z = ic_future[:, :, 2].view(-1).detach().numpy()
+
+    ex_x = ex_traj[:, 0]
+    ex_y = ex_traj[:, 1]
+    ex_z = ex_traj[:, 2]
+
+    ap_x = approx_traj[:, 0]
+    ap_y = approx_traj[:, 1]
+    ap_z = approx_traj[:, 2]
+
     ax = plt.axes(projection='3d')
     ax.plot3D(x, y, z, '-', label='Real Lorenz')
-    ax.plot3D(ex_traj[:, 0], ex_traj[:, 1], ex_traj[:, 2], '-', label="Learnt Lorenz")
+    ax.plot3D(ex_x, ex_y, ex_z, '-', label="approximate Lorenz")
+    if show_prior:
+        ax.plot3D(ap_x, ap_y, ap_z, '-', label="Prior model")
     ax.legend()
     plt.savefig(figures_dir + "/lorenz3d.png")
     plt.show()
@@ -244,8 +291,10 @@ def test_lorenz():
     data_time = np.linspace(0, N*dt, N+1)
     # compare x, y and z of real and learnt trajectory
     plt.figure()
-    plt.plot(data_time, x, '-', label='Real x')
-    plt.plot(t, ex_traj[:, 0], label='Learnt x')
+    plt.plot(data_time, x, '-', label='Real Lorenz x')
+    plt.plot(shifted_t, ex_x, label='Approximate model x')
+    if show_prior:
+        plt.plot(t, ap_x, label='Prior x')
     plt.xlabel('time t')
     plt.legend()
     plt.savefig(figures_dir + "/lorenzx.png")
@@ -253,7 +302,9 @@ def test_lorenz():
 
     plt.figure()
     plt.plot(data_time, y, '-', label='Real y')
-    plt.plot(t, ex_traj[:, 1], label='Learnt y')
+    plt.plot(shifted_t, ex_y, label='Learnt y')
+    if show_prior:
+        plt.plot(t, ap_y, label='Prior y')
     plt.xlabel('time t')
     plt.legend()
     plt.savefig(figures_dir + "/lorenzy.png")
@@ -261,10 +312,39 @@ def test_lorenz():
 
     plt.figure()
     plt.plot(data_time, z, '-', label='Real z')
-    plt.plot(t, ex_traj[:, 2], label='Learnt z')
+    plt.plot(shifted_t, ex_z, label='Learnt z')
+    if show_prior:
+        plt.plot(t, ap_z, label='Prior z')
     plt.xlabel('time t')
     plt.legend()
     plt.savefig(figures_dir + "/lorenzz.png")
+    plt.show()
+
+    # tent map
+    temp_idx = argrelextrema(z, np.greater)
+    z_max = z[temp_idx]
+    zn = z_max[:-1]
+    znplus1 = z_max[1:]
+    plt.plot(zn, znplus1, 'o', label='Real Lorenz')
+    #plt.plot(zn, zn, 'r-')
+
+    temp_idx = argrelextrema(ex_z, np.greater)
+    ex_z_max = ex_z[temp_idx]
+    ex_zn = ex_z_max[:-1]
+    ex_znplus1 = ex_z_max[1:]
+    plt.plot(ex_zn, ex_znplus1, 'o', label='Learnt Lorenz')
+
+    if show_prior:
+        temp_idx = argrelextrema(ap_z, np.greater)
+        ap_z_max = ap_z[temp_idx]
+        ap_zn = ap_z_max[:-1]
+        ap_znplus1 = ap_z_max[1:]
+        plt.plot(ap_zn, ap_znplus1, 'o', label='Prior model')
+
+    plt.xlabel('local_max(z_n)')
+    plt.ylabel('local_max(z_n+1)')
+    plt.legend()
+    plt.title('Cobweb diagram')
     plt.show()
 
     # 0-1 Test for chaos in real and learnt trajectories
@@ -273,6 +353,48 @@ def test_lorenz():
     logging.info("0-1 test of | real x: {} | learnt x: {}".format(z1test(x[::subsample]), z1test(ex_traj[::subsample, 0])))
     logging.info("            | real y: {} | learnt y: {}".format(z1test(y[::subsample]), z1test(ex_traj[::subsample, 1])))
     logging.info("            | real z: {} | learnt z: {}".format(z1test(z[::subsample]), z1test(ex_traj[::subsample, 2])))
+
+
+def test_van_der_pol(show_prior=False):
+    x = ic_future[:, :, 0].view(-1).detach().numpy()
+    y = ic_future[:, :, 1].view(-1).detach().numpy()
+
+    short_term = 100
+    plt.plot(x[:short_term], y[:short_term], '-x', label='Real')
+    plt.plot(ex_traj[:short_term, 0], ex_traj[:short_term, 1], label='Learnt')
+    if show_prior: plt.plot(approx_traj[:short_term, 0], approx_traj[:short_term, 1], label='Prior Approximation')
+    plt.title('Van der Pol oscillator: First {} steps'.format(str(short_term)))
+    plt.legend()
+    plt.show()
+
+    mid_term = 1000
+    plt.plot(x[:mid_term], y[:mid_term], '-', label='Real')
+    plt.plot(ex_traj[:mid_term, 0], ex_traj[:mid_term, 1], label='Learnt')
+    if show_prior: plt.plot(approx_traj[:mid_term, 0], approx_traj[:mid_term, 1], label='Prior Approximation')
+    plt.title('Van der Pol oscillator: First {} steps'.format(str(mid_term)))
+    plt.legend()
+    plt.show()
+
+    long_term = 10000
+    plt.plot(x[:long_term], y[:long_term], '-', label='Real')
+    plt.plot(ex_traj[:long_term, 0], ex_traj[:long_term, 1], label='Learnt')
+    if show_prior: plt.plot(approx_traj[:long_term, 0], approx_traj[:long_term, 1], label='Prior Approximation')
+    plt.title('Van der Pol oscillator: First {} steps'.format(str(long_term)))
+    plt.legend()
+    plt.xlabel('x'), plt.ylabel('y')
+    plt.show()
+
+    plt.plot(x[:long_term], label='Real')
+    # plt.plot(ex_traj[:long_term, 0], label='Learnt')
+    # if show_prior: plt.plot(approx_traj[:long_term, 0], label='Approx')
+    # plt.legend()
+    plt.show()
+
+    plt.plot(y[:long_term], label='Real')
+    plt.plot(ex_traj[:long_term, 1], label='Learnt')
+    if show_prior: plt.plot(approx_traj[:long_term, 1], label='Approx')
+    plt.legend()
+    plt.show()
 
 
 if __name__ == "__main__":
@@ -286,43 +408,45 @@ if __name__ == "__main__":
     logging.getLogger('').addHandler(console)
     logging.info("\n ----------------------- Starting of new script ----------------------- \n")
 
-    data_name = 'VanDePol'
-    #data_name = 'Lorenz'
+    # choose the system
+    #data_name = 'VanDerPol'
+    data_name = 'Lorenz'
 
     project_dir = os.path.dirname(os.path.realpath(__file__))
-    if data_name == 'VanDePol':
+    if data_name == 'VanDerPol':
         dt = 0.02
-        test_data_dir = project_dir + '/data/VanDePol/van_de_pol_test_data_nt.pt'
-        train_data_dir = project_dir + '/data/VanDePol/van_de_pol_train_data_nt.pt'
-        val_data_dir = project_dir + '/data/VanDePol/van_de_pol_val_data_nt.pt'
+        test_data_dir = project_dir + '/data/VanDerPol/van_de_pol_test_data.pt'
+        train_data_dir = project_dir + '/data/VanDerPol/van_de_pol_train_data.pt'
+        val_data_dir = project_dir + '/data/VanDerPol/van_de_pol_val_data.pt'
         model_dir = project_dir + '/van_de_pol_prediction/models/vdp'
         figures_dir = project_dir + "/van_de_pol_prediction/figures"
-        dataset = VanDePol
-        data_dim = 2
+        dataset = VanDerPol
+        data_dim = 3
 
     elif data_name == 'Lorenz':
         # directory settings
-        dt = 0.01    # read out from simulation script
+        dt = 0.1    # 0.01 or 0.1
         test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
         train_data_dir = project_dir + "/data/Data3D" + str(dt) + "/train/data.h5"
         val_data_dir = project_dir + "/data/Data3D" + str(dt) + "/val/data.h5"
         model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
-        # model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+        #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
         figures_dir = project_dir + "/3D_lorenz_prediction/figures"
         dataset = DDDLorenzData
         data_dim = 3
 
     # data settings
     lookahead = 2
-    batch_size = 500
+    batch_size = 1200
+    n_iterations = 1
+
+    max_len = (n_iterations+1) * batch_size
     t = torch.linspace(0, lookahead*dt, lookahead+1)
-    print(t)
     assert(len(t) == lookahead + 1)
-    max_len = 600
 
     # model settings
-    TRAIN_MODEL = False
-    LOAD_THEN_TRAIN = False
+    TRAIN_MODEL = True
+    LOAD_THEN_TRAIN = True
     EPOCHS = 150
     LR = 0.01
 
@@ -332,21 +456,24 @@ if __name__ == "__main__":
         sigma = mistake_factor * 10
         beta = 8./3
         rho = 28
-        #approx_model = LorenzModel(sigma, rho, beta)
+        approx_model = LorenzModel(sigma, rho, beta)
         #approx_model = PeriodicApprox()
-    elif data_name == 'VanDePol':
-        mistake_factor = 0.9
+    elif data_name == 'VanDerPol':
+        mistake_factor = 10
         mu = mistake_factor*0.2
-        approx_model = VanDePolModel(mu=mu)
+        approx_model = VanDerPolModel(mu=mu, time_dependent=True)
     approx_model.eval()
 
     # constructing NN model that learns the dynamics
-    f = Net(hidden_dim=100, io_dim=data_dim, time_dependent=False)
-    #f = VanDePolModel()
-    #f = KnowledgeModel(hidden_dim=100, known_model=approx_model, io_dim=data_dim)
+    f = Net(hidden_dim=256, io_dim=data_dim)
+    #f = LorenzModel()
+    #f = PeriodicApprox()
+    #f = VanDerPolModel(mu=0.2*0.5)
+    #f = KnowledgeModel(hidden_dim=100, io_dim=data_dim, known_model=approx_model)
+    #f = SumKnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
     logging.info(f)
-
     params = (list(f.parameters()))
+
     optimizer = optim.Adam(params, lr=LR)
     #scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=200, gamma=0.8)
     #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.5, patience=10, verbose=False, min_lr=LR/100)
@@ -354,7 +481,7 @@ if __name__ == "__main__":
     if TRAIN_MODEL:
         if LOAD_THEN_TRAIN:
             load_models(model_dir, f)
-            #load_optimizer(model_dir, optimizer)
+            load_optimizer(model_dir, optimizer)
 
         train_dataset = dataset(train_data_dir, lookahead=lookahead, tau=1, k=1, max_len=max_len)
 
@@ -370,44 +497,77 @@ if __name__ == "__main__":
             epochs=EPOCHS,
             lr=LR,
             batch_size=batch_size,
-            shuffle=True,
+            shuffle=False,
             train_on_one_batch=False
         )
         trainer.train()
 
     else:
         load_models(model_dir, f)
-        load_optimizer(model_dir, optimizer)
+        #load_optimizer(model_dir, optimizer)
+        pass
 
     with torch.no_grad():
 
-        N = 1000
+        N = 2000
         test_dataset = dataset(test_data_dir, lookahead=N, tau=1, k=1, max_len=int(1.5*N))
         test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
         ic_state, ic_future = next(iter(test_dataloader))
         ic_state = ic_state.view(1, data_dim)
-        dt_test = dt
-        N_pred = int(N*dt/dt_test)
+        dt_test = dt #/10
+        N_pred = int(N/10*dt/dt_test)*10
         t = torch.arange(0, N_pred*dt_test, dt_test)
+        shifted_t = torch.arange(0, N_pred*dt, dt)
         logging.info('Calculating test prediction...')
-        g = VanDePolModel(mu=10*0.2)
         ex_traj = np.array(odeint(f, ic_state, t).view(-1, data_dim))
+        approx_traj = np.array(odeint(approx_model, ic_state, t).view(-1, data_dim))
         logging.info('Finished test prediction...')
 
         if data_name == 'Lorenz':
-            test_lorenz()
+            test_lorenz(show_prior=False)
 
-        if data_name == 'VanDePol':
+        if data_name == 'VanDerPol':
+            #test_van_der_pol(show_prior=False)
+
             x = ic_future[:, :, 0].view(-1).detach().numpy()
             y = ic_future[:, :, 1].view(-1).detach().numpy()
 
-            plt.plot(x, y, label='Real')
-            plt.plot(ex_traj[:, 0], ex_traj[:, 1], label='Learnt')
-            plt.title('Van de Pol oscillator')
+            short_term = 100
+            plt.plot(x[:short_term], y[:short_term], '-x', label='Real')
+            plt.plot(ex_traj[:short_term, 0], ex_traj[:short_term, 1], label='Learnt')
+            plt.plot(approx_traj[:short_term, 0], approx_traj[:short_term, 1], label='Prior Approximation')
+            plt.title('Van der Pol oscillator: First {} steps'.format(str(short_term)))
             plt.legend()
             plt.show()
 
+            mid_term = 1000
+            plt.plot(x[:mid_term], y[:mid_term], '-', label='Real')
+            plt.plot(ex_traj[:mid_term, 0], ex_traj[:mid_term, 1], label='Learnt')
+            plt.plot(approx_traj[:mid_term, 0], approx_traj[:mid_term, 1], label='Prior Approximation')
+            plt.title('Van der Pol oscillator: First {} steps'.format(str(mid_term)))
+            plt.legend()
+            plt.show()
 
+            long_term = 10000
+            plt.plot(x[:long_term], y[:long_term], '-', label='Real')
+            plt.plot(ex_traj[:long_term, 0], ex_traj[:long_term, 1], label='Learnt')
+            plt.plot(approx_traj[:long_term, 0], approx_traj[:long_term, 1], label='Prior Approximation')
+            plt.title('Van der Pol oscillator: First {} steps'.format(str(long_term)))
+            plt.legend()
+            plt.xlabel('x'), plt.ylabel('y')
+            plt.show()
+
+            plt.plot(x[:long_term], label='Real')
+            #plt.plot(ex_traj[:long_term, 0], label='Learnt')
+            #plt.plot(approx_traj[:long_term, 0], label='Approx')
+            #plt.legend()
+            plt.show()
+
+            plt.plot(y[:long_term], label='Real')
+            plt.plot(ex_traj[:long_term, 1], label='Learnt')
+            plt.plot(approx_traj[:long_term, 1], label='Approx')
+            plt.legend()
+            plt.show()
 
 
     logging.info("\n REACHED END OF MAIN")
