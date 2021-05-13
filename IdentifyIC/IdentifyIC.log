@@ -670,3 +670,234 @@ Constructed 3D Lorenz dataset with:
 2021-04-28 15:40:06,094:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
 2021-04-28 15:40:06,094:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
 
+2021-05-11 15:51:59,210:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-11 15:51:59,210:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-11 15:51:59,210:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-11 15:52:05,051:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-11 15:52:05,051:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-11 15:52:17,876:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-11 15:52:17,876:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-11 15:52:17,876:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:14:54,960:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:14:54,961:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:14:54,961:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:14:59,646:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:14:59,666:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:15:55,730:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:15:55,730:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:15:55,730:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:16:00,870:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:16:01,283:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:16:01,283:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:16:14,888:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:16:14,888:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:16:14,888:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:16:19,362:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:16:19,753:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:16:19,753:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:16:59,435:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:16:59,435:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:16:59,435:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:17:04,141:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:22:13,030:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:22:13,030:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:22:13,030:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:22:17,887:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:23:18,718:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:23:18,718:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:23:18,718:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:23:23,417:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:24:26,893:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:24:26,893:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:24:26,893:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:24:31,590:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:24:32,041:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:24:32,041:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:24:41,516:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:24:41,516:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:24:41,517:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:24:46,270:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:25:04,397:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:25:04,398:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:25:04,398:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:25:08,904:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:25:09,970:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:25:09,970:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:25:49,824:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:25:49,824:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:25:49,824:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:25:54,505:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:26:10,833:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:26:10,833:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:26:10,833:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:26:15,469:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:26:15,897:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:26:15,897:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:26:15,941:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:26:15,941:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:26:35,061:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:26:35,061:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:26:35,061:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:26:39,863:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:26:40,279:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:26:40,279:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:27:04,238:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:27:04,238:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:27:04,238:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:27:08,869:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:27:38,863:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:27:38,863:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:27:38,863:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:27:43,743:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:27:57,330:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:27:57,331:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:27:57,331:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:28:01,982:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:28:16,557:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:28:16,557:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:28:16,557:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:28:21,229:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:28:54,136:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:28:54,137:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:28:54,137:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:28:58,572:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:29:08,628:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:29:08,628:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:29:08,628:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:29:13,364:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:29:14,418:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:29:14,418:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:29:14,462:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:29:14,462:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:29:23,127:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:29:23,127:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:29:23,127:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:29:27,735:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:29:40,356:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:29:40,357:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:29:40,357:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:29:45,010:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:29:45,887:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:29:45,887:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:31:21,005:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:31:21,005:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:31:21,005:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:31:25,669:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:31:26,814:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:31:26,814:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:31:26,856:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:31:26,857:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:31:54,733:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:31:54,733:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:31:54,733:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:31:59,735:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:32:00,870:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:32:00,870:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:32:06,990:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:32:06,990:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:32:06,990:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:32:11,468:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:32:12,622:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:32:12,622:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:32:35,225:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:32:35,225:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:32:35,226:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:32:39,858:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:32:40,999:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:32:40,999:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:32:45,045:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:32:45,045:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:32:45,046:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:32:49,942:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:32:55,138:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:32:55,138:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:32:55,138:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:32:59,934:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:33:01,058:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:33:01,058:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:34:22,169:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:34:22,169:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:34:22,169:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:34:26,947:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:34:28,115:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:34:28,115:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:35:38,007:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:35:38,007:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:35:38,007:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:35:43,236:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:35:44,591:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:35:44,591:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.
+2021-05-12 14:36:14,199:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:36:14,199:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:36:14,199:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:36:19,112:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:38:41,364:__init__:INFO:
+Constructed 3D Lorenz dataset with: 
+2021-05-12 14:38:41,364:__init__:INFO:     lookahead: 100 | tau: 1 | k: 8
+2021-05-12 14:38:41,364:__init__:INFO:     size of histories: torch.Size([182, 8, 3]) | size of futures: torch.Size([182, 101, 3])
+
+2021-05-12 14:38:45,998:_findfont_cached:WARNING:findfont: Font family ['normal'] not found. Falling back to DejaVu Sans.
+2021-05-12 14:38:47,297:z1test:WARNING:Warning: data is probably oversampled.
+2021-05-12 14:38:47,297:z1test:WARNING:Use coarser sampling or reduce the maximum value of c.

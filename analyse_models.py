@@ -4,9 +4,8 @@
     Analysis of trained added knowledge based models of Lorenz system
 """
 import numpy as np
-import h5py
-import time
 import matplotlib.pyplot as plt
+import matplotlib
 from scipy.signal import argrelextrema
 from mpl_toolkits.mplot3d import Axes3D # <--- This is important for 3d plotting
 import torch
@@ -40,6 +39,9 @@ def x_of_exact_lorenz(x):
 
 
 if __name__ == "__main__":
+    # set up matplotlib font size
+    font = {'size': 18}
+    matplotlib.rc('font', **font)
 
     mistake_factor = 0.5
 
@@ -70,11 +72,13 @@ if __name__ == "__main__":
     dxdt = x_of_exact_lorenz(ic_state).detach().numpy()
     comp = np.arange(-10, 10)
 
-    plt.plot(dxdt, dxdt_NODE, 'x')
-    plt.plot(comp, comp, '-')
-    plt.xlabel("Exact $dx/dt$")
+    plt.plot(dxdt, dxdt_NODE, 'x', color='orange')
+    plt.xlabel(r'$(1-\alpha)\sigma(y-x)$')
     plt.ylabel('Learnt $dx/dt$')
-    plt.savefig(fig_dir + str(mistake_factor) + 'lorenz_error_cobweb.png')
+    plt.savefig(fig_dir + str(mistake_factor) + 'lorenz_error_cobweb.png',
+                dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
     error = (dxdt_NODE-dxdt)/(1-mistake_factor)
@@ -99,18 +103,23 @@ if __name__ == "__main__":
     plt.hist(error, bins=int(nbins/10), label='Lorenz inputs')
     #plt.title('Histogram of error')
     plt.ylabel('# of observations')
-    plt.xlabel('Absolute error')
-    plt.legend()
-    plt.savefig(fig_dir + str(mistake_factor) + 'error_histogram.png')
+    plt.xlabel('Error')
+    #plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=1)
+    plt.savefig(fig_dir + str(mistake_factor) + 'error_histogram.png',
+                dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
     devil_error = np.abs(devil_error)
 
     plt.plot(devil_dxdt, devil_dxdt_NODE, 'x')
-    plt.plot(comp, comp)
-    plt.xlabel('Exact $dx/dt$')
-    plt.ylabel('Learnt $dx/dt$')
-    plt.savefig(fig_dir + str(mistake_factor) + 'random_error_cobweb.png')
+    plt.xlabel(r'$(1-\alpha)\sigma(y-x)$')
+    plt.ylabel(r'Learnt $dx/dt$')
+    plt.savefig(fig_dir + str(mistake_factor) + 'random_error_cobweb.png',
+                dpi=300,
+                format='png',
+                bbox_inches='tight')
     #plt.title('Error on non-Lorenz inputs')
     plt.show()
 
@@ -121,12 +130,15 @@ if __name__ == "__main__":
 
     f, ax = plt.subplots(1, 1, sharex=True, sharey=True)
     im = ax.tricontourf(devil_x, devil_y, devil_error, 300)  # choose 20 contour levels, just to show how good its interpolation is
-    f.colorbar(im, label='Absolute error of learnt $dx/dt$')
+    f.colorbar(im, label=r'Absolute error of learnt $dx/dt$')
     plt.plot(x, y, 'rx', label='Lorenz trajectory')
-    plt.xlabel('x-component')
-    plt.ylabel('y-component')
-    plt.legend()
-    plt.savefig(fig_dir + str(mistake_factor) + 'error_location.png')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=1)
+    plt.savefig(fig_dir + str(mistake_factor) + 'error_location.png',
+                dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
 

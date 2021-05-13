@@ -15,6 +15,7 @@ import numpy as np
 import h5py
 import time
 import matplotlib.pyplot as plt
+import matplotlib
 from scipy.signal import argrelextrema
 from mpl_toolkits.mplot3d import Axes3D # <--- This is important for 3d plotting
 import torch
@@ -46,7 +47,7 @@ class Net(nn.Module):
         else:
             self.layer1 = nn.Linear(self.io_dim, hidden_dim)
 
-        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self,t , x):
@@ -57,7 +58,7 @@ class Net(nn.Module):
         else:
             x = self.acti(self.layer1(x))
 
-        #x = self.acti(self.layer2(x))
+        x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
 
@@ -87,7 +88,7 @@ class LorenzModel(nn.Module):
     """
     def __init__(self, sigma=10, rho=28, beta=8./3):
         super(LorenzModel, self).__init__()
-        #self.temp = nn.Linear(1, 1)
+        self.temp = nn.Linear(1, 1)
         self.sigma = sigma
         self.rho = rho
         self.beta = beta
@@ -279,72 +280,94 @@ def test_lorenz(show_prior=False):
     ap_y = approx_traj[:, 1]
     ap_z = approx_traj[:, 2]
 
+    ncol = 1
     ax = plt.axes(projection='3d')
-    ax.plot3D(x, y, z, '-', label='Real Lorenz')
-    ax.plot3D(ex_x, ex_y, ex_z, '-', label="approximate Lorenz")
+    ax.plot3D(x, y, z, '-', label='Ground truth 1')
+    ax.plot3D(ex_x, ex_y, ex_z, '-', label="Ground truth 2")
     if show_prior:
         ax.plot3D(ap_x, ap_y, ap_z, '-', label="Prior model")
-    ax.legend()
-    plt.savefig(figures_dir + "/lorenz3d.png")
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    ax.set_xlabel(r'$x$')
+    ax.set_ylabel(r'$y$')
+    ax.set_zlabel(r'$z$')
+    plt.savefig(figures_dir + "/fully_obs_3d.png", dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
     data_time = np.linspace(0, N*dt, N+1)
     # compare x, y and z of real and learnt trajectory
-    plt.figure()
-    plt.plot(data_time, x, '-', label='Real Lorenz x')
-    plt.plot(shifted_t, ex_x, label='Approximate model x')
+    plt.figure(figsize=(6, 6), dpi=300)
+    plt.plot(data_time, x, '-', label='Ground truth 1')
+    plt.plot(shifted_t, ex_x, label='Ground truth 2')
     if show_prior:
-        plt.plot(t, ap_x, label='Prior x')
+        plt.plot(t, ap_x, label='Prior')
     plt.xlabel('time t')
-    plt.legend()
-    plt.savefig(figures_dir + "/lorenzx.png")
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$x$')
+    plt.savefig(figures_dir + "/fully_obs_x.png",
+                dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
-    plt.figure()
-    plt.plot(data_time, y, '-', label='Real y')
-    plt.plot(shifted_t, ex_y, label='Learnt y')
+    plt.figure(figsize=(6, 6), dpi=300)
+    plt.plot(data_time, y, '-', label='Ground truth')
+    plt.plot(shifted_t, ex_y, label='Learnt')
     if show_prior:
-        plt.plot(t, ap_y, label='Prior y')
+        plt.plot(t, ap_y, label='Prior')
     plt.xlabel('time t')
-    plt.legend()
-    plt.savefig(figures_dir + "/lorenzy.png")
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$y$')
+    plt.savefig(figures_dir + "/fully_obs_y.png", dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
-    plt.figure()
-    plt.plot(data_time, z, '-', label='Real z')
-    plt.plot(shifted_t, ex_z, label='Learnt z')
+    plt.figure(figsize=(6, 6), dpi=300)
+    plt.plot(data_time, z, '-', label='Ground truth')
+    plt.plot(shifted_t, ex_z, label='Learnt')
     if show_prior:
-        plt.plot(t, ap_z, label='Prior z')
+        plt.plot(t, ap_z, label='Prior')
     plt.xlabel('time t')
-    plt.legend()
-    plt.savefig(figures_dir + "/lorenzz.png")
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$z$')
+    plt.savefig(figures_dir + "/fully_obs_z.png", dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
     # tent map
+    plt.figure(figsize=(6, 6), dpi=300)
     temp_idx = argrelextrema(z, np.greater)
     z_max = z[temp_idx]
     zn = z_max[:-1]
     znplus1 = z_max[1:]
-    plt.plot(zn, znplus1, 'o', label='Real Lorenz')
+    plt.plot(zn, znplus1, 'o', label='Ground truth')
     #plt.plot(zn, zn, 'r-')
 
     temp_idx = argrelextrema(ex_z, np.greater)
     ex_z_max = ex_z[temp_idx]
     ex_zn = ex_z_max[:-1]
     ex_znplus1 = ex_z_max[1:]
-    plt.plot(ex_zn, ex_znplus1, 'o', label='Learnt Lorenz')
+    plt.plot(ex_zn, ex_znplus1, 'o', label='Learnt')
 
     if show_prior:
         temp_idx = argrelextrema(ap_z, np.greater)
         ap_z_max = ap_z[temp_idx]
         ap_zn = ap_z_max[:-1]
         ap_znplus1 = ap_z_max[1:]
-        plt.plot(ap_zn, ap_znplus1, 'o', label='Prior model')
+        plt.plot(ap_zn, ap_znplus1, 'o', label='Prior')
 
-    plt.xlabel('local_max(z_n)')
-    plt.ylabel('local_max(z_n+1)')
-    plt.legend()
-    plt.title('Cobweb diagram')
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'local_max($z_n$)')
+    plt.ylabel(r'local_max($z_{n+1}$)')
+    plt.savefig(figures_dir + "/fully_obs_cobweb.png", dpi=300,
+                format='png',
+                bbox_inches='tight')
     plt.show()
 
     # 0-1 Test for chaos in real and learnt trajectories
@@ -358,42 +381,66 @@ def test_lorenz(show_prior=False):
 def test_van_der_pol(show_prior=False):
     x = ic_future[:, :, 0].view(-1).detach().numpy()
     y = ic_future[:, :, 1].view(-1).detach().numpy()
-
+    ncol = 1
     short_term = 100
-    plt.plot(x[:short_term], y[:short_term], '-x', label='Real')
+
+    plt.figure(figsize=(6, 6))
+    plt.plot(x[:short_term], y[:short_term], '-x', label='Ground truth')
     plt.plot(ex_traj[:short_term, 0], ex_traj[:short_term, 1], label='Learnt')
     if show_prior: plt.plot(approx_traj[:short_term, 0], approx_traj[:short_term, 1], label='Prior Approximation')
-    plt.title('Van der Pol oscillator: First {} steps'.format(str(short_term)))
-    plt.legend()
+    #plt.title('Van der Pol oscillator: First {} steps'.format(str(short_term)))
+    lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$x$')
+    plt.ylabel(r'$y$')
+    plt.savefig(figures_dir + "/" + str(mistake_factor) + "mu100steps.png",
+                    dpi=300,
+                    format='png',
+                    bbox_extra_artists=(lg,),
+                    bbox_inches='tight')
     plt.show()
 
     mid_term = 1000
-    plt.plot(x[:mid_term], y[:mid_term], '-', label='Real')
+    plt.figure(figsize=(6, 6))
+    plt.plot(x[:mid_term], y[:mid_term], '-', label='Ground truth')
     plt.plot(ex_traj[:mid_term, 0], ex_traj[:mid_term, 1], label='Learnt')
     if show_prior: plt.plot(approx_traj[:mid_term, 0], approx_traj[:mid_term, 1], label='Prior Approximation')
-    plt.title('Van der Pol oscillator: First {} steps'.format(str(mid_term)))
-    plt.legend()
+    #plt.title('Van der Pol oscillator: First {} steps'.format(str(mid_term)))
+    lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$x$')
+    plt.ylabel(r'$y$')
+    plt.savefig(figures_dir + "/" + str(mistake_factor) + "mu1000steps.png", dpi=300,
+                    format='png',
+                    bbox_extra_artists=(lg,),
+                    bbox_inches='tight')
     plt.show()
 
     long_term = 10000
-    plt.plot(x[:long_term], y[:long_term], '-', label='Real')
+    plt.figure(figsize=(6, 6))
+    plt.plot(x[:long_term], y[:long_term], '-', label='Ground truth')
     plt.plot(ex_traj[:long_term, 0], ex_traj[:long_term, 1], label='Learnt')
     if show_prior: plt.plot(approx_traj[:long_term, 0], approx_traj[:long_term, 1], label='Prior Approximation')
-    plt.title('Van der Pol oscillator: First {} steps'.format(str(long_term)))
-    plt.legend()
-    plt.xlabel('x'), plt.ylabel('y')
+    #plt.title('Van der Pol oscillator: First {} steps'.format(str(long_term)))
+    lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
+    plt.xlabel(r'$x$')
+    plt.ylabel(r'$y$')
+    plt.savefig(figures_dir + "/" + str(mistake_factor) + "mu10ksteps.png", dpi=300,
+                    format='png',
+                    bbox_extra_artists=(lg,),
+                    bbox_inches='tight')
     plt.show()
 
-    plt.plot(x[:long_term], label='Real')
+    plt.figure(figsize=(6, 6))
+    plt.plot(x[:long_term], label='Ground truth')
     # plt.plot(ex_traj[:long_term, 0], label='Learnt')
     # if show_prior: plt.plot(approx_traj[:long_term, 0], label='Approx')
     # plt.legend()
     plt.show()
 
-    plt.plot(y[:long_term], label='Real')
+    plt.figure(figsize=(6, 6))
+    plt.plot(y[:long_term], label='Ground truth')
     plt.plot(ex_traj[:long_term, 1], label='Learnt')
     if show_prior: plt.plot(approx_traj[:long_term, 1], label='Approx')
-    plt.legend()
+    plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=ncol)
     plt.show()
 
 
@@ -407,6 +454,11 @@ if __name__ == "__main__":
     console.setLevel(logging.INFO)
     logging.getLogger('').addHandler(console)
     logging.info("\n ----------------------- Starting of new script ----------------------- \n")
+
+    # set up matplot lib font size
+    font = {'family': 'normal',
+            'size': 17}
+    matplotlib.rc('font', **font)
 
     # choose the system
     #data_name = 'VanDerPol'
@@ -425,19 +477,19 @@ if __name__ == "__main__":
 
     elif data_name == 'Lorenz':
         # directory settings
-        dt = 0.1    # 0.01 or 0.1
+        dt = 0.01    # 0.01 or 0.1
         test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
         train_data_dir = project_dir + "/data/Data3D" + str(dt) + "/train/data.h5"
         val_data_dir = project_dir + "/data/Data3D" + str(dt) + "/val/data.h5"
-        model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
-        #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+        #model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
+        model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
         figures_dir = project_dir + "/3D_lorenz_prediction/figures"
         dataset = DDDLorenzData
         data_dim = 3
 
     # data settings
     lookahead = 2
-    batch_size = 1200
+    batch_size = 500
     n_iterations = 1
 
     max_len = (n_iterations+1) * batch_size
@@ -445,19 +497,19 @@ if __name__ == "__main__":
     assert(len(t) == lookahead + 1)
 
     # model settings
-    TRAIN_MODEL = True
-    LOAD_THEN_TRAIN = True
-    EPOCHS = 150
+    TRAIN_MODEL = False
+    LOAD_THEN_TRAIN = False
+    EPOCHS = 200
     LR = 0.01
 
     # construct approximation model
     if data_name == 'Lorenz':
-        mistake_factor = 0.9
+        mistake_factor = 0.5
         sigma = mistake_factor * 10
         beta = 8./3
         rho = 28
-        approx_model = LorenzModel(sigma, rho, beta)
-        #approx_model = PeriodicApprox()
+        #approx_model = LorenzModel(sigma, rho, beta)
+        approx_model = PeriodicApprox()
     elif data_name == 'VanDerPol':
         mistake_factor = 10
         mu = mistake_factor*0.2
@@ -465,11 +517,11 @@ if __name__ == "__main__":
     approx_model.eval()
 
     # constructing NN model that learns the dynamics
-    f = Net(hidden_dim=256, io_dim=data_dim)
-    #f = LorenzModel()
+    #f = Net(hidden_dim=256, io_dim=data_dim)
+    f = LorenzModel(sigma=0.9*10)
     #f = PeriodicApprox()
     #f = VanDerPolModel(mu=0.2*0.5)
-    #f = KnowledgeModel(hidden_dim=100, io_dim=data_dim, known_model=approx_model)
+    #f = KnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
     #f = SumKnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
     logging.info(f)
     params = (list(f.parameters()))
@@ -503,21 +555,21 @@ if __name__ == "__main__":
         trainer.train()
 
     else:
-        load_models(model_dir, f)
+        #load_models(model_dir, f)
         #load_optimizer(model_dir, optimizer)
         pass
 
     with torch.no_grad():
 
-        N = 2000
+        N = 1000
         test_dataset = dataset(test_data_dir, lookahead=N, tau=1, k=1, max_len=int(1.5*N))
         test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
         ic_state, ic_future = next(iter(test_dataloader))
         ic_state = ic_state.view(1, data_dim)
-        dt_test = dt #/10
-        N_pred = int(N/10*dt/dt_test)*10
-        t = torch.arange(0, N_pred*dt_test, dt_test)
-        shifted_t = torch.arange(0, N_pred*dt, dt)
+        dt_test = dt
+        print(N)
+        t = torch.arange(0, N*dt_test, dt_test)
+        shifted_t = torch.arange(0, N*dt, dt)
         logging.info('Calculating test prediction...')
         ex_traj = np.array(odeint(f, ic_state, t).view(-1, data_dim))
         approx_traj = np.array(odeint(approx_model, ic_state, t).view(-1, data_dim))
@@ -527,47 +579,7 @@ if __name__ == "__main__":
             test_lorenz(show_prior=False)
 
         if data_name == 'VanDerPol':
-            #test_van_der_pol(show_prior=False)
-
-            x = ic_future[:, :, 0].view(-1).detach().numpy()
-            y = ic_future[:, :, 1].view(-1).detach().numpy()
-
-            short_term = 100
-            plt.plot(x[:short_term], y[:short_term], '-x', label='Real')
-            plt.plot(ex_traj[:short_term, 0], ex_traj[:short_term, 1], label='Learnt')
-            plt.plot(approx_traj[:short_term, 0], approx_traj[:short_term, 1], label='Prior Approximation')
-            plt.title('Van der Pol oscillator: First {} steps'.format(str(short_term)))
-            plt.legend()
-            plt.show()
-
-            mid_term = 1000
-            plt.plot(x[:mid_term], y[:mid_term], '-', label='Real')
-            plt.plot(ex_traj[:mid_term, 0], ex_traj[:mid_term, 1], label='Learnt')
-            plt.plot(approx_traj[:mid_term, 0], approx_traj[:mid_term, 1], label='Prior Approximation')
-            plt.title('Van der Pol oscillator: First {} steps'.format(str(mid_term)))
-            plt.legend()
-            plt.show()
-
-            long_term = 10000
-            plt.plot(x[:long_term], y[:long_term], '-', label='Real')
-            plt.plot(ex_traj[:long_term, 0], ex_traj[:long_term, 1], label='Learnt')
-            plt.plot(approx_traj[:long_term, 0], approx_traj[:long_term, 1], label='Prior Approximation')
-            plt.title('Van der Pol oscillator: First {} steps'.format(str(long_term)))
-            plt.legend()
-            plt.xlabel('x'), plt.ylabel('y')
-            plt.show()
-
-            plt.plot(x[:long_term], label='Real')
-            #plt.plot(ex_traj[:long_term, 0], label='Learnt')
-            #plt.plot(approx_traj[:long_term, 0], label='Approx')
-            #plt.legend()
-            plt.show()
-
-            plt.plot(y[:long_term], label='Real')
-            plt.plot(ex_traj[:long_term, 1], label='Learnt')
-            plt.plot(approx_traj[:long_term, 1], label='Approx')
-            plt.legend()
-            plt.show()
+            test_van_der_pol(show_prior=True)
 
 
     logging.info("\n REACHED END OF MAIN")

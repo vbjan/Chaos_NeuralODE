@@ -10,6 +10,7 @@ import numpy as np
 import h5py
 import time
 import matplotlib.pyplot as plt
+import matplotlib
 from mpl_toolkits.mplot3d import Axes3D # <--- This is important for 3d plotting
 import torch
 import torch.nn as nn
@@ -60,6 +61,11 @@ if __name__ == "__main__":
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
     logging.getLogger('').addHandler(console)
+
+    # Set up font size matplotlib
+    font = {'family': 'normal',
+            'size': 15}
+    matplotlib.rc('font', **font)
 
     project_dir = os.path.dirname(os.path.realpath(__file__))
     dddtest_data_dir = project_dir + "/data/Data3D0.1/test/data.h5"
@@ -173,7 +179,8 @@ if __name__ == "__main__":
         testx_future = testU_future[:, :, 0].view(1, -1, 1)
         t_history = np.linspace(0, tau*dt_data*k, k)
         t_future = np.linspace(tau*dt_data*k, dt_data*(k+N+1), N+1)
-        plt.figure()
+        plt.figure(figsize=(6, 6), dpi=300)
+        #plt.figure()
         plt.plot(t_history, testx_history.view(-1), 'ro-', label="known history of x")
         plt.plot(t_future, testx_future.view(-1), 'go-', label="unknown future of x")
 
@@ -195,9 +202,16 @@ if __name__ == "__main__":
         plt.plot(t_future, ex_traj[:, 0], 'k', label='Prediction of x')
         plt.plot(tau*k*dt_data, out[:, :, 0].detach().float(), 'cx', label='inferred point')
         #plt.title("Partially Observed Lorenz Prediction")
-        plt.xlabel('time t')
-        plt.ylabel('x component')
-        plt.legend(), plt.show()
+        plt.xlabel(r'time $t$')
+        plt.ylabel(r'$x$ component')
+        lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=1)
+        plt.savefig(figures_dir + '/partially_obs_longx.png',
+                    dpi=300,
+                    format='png',
+                    bbox_extra_artists=(lg,),
+                    bbox_inches='tight')
+
+        plt.show()
 
         print("0-1 test of | real x: {} | learnt x: {}".format(z1test(testx_future.view(-1).numpy()),
                                                                       z1test(ex_traj[:, 0])))
