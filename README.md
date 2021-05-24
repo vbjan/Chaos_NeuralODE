@@ -1,5 +1,5 @@
 # LED_NeuralODE
-Bachelor Thesis at CSE-lab at ETH on: Learning effective dynamics of a system using Neural ODEs
+Bachelor Thesis at CSE-lab at ETH on: Learning Residual Neural ODE Dynamics of Partially and Fully Observed Systems
 
 Applying Neural ODEs to three scenarios of learning the dynamics of a chaotic system with:
   - full state observations
