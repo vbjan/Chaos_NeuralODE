@@ -20,7 +20,7 @@ from utils import get_lr
 from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
 from utils import save_models, load_models, get_num_trainable_params
 from Datasets import DDDLorenzData, VanDerPol
-from threeDLorenzNODE import SumKnowledgeModel
+from threeDLorenzNODE import SumKnowledgeModel, Net, KnowledgeModel, LorenzModel, PeriodicApprox
 
 
 class GhostModel(nn.Module):
@@ -34,7 +34,7 @@ class GhostModel(nn.Module):
 
 
 def x_of_exact_lorenz(x):
-    sigma = (1-mistake_factor)*10
+    sigma = 10
     return sigma*(x[:, 1] - x[:, 0])
 
 
@@ -43,23 +43,44 @@ if __name__ == "__main__":
     font = {'size': 18}
     matplotlib.rc('font', **font)
 
-    mistake_factor = 0.5
+    type = "MNODE"
+    #type = "AddNODE"
+    #type = "pure"
 
-    ghost = GhostModel()
-    dt = 0.01    # read out from simulation script
+    dt = 0.01  # read out from simulation script
     project_dir = os.path.dirname(os.path.realpath(__file__))
     test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
-    model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
     fig_dir = project_dir + '/3D_lorenz_prediction/figures/'
 
     N = 2
     batch_size = 1000
-    dataset = DDDLorenzData(test_data_dir, lookahead=N, tau=1, k=1, max_len=int(batch_size*1.5))
+    dataset = DDDLorenzData(test_data_dir, lookahead=N, tau=1, k=1, max_len=int(batch_size * 1.5))
     data_dim = dataset.data_dim
     dataloader = DataLoader(dataset, batch_size=batch_size, drop_last=True, shuffle=True)
 
-    f = SumKnowledgeModel(hidden_dim=50, known_model=ghost, io_dim=data_dim)
-
+    # TODO: change prior models to Lorenz model to make comparison better
+    if type == 'AddNODE':    # knowledge based model
+        mistake_factor = 0.6
+        label = type + str(mistake_factor)
+        ghost = LorenzModel(sigma=mistake_factor*10)
+        f = SumKnowledgeModel(hidden_dim=50, known_model=ghost, io_dim=data_dim)
+        model_dir = project_dir + '/3D_lorenz_prediction/models/sum_models/' + str(mistake_factor) + 'model/knowledge'
+    elif type == 'MNODE':
+        mistake_factor = 0.9
+        label = type + str(mistake_factor)
+        #label = type + 'periodic'
+        ghost = LorenzModel(sigma=mistake_factor*10)
+        #ghost = PeriodicApprox()
+        f = KnowledgeModel(hidden_dim=50, known_model=ghost, io_dim=data_dim)
+        model_dir = project_dir + '/3D_lorenz_prediction/models/knowledgemodels/' + str(mistake_factor) + 'sigma/knowledge'
+        #model_dir = project_dir + '/3D_lorenz_prediction/models/knowledgemodels/periodic_model/knowledge'
+    elif type == 'pure':
+        label = "pure"
+        f = Net(hidden_dim=256, io_dim=data_dim)
+        model_dir = project_dir + '/3D_lorenz_prediction/models/2.4model/3DLorenzmodel'
+    else:
+        print("type '{}' doesn't exist".format(type))
+        exit()
     load_models(model_dir, f)
 
     ic_state, ic_future = next(iter(dataloader))
@@ -69,22 +90,22 @@ if __name__ == "__main__":
     t = torch.zeros(1)
     dstatedt = f(t, ic_state)
     dxdt_NODE = dstatedt[:, 0].detach().numpy()
+    if type == 'pure':
+        dxdt_NODE = dxdt_NODE/10
     dxdt = x_of_exact_lorenz(ic_state).detach().numpy()
-    comp = np.arange(-10, 10)
 
+    comp = np.arange(-10, 10)
     plt.plot(dxdt, dxdt_NODE, 'x', color='orange')
     plt.xlabel(r'$(1-\alpha)\sigma(y-x)$')
     plt.ylabel('Learnt $dx/dt$')
-    plt.savefig(fig_dir + str(mistake_factor) + 'lorenz_error_cobweb.png',
+    plt.savefig(fig_dir + label + 'lorenz_error_cobweb.png',
                 dpi=300,
                 format='png',
                 bbox_inches='tight')
     plt.show()
 
-    error = (dxdt_NODE-dxdt)/(1-mistake_factor)
-    print(error.shape)
-
-
+    #error = dxdt_NODE/dxdt
+    error = (dxdt_NODE-dxdt)#/(1-mistake_factor)
     mean_error = np.mean(np.abs(error))
     print("\n Mean error: {}".format(mean_error))
 
@@ -92,31 +113,34 @@ if __name__ == "__main__":
     y = ic_state[:, 1]
 
     # DEVIL
-    devil_state = (torch.rand(ic_state.size()).float()-0.5)*45
+    devil_state = (torch.rand(ic_state.size()).float()-0.5)*45 # random inputs
     devil_dxdt_NODE = f(t, devil_state)[:, 0].detach().numpy()
+    if type == 'pure':
+        devil_dxdt_NODE = devil_dxdt_NODE/10
     devil_dxdt = x_of_exact_lorenz(devil_state).detach().numpy()
-    devil_error = (devil_dxdt_NODE - devil_dxdt)/(1-mistake_factor)
+
+    #devil_error = devil_dxdt_NODE/devil_dxdt
+    devil_error = (devil_dxdt_NODE - devil_dxdt)#/(1-mistake_factor)
     print(devil_error.shape)
 
     nbins = 50
     plt.hist(devil_error, bins=nbins, label='Random inputs')
-    plt.hist(error, bins=int(nbins/10), label='Lorenz inputs')
+    plt.hist(error, bins=int(nbins/5), label='Lorenz inputs')
     #plt.title('Histogram of error')
     plt.ylabel('# of observations')
     plt.xlabel('Error')
     #plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=1)
-    plt.savefig(fig_dir + str(mistake_factor) + 'error_histogram.png',
+    plt.savefig(fig_dir + label + 'error_histogram.png',
                 dpi=300,
                 format='png',
                 bbox_inches='tight')
     plt.show()
 
     devil_error = np.abs(devil_error)
-
     plt.plot(devil_dxdt, devil_dxdt_NODE, 'x')
     plt.xlabel(r'$(1-\alpha)\sigma(y-x)$')
     plt.ylabel(r'Learnt $dx/dt$')
-    plt.savefig(fig_dir + str(mistake_factor) + 'random_error_cobweb.png',
+    plt.savefig(fig_dir + label + 'random_error_cobweb.png',
                 dpi=300,
                 format='png',
                 bbox_inches='tight')
@@ -131,11 +155,13 @@ if __name__ == "__main__":
     f, ax = plt.subplots(1, 1, sharex=True, sharey=True)
     im = ax.tricontourf(devil_x, devil_y, devil_error, 300)  # choose 20 contour levels, just to show how good its interpolation is
     f.colorbar(im, label=r'Absolute error of learnt $dx/dt$')
+    im.set_clim(0, 100)
     plt.plot(x, y, 'rx', label='Lorenz trajectory')
+
     plt.xlabel('x')
     plt.ylabel('y')
     lg = plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc='lower left', ncol=1)
-    plt.savefig(fig_dir + str(mistake_factor) + 'error_location.png',
+    plt.savefig(fig_dir + label + 'error_location.png',
                 dpi=300,
                 format='png',
                 bbox_inches='tight')

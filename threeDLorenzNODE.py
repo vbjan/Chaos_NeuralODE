@@ -41,13 +41,14 @@ class Net(nn.Module):
         self.io_dim = io_dim
         self.time_dependent = time_dependent
         self.acti = nn.LeakyReLU()
+        #self.acti = nn.ReLU()
 
         if self.time_dependent:
             self.layer1 = nn.Linear(self.io_dim + 1, hidden_dim)
         else:
             self.layer1 = nn.Linear(self.io_dim, hidden_dim)
 
-        self.layer2 = nn.Linear(hidden_dim, hidden_dim)
+        #self.layer2 = nn.Linear(hidden_dim, hidden_dim)
         self.layer3 = nn.Linear(hidden_dim, self.io_dim)
 
     def forward(self,t , x):
@@ -58,7 +59,7 @@ class Net(nn.Module):
         else:
             x = self.acti(self.layer1(x))
 
-        x = self.acti(self.layer2(x))
+        #x = self.acti(self.layer2(x))
         x = self.layer3(x)
         return x
 
@@ -88,7 +89,8 @@ class LorenzModel(nn.Module):
     """
     def __init__(self, sigma=10, rho=28, beta=8./3):
         super(LorenzModel, self).__init__()
-        self.temp = nn.Linear(1, 1)
+
+        #self.temp = nn.Linear(1, 1)
         self.sigma = sigma
         self.rho = rho
         self.beta = beta
@@ -297,7 +299,7 @@ def test_lorenz(show_prior=False):
 
     data_time = np.linspace(0, N*dt, N+1)
     # compare x, y and z of real and learnt trajectory
-    plt.figure(figsize=(6, 6), dpi=300)
+    plt.figure(figsize=(20, 5), dpi=300)
     plt.plot(data_time, x, '-', label='Ground truth 1')
     plt.plot(shifted_t, ex_x, label='Ground truth 2')
     if show_prior:
@@ -481,15 +483,15 @@ if __name__ == "__main__":
         test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
         train_data_dir = project_dir + "/data/Data3D" + str(dt) + "/train/data.h5"
         val_data_dir = project_dir + "/data/Data3D" + str(dt) + "/val/data.h5"
-        #model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
-        model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
+        model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
+        #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
         figures_dir = project_dir + "/3D_lorenz_prediction/figures"
         dataset = DDDLorenzData
         data_dim = 3
 
     # data settings
     lookahead = 2
-    batch_size = 500
+    batch_size = 1000
     n_iterations = 1
 
     max_len = (n_iterations+1) * batch_size
@@ -498,18 +500,18 @@ if __name__ == "__main__":
 
     # model settings
     TRAIN_MODEL = False
-    LOAD_THEN_TRAIN = False
-    EPOCHS = 200
+    LOAD_THEN_TRAIN = True
+    EPOCHS = 100
     LR = 0.01
 
     # construct approximation model
     if data_name == 'Lorenz':
-        mistake_factor = 0.5
+        mistake_factor = 0.6
         sigma = mistake_factor * 10
         beta = 8./3
         rho = 28
-        #approx_model = LorenzModel(sigma, rho, beta)
-        approx_model = PeriodicApprox()
+        approx_model = LorenzModel(sigma, rho, beta)
+        #approx_model = PeriodicApprox()
     elif data_name == 'VanDerPol':
         mistake_factor = 10
         mu = mistake_factor*0.2
@@ -518,10 +520,10 @@ if __name__ == "__main__":
 
     # constructing NN model that learns the dynamics
     #f = Net(hidden_dim=256, io_dim=data_dim)
-    f = LorenzModel(sigma=0.9*10)
+    #f = LorenzModel(sigma=0.9*10)
     #f = PeriodicApprox()
     #f = VanDerPolModel(mu=0.2*0.5)
-    #f = KnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
+    f = KnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
     #f = SumKnowledgeModel(hidden_dim=50, io_dim=data_dim, known_model=approx_model)
     logging.info(f)
     params = (list(f.parameters()))
@@ -555,7 +557,7 @@ if __name__ == "__main__":
         trainer.train()
 
     else:
-        #load_models(model_dir, f)
+        load_models(model_dir, f)
         #load_optimizer(model_dir, optimizer)
         pass
 
@@ -566,7 +568,7 @@ if __name__ == "__main__":
         test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True, drop_last=True)
         ic_state, ic_future = next(iter(test_dataloader))
         ic_state = ic_state.view(1, data_dim)
-        dt_test = dt
+        dt_test = dt #/10
         print(N)
         t = torch.arange(0, N*dt_test, dt_test)
         shifted_t = torch.arange(0, N*dt, dt)
