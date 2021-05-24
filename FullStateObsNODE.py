@@ -3,9 +3,6 @@
     Learning effective NODE dynamics with and without prior knowledge
     Version: 13
 
-    TODO:
-        - Clearer settings area
-
     Learnings:
         - ANODE becomes unstable for chaotic systems. Penalty by putting augmented dimensions in loss function,
         creates periodic behavior.
@@ -450,7 +447,7 @@ if __name__ == "__main__":
 
     # logging settings
     os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-    logging.basicConfig(filename="3D_lorenz_prediction/ANODE.log", level=logging.INFO,
+    logging.basicConfig(filename="FullStateNODE/ANODE.log", level=logging.INFO,
                         format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
@@ -483,9 +480,9 @@ if __name__ == "__main__":
         test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
         train_data_dir = project_dir + "/data/Data3D" + str(dt) + "/train/data.h5"
         val_data_dir = project_dir + "/data/Data3D" + str(dt) + "/val/data.h5"
-        model_dir = project_dir + '/3D_lorenz_prediction/models/knowledge'
-        #model_dir = project_dir + '/3D_lorenz_prediction/models/3DLorenzmodel'
-        figures_dir = project_dir + "/3D_lorenz_prediction/figures"
+        model_dir = project_dir + '/FullStateNODE/models/knowledge'
+        #model_dir = project_dir + '/FullStateNODE/models/3DLorenzmodel'
+        figures_dir = project_dir + "/FullStateNODE/figures"
         dataset = DDDLorenzData
         data_dim = 3
 
@@ -499,8 +496,8 @@ if __name__ == "__main__":
     assert(len(t) == lookahead + 1)
 
     # model settings
-    TRAIN_MODEL = False
-    LOAD_THEN_TRAIN = True
+    TRAIN_MODEL = True
+    LOAD_THEN_TRAIN = False
     EPOCHS = 100
     LR = 0.01
 

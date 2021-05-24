@@ -56,7 +56,7 @@ class Net(nn.Module):
 
 if __name__ == "__main__":
     # Set up logging
-    logging.basicConfig(filename="IdentifyIC/IdentifyIC.log", level=logging.INFO,
+    logging.basicConfig(filename="PartialStateNODE/IdentifyIC.log", level=logging.INFO,
                         format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
@@ -71,9 +71,9 @@ if __name__ == "__main__":
     dddtest_data_dir = project_dir + "/data/Data3D0.1/test/data.h5"
     dddtrain_data_dir = project_dir + "/data/Data3D0.1/train/data.h5"
     dddval_data_dir = project_dir + "/data/Data3D0.1/val/data.h5"
-    figures_dir = project_dir + "/IdentifyIC/figures"
-    model_dir = project_dir + '/IdentifyIC/models/3DLorenzmodel'
-    ddd_model_dir = project_dir + '/IdentifyIC/models/3Dmodel/3DLorenzmodel'
+    figures_dir = project_dir + "/PartialStateNODE/figures"
+    model_dir = project_dir + '/PartialStateNODE/models/3DLorenzmodel'
+    ddd_model_dir = project_dir + '/PartialStateNODE/models/3Dmodel/3DLorenzmodel'
 
     dt_data = 0.1
     dt = dt_data/10  # read out from simulation script

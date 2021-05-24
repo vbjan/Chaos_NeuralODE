@@ -50,7 +50,7 @@ if __name__ == "__main__":
     dt = 0.01  # read out from simulation script
     project_dir = os.path.dirname(os.path.realpath(__file__))
     test_data_dir = project_dir + "/data/Data3D" + str(dt) + "/test/data.h5"
-    fig_dir = project_dir + '/3D_lorenz_prediction/figures/'
+    fig_dir = project_dir + '/FullStateNODE/figures/'
 
     N = 2
     batch_size = 1000
@@ -58,13 +58,12 @@ if __name__ == "__main__":
     data_dim = dataset.data_dim
     dataloader = DataLoader(dataset, batch_size=batch_size, drop_last=True, shuffle=True)
 
-    # TODO: change prior models to Lorenz model to make comparison better
     if type == 'AddNODE':    # knowledge based model
         mistake_factor = 0.6
         label = type + str(mistake_factor)
         ghost = LorenzModel(sigma=mistake_factor*10)
         f = SumKnowledgeModel(hidden_dim=50, known_model=ghost, io_dim=data_dim)
-        model_dir = project_dir + '/3D_lorenz_prediction/models/sum_models/' + str(mistake_factor) + 'model/knowledge'
+        model_dir = project_dir + '/FullStateNODE/models/AddNODE/' + str(mistake_factor) + 'model/knowledge'
     elif type == 'MNODE':
         mistake_factor = 0.9
         label = type + str(mistake_factor)
@@ -72,12 +71,12 @@ if __name__ == "__main__":
         ghost = LorenzModel(sigma=mistake_factor*10)
         #ghost = PeriodicApprox()
         f = KnowledgeModel(hidden_dim=50, known_model=ghost, io_dim=data_dim)
-        model_dir = project_dir + '/3D_lorenz_prediction/models/knowledgemodels/' + str(mistake_factor) + 'sigma/knowledge'
-        #model_dir = project_dir + '/3D_lorenz_prediction/models/knowledgemodels/periodic_model/knowledge'
+        model_dir = project_dir + '/FullStateNODE/models/M-NODE/' + str(mistake_factor) + 'sigma/knowledge'
+        #model_dir = project_dir + '/FullStateNODE/models/M-NODE/periodic_model/knowledge'
     elif type == 'pure':
         label = "pure"
         f = Net(hidden_dim=256, io_dim=data_dim)
-        model_dir = project_dir + '/3D_lorenz_prediction/models/2.4model/3DLorenzmodel'
+        model_dir = project_dir + '/FullStateNODE/models/PureNODE/3DLorenzmodel'
     else:
         print("type '{}' doesn't exist".format(type))
         exit()
@@ -167,11 +166,3 @@ if __name__ == "__main__":
                 bbox_inches='tight')
     plt.show()
 
-
-    # TODO: Heat map of where the error is...
-
-
-
-    #plt.plot(traj[:, 0].detach().numpy())
-    #plt.plot(traj[:, 1].detach().numpy())
-    #plt.plot(traj[:, 2].detach().numpy())
