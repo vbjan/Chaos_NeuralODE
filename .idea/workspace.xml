@@ -2,62 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dca6152-4764-469e-8ecf-c89fac376200" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/0.5error_location.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/0.5lorenz_error_cobweb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/0.5random_error_cobweb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/knowledgemodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.5model/knowledgemodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.5model/knowledgeopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.6model/knowledgemodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.6model/knowledgeopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.9model/knowledgemodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/sum_models/0.9model/knowledgemodelopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analyse_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_test_data.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_test_data_nt.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_train_data.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_train_data_nt.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_val_data.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/VanDerPol/van_de_pol_val_data_nt.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/0.5mu_model/vdpmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/0.5mu_model/vdpopt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/10mu_model/vdpmodel0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/10mu_model/vdpopt.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1D_lorenz_prediction/1DLorenzNODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/1D_lorenz_prediction/1DLorenzNODE.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/ANODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/ANODE.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenz3d.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzx.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzz.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/lorenzz.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/figures/losses.png" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/figures/losses.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelmodel0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/3DLorenzmodelopt.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/checkpoint_of_augmented_well/ANODEmodel0.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/checkpoint_of_augmented_well/ANODEopt.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/knowledgemodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/knowledgemodel0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/knowledgeopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/3D_lorenz_prediction/models/knowledgeopt.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/small_dt_model/3DLorenzmodelmodel0.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/small_dt_model/3DLorenzmodelopt.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/untested_model/3DLorenzmodelmodel0.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D_lorenz_prediction/models/untested_model/3DLorenzmodelopt.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Datasets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IdentifyIC.py" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IdentifyIC/IdentifyIC.log" beforeDir="false" afterPath="$PROJECT_DIR$/IdentifyIC/IdentifyIC.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_test_data.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_test_data_nt.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_train_data.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_train_data_nt.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_val_data.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/VanDePol/van_de_pol_val_data_nt.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oneDLorenzNODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneDLorenzNODE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threeDLorenzNODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/threeDLorenzNODE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/van_de_pol_prediction/figures/losses.png" beforeDir="false" afterPath="$PROJECT_DIR$/van_de_pol_prediction/figures/losses.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/van_de_pol_prediction/models/Noknowledge/vdpmodel0.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/van_de_pol_prediction/models/Noknowledge/vdpopt.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/van_de_pol_prediction/models/vdpmodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/vdpmodel0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/van_de_pol_prediction/models/vdpopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/van_de_pol_prediction/models/vdpopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullStateNODE/ANODE.log" beforeDir="false" afterPath="$PROJECT_DIR$/FullStateNODE/ANODE.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullStateNODE/models/knowledgemodel0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/FullStateNODE/models/knowledgemodel0.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullStateNODE/models/knowledgeopt.pth" beforeDir="false" afterPath="$PROJECT_DIR$/FullStateNODE/models/knowledgeopt.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PartialStateNODE/IdentifyIC.log" beforeDir="false" afterPath="$PROJECT_DIR$/PartialStateNODE/IdentifyIC.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PartialStateNODE/figures/partially_obs_longx.png" beforeDir="false" afterPath="$PROJECT_DIR$/PartialStateNODE/figures/partially_obs_longx.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,8 +89,8 @@
       <recent name="$PROJECT_DIR$/../../Results/SumKnowledge" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.threeDLorenzNODE">
-    <configuration name="IdentifyIC" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.PartialStateObsNODE">
+    <configuration name="FullStateObsNODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MyNeuralODE" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -153,7 +103,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IdentifyIC.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FullStateObsNODE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
@@ -198,6 +148,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NbedDyn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PartialStateObsNODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="MyNeuralODE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PartialStateObsNODE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
@@ -338,28 +310,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="threeDLorenzNODE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="MyNeuralODE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/LatentODE/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/threeDLorenzNODE.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="true" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python">
       <module name="MyNeuralODE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -391,8 +341,8 @@
       <item itemvalue="Python.ksequ" />
       <item itemvalue="Python.utils" />
       <item itemvalue="Python.analyse_models" />
-      <item itemvalue="Python.threeDLorenzNODE" />
-      <item itemvalue="Python.IdentifyIC" />
+      <item itemvalue="Python.FullStateObsNODE" />
+      <item itemvalue="Python.PartialStateObsNODE" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -493,6 +443,8 @@
       <workItem from="1620223825569" duration="3569000" />
       <workItem from="1620399956974" duration="454000" />
       <workItem from="1620734990081" duration="2657000" />
+      <workItem from="1621872866276" duration="215000" />
+      <workItem from="1621873085844" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="Exchanged data with data with smaller dt (from dt=0.01 to dt=0.0025)">
       <created>1617726734700</created>
@@ -582,10 +534,10 @@
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
     <state x="-1571" y="288" key="#Neural_oDE/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1617282990006" />
-    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620141367044">
+    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621873208750">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620141367044" />
+    <state x="-2456" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873208750" />
     <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.-55.2560.1440/0.0.1440.900@0.0.1440.900" timestamp="1617092354457" />
     <state x="59" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1618475681186" />
     <state x="-1584" y="472" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619081841349">
@@ -598,45 +550,45 @@
     </state>
     <state x="-2560" y="23" key="CommitChangelistDialog2/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1619000589160" />
     <state x="0" y="49" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1618392373789" />
-    <state width="2518" height="166" key="GridCell.Tab.0.bottom" timestamp="1620737717700">
+    <state width="2518" height="394" key="GridCell.Tab.0.bottom" timestamp="1621873365637">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="166" key="GridCell.Tab.0.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620737717700" />
+    <state width="2518" height="394" key="GridCell.Tab.0.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873365637" />
     <state width="1398" height="223" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618924084897" />
-    <state width="2518" height="166" key="GridCell.Tab.0.center" timestamp="1620737717699">
+    <state width="2518" height="394" key="GridCell.Tab.0.center" timestamp="1621873365636">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="166" key="GridCell.Tab.0.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620737717699" />
+    <state width="2518" height="394" key="GridCell.Tab.0.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873365636" />
     <state width="1398" height="223" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1618924084896" />
-    <state width="2518" height="166" key="GridCell.Tab.0.left" timestamp="1620737717698">
+    <state width="2518" height="394" key="GridCell.Tab.0.left" timestamp="1621873365635">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="166" key="GridCell.Tab.0.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620737717698" />
+    <state width="2518" height="394" key="GridCell.Tab.0.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873365635" />
     <state width="1398" height="223" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1618924084896" />
-    <state width="2518" height="166" key="GridCell.Tab.0.right" timestamp="1620737717699">
+    <state width="2518" height="394" key="GridCell.Tab.0.right" timestamp="1621873365636">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="166" key="GridCell.Tab.0.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620737717699" />
+    <state width="2518" height="394" key="GridCell.Tab.0.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873365636" />
     <state width="1398" height="223" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1618924084896" />
-    <state width="2518" height="609" key="GridCell.Tab.1.bottom" timestamp="1620142805571">
+    <state width="2518" height="609" key="GridCell.Tab.1.bottom" timestamp="1621873080832">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="609" key="GridCell.Tab.1.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620142805571" />
+    <state width="2518" height="609" key="GridCell.Tab.1.bottom/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873080832" />
     <state width="1398" height="353" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1618736407539" />
-    <state width="2518" height="609" key="GridCell.Tab.1.center" timestamp="1620142805571">
+    <state width="2518" height="609" key="GridCell.Tab.1.center" timestamp="1621873080832">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="609" key="GridCell.Tab.1.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620142805571" />
+    <state width="2518" height="609" key="GridCell.Tab.1.center/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873080832" />
     <state width="1398" height="353" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1618736407539" />
-    <state width="2518" height="609" key="GridCell.Tab.1.left" timestamp="1620142805571">
+    <state width="2518" height="609" key="GridCell.Tab.1.left" timestamp="1621873080831">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="609" key="GridCell.Tab.1.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620142805571" />
+    <state width="2518" height="609" key="GridCell.Tab.1.left/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873080831" />
     <state width="1398" height="353" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1618736407539" />
-    <state width="2518" height="609" key="GridCell.Tab.1.right" timestamp="1620142805571">
+    <state width="2518" height="609" key="GridCell.Tab.1.right" timestamp="1621873080832">
       <screen x="-2560" y="-55" width="2560" height="1440" />
     </state>
-    <state width="2518" height="609" key="GridCell.Tab.1.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1620142805571" />
+    <state width="2518" height="609" key="GridCell.Tab.1.right/-2560.-55.2560.1440/0.0.1440.900@-2560.-55.2560.1440" timestamp="1621873080832" />
     <state width="1398" height="353" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1618736407539" />
     <state x="-2085" y="383" key="SettingsEditor" timestamp="1617387961675">
       <screen x="-2560" y="-55" width="2560" height="1440" />
@@ -688,17 +640,19 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyNeuralODE$ksequ.coverage" NAME="ksequ Coverage Results" MODIFIED="1618478384035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../KSODE/kuramoto-sivashinsky" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$LorentzLatentODE.coverage" NAME="LorentzLatentODE Coverage Results" MODIFIED="1617006792003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$threeDLorenzNODE.coverage" NAME="threeDLorenzNODE Coverage Results" MODIFIED="1621873066822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="create_data Coverage Results" MODIFIED="1618995713839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Lorenz3D" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$NbedDyn.coverage" NAME="NbedDyn Coverage Results" MODIFIED="1618841637285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$IdentifyIC.coverage" NAME="IdentifyIC Coverage Results" MODIFIED="1619793091934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$ksequ.coverage" NAME="ksequ Coverage Results" MODIFIED="1618478384035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../KSODE/kuramoto-sivashinsky" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$oneDLorenzNODE.coverage" NAME="oneDLorenzNODE Coverage Results" MODIFIED="1619615756813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$LorentzLatentODE.coverage" NAME="LorentzLatentODE Coverage Results" MODIFIED="1617006792003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$FigureOutCuda.coverage" NAME="FigureOutCuda Coverage Results" MODIFIED="1616770663897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$3DLorenzNODE.coverage" NAME="3DLorenzNODE Coverage Results" MODIFIED="1617726397871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$threeDLorenzNODE.coverage" NAME="threeDLorenzNODE Coverage Results" MODIFIED="1620737633113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyNeuralODE$create_data.coverage" NAME="create_data Coverage Results" MODIFIED="1618995713839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Lorenz3D" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$analyse_models.coverage" NAME="analyse_models Coverage Results" MODIFIED="1620400051460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$Neural_oDE.coverage" NAME="Neural oDE Coverage Results" MODIFIED="1617279851054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$FullStateObsNODE.coverage" NAME="FullStateObsNODE Coverage Results" MODIFIED="1621873140313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyNeuralODE$SimpleSinNeuralODE.coverage" NAME="SimpleSinNeuralODE Coverage Results" MODIFIED="1616776260798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyNeuralODE$PartialStateObsNODE.coverage" NAME="PartialStateObsNODE Coverage Results" MODIFIED="1621873211821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
