@@ -20,7 +20,7 @@ from utils import get_lr
 from utils import load_h5_data, z1test, split_sequence, make_batches_from_stack
 from utils import save_models, load_models, get_num_trainable_params
 from Datasets import DDDLorenzData, VanDerPol
-from threeDLorenzNODE import SumKnowledgeModel, Net, KnowledgeModel, LorenzModel, PeriodicApprox
+from FullStateObsNODE import SumKnowledgeModel, Net, KnowledgeModel, LorenzModel, PeriodicApprox
 
 
 class GhostModel(nn.Module):
